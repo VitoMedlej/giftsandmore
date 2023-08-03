@@ -31,7 +31,8 @@ const Preloader3 = ({res}:{res:any}) => {
             // width: {xs:'98%',md:'74%',lg:'80%'},
             width:'100%',
             // maxWidth: 'lg',
-            maxHeight:'450px',
+            maxHeight:{xs:'600px',sm:'80vh'},
+            height : {xs:'100%',sm:'500px',md:'600px'},
              
             margin: '0 auto',
             display: {
@@ -39,7 +40,6 @@ const Preloader3 = ({res}:{res:any}) => {
             },
             mt:20,
             mb:2,
-            height: '100%'
         }}>
             <Swiper
             

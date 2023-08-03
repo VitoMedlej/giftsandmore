@@ -14,8 +14,10 @@ import Link from 'next/link';
 import {Badge, Divider, Typography} from '@mui/material';
 // import { loadState } from '../../Utils/LocalstorageFn';
 import {useRouter} from 'next/navigation';
-import {AiOutlinePhone, AiOutlineSearch, AiOutlineMenu} from 'react-icons/ai'
-import {CiSearch,CiShoppingCart} from 'react-icons/ci'
+// import {AiOutlinePhone, AiOutlineSearch, AiOutlineMenu} from 'react-icons/ai'
+// import {CiSearch,CiShoppingCart} from 'react-icons/ci'
+import {BsHandbag} from 'react-icons/bs'
+import {GoSearch} from 'react-icons/go'
 
 import SearchInput from './SearchInput';
 
@@ -183,7 +185,7 @@ export default function Navbar() {
                         }}>
                             {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
 
-                                <CiShoppingCart color='black'/>
+                                <BsHandbag color='black'/>
                             {/* </Badge> */}
                             {/* <Typography>
                                 Cart
@@ -235,7 +237,7 @@ export default function Navbar() {
                             color: 'black'
                         }}>
 
-                                <CiSearch color='black'/>
+                                <GoSearch color='black'/>
                           
                         </IconButton>
                         <IconButton
@@ -244,7 +246,7 @@ export default function Navbar() {
                             color: 'black'
                         }}>
                             {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
-                                <CiShoppingCart color='black'/>
+                                <BsHandbag color='black'/>
                             {/* </Badge> */}
                             {/* <Typography>
                                 Cart

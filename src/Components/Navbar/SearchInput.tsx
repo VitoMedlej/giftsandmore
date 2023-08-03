@@ -8,7 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import { useRouter } from 'next/navigation';
 // import DirectionsIcon from '@mui/icons-material/Directions';
 // 
-import {CiSearch} from 'react-icons/ci'
+import {GoSearch} from 'react-icons/go'
 
 export default function SearchInput({sx,mobile}:{mobile?:boolean,sx?:any}) {
   const router = useRouter()
@@ -57,7 +57,7 @@ export default function SearchInput({sx,mobile}:{mobile?:boolean,sx?:any}) {
       <IconButton
        
       type="submit" className='searchIcon   trans' sx={{borderRadius:0,p: '5px' }} aria-label="search">
-        <CiSearch />
+        <GoSearch />
       </IconButton>
      
     </Paper>
