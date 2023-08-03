@@ -1,16 +1,17 @@
 "use client";
 import {useContext} from 'react';
-import {Drawer,List,Divider,ListItem,ListItemButton,ListItemText,ListItemIcon,Box, Typography} from '@mui/material';
-import {IoShirtOutline,IoShirtSharp} from 'react-icons/io5';
+import {Drawer,List,Divider,
+  Box, Typography} from '@mui/material';
+// import {IoShirtOutline,IoShirtSharp} from 'react-icons/io5';
 import { IconButton } from '@mui/material';
 
-import { useRouter } from 'next/navigation';
-import {MdFastfood} from 'react-icons/md';
+// import { useRouter } from 'next/navigation';
+// import {MdFastfood} from 'react-icons/md';
 
 import { DrawerContext } from '@/context/Contexts';
 import {GrFormClose} from 'react-icons/gr'
-import SMicons from '../SMicons/SMicons';
-import { categories } from '../Navbar/Navbar';
+// import SMicons from '../SMicons/SMicons';
+// import { categories } from '../Navbar/Navbar';
 import SideAccordion from './SideAccordion';
 
 
