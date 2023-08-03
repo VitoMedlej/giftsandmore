@@ -1,19 +1,19 @@
-// "use client"
+"use client"
 
 import Preloader3 from '../Preloader3';
 
-const MainCarousel = async () => {
+const MainCarousel =   ({images} : {images : string[] | [] | null}) => {
 
-
+  
 
     try {
 
         // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ next: { revalidate: 10 } })
         // const req = await fetch(`https://getpantry.cloud/apiv1/pantry/11c7944e-bdec-4962-bcad-f24fe432bca6/basket/Images`,{ next: { revalidate: 400 } })
-        // let res : any = await  req.json() ;
-        let res = {data:null}
+        // let res : any = await  req.json();
+        // let res = {data:null}
         return (
-          <Preloader3 res={res}/>
+          <Preloader3 res={images}/>
          )
   }
   catch (e) {
@@ -38,4 +38,5 @@ const MainCarousel = async () => {
    
 }
 
+// export const revalidate = 3600
 export default MainCarousel

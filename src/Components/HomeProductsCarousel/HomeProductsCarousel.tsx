@@ -1,3 +1,5 @@
+"use client"
+
 import {Box, Divider, Typography} from '@mui/material'
 import { Dispatch, SetStateAction } from 'react'
 import Link from 'next/link'

@@ -3,7 +3,7 @@ import { Box } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import  { Autoplay } from 'swiper'
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Navigation} from "swiper";
+// import {Navigation} from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useRouter } from 'next/navigation';
@@ -32,6 +32,7 @@ const Preloader3 = ({res}:{res:any}) => {
             // width: {xs:'98%',md:'74%',lg:'80%'},
             width:'100%',
             // maxWidth: 'lg',
+            minHeight:'300px',
             maxHeight:{xs:'600px',sm:'80vh'},
             height : {xs:'100%',sm:'500px',md:'600px'},
              

@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import {Box, Divider, Typography} from '@mui/material'
 import Link from 'next/link'
 import {AiOutlineShoppingCart} from 'react-icons/ai';
-
 import { useRouter } from 'next/navigation'
 import Btn from '@/Components/Btn/Btn';
 import CartProduct from '@/Components/Shared/CartProduct/CartProduct';

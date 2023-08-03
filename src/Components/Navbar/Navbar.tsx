@@ -21,7 +21,6 @@ import {GoSearch} from 'react-icons/go'
 
 // import SearchInput from './SearchInput';
 
-// import NavButtom from './NavButtom';
 import { useCartContext, useDrawerContext } from '@/context/Contexts';
 
 
@@ -57,7 +56,7 @@ export default function Navbar() {
 
         background:'white',
         border: 'none',
-        // position : 'fixed',
+        position : 'relative !important',
         flexGrow: 1
     }}>
         <Box className='flex bg white gap1 align-center items-center w100 center' sx={{
@@ -88,6 +87,7 @@ export default function Navbar() {
 
                 background:'white',
             // maxWidth: 'lg',
+            position:'relative',
             boxShadow:'1px 1px 3px #00000030',
             margin: '0 auto',
         }}>
@@ -99,11 +99,12 @@ export default function Navbar() {
                     // border : `1px solid #00000012`,
                 background:'white',
                     maxWidth:'xl',
+            position:'relative',
+
                 px:'0 !important',
                 flexWrap: 'wrap'
             }}> 
                 
-{/* <NavButtom/> */}
 
                
             

@@ -1,13 +1,13 @@
 "use client"
 import React from 'react'
 import { Box,  Container, Typography } from "@mui/material"
-import ContactSection from './ContactSection/ContactSection'
+// import ContactSection from './ContactSection/ContactSection'
 import HomeProductCollection from './HomeProductCollection/HomeProductCollection'
 import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 import MainCarousel from './MainCarousel/MainCarousel'
 import { useRouter } from 'next/navigation'
-import Perks from './Perks/Perks'
-import { IProduct } from '@/Types/Types'
+// import Perks from './Perks/Perks'
+// import { IProduct } from '@/Types/Types'
 
 
 const cates = [{img:'https://ucarecdn.com/ae56917f-a7a6-4ec0-b967-775b949b6877/shoescate.JPG',category:'men',type:'shoes'},
@@ -15,11 +15,11 @@ const cates = [{img:'https://ucarecdn.com/ae56917f-a7a6-4ec0-b967-775b949b6877/s
 {img:'https://ucarecdn.com/e6703908-03cc-4bc0-bd35-afa9a94d29a0/Capture.JPG',category:'collection'} ,
 ]
 
-const PreLoader = ({data}:any) => {
+const PreLoader = ({data, images}:any) => {
     const router= useRouter();
   return (
     <Box >
-      <MainCarousel/>
+      <MainCarousel images={images}/>
 
     <Container disableGutters className='wrap auto flex' sx={{pt:10,px:{sm:1},maxWidth:'xl',display:'flex'}}>
   
