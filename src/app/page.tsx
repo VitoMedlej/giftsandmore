@@ -1,4 +1,3 @@
-
 import PreLoader from "@/Components/PreLoader"
 import { server } from "@/Utils/Server"
 // import { IProduct } from "@/Types/Types"
@@ -6,7 +5,7 @@ import { server } from "@/Utils/Server"
 // import { Box,  Container, Typography } from "@mui/material"
 // import { useEffect, useState } from "react"
 
-export default async function Home() {
+export default  async function Home() {
 //   const [data,setData] = useState< {
 //     products: IProduct[] | never[] ; 
 //     featuredProducts:IProduct[] | never[];
@@ -40,9 +39,9 @@ export default async function Home() {
 try {
 
       // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ next: { revalidate: 10 } })
-      const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ cache: 'no-store' })
-      let res = await req.json()
-      // let res = {data:null}
+      // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ cache: 'no-store' })
+      // let res = await req.json()
+      let res = {data:null}
       return (
         <PreLoader data={res?.data}/>
        )

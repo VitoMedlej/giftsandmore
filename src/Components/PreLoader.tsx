@@ -9,11 +9,10 @@ import { useRouter } from 'next/navigation'
 import Perks from './Perks/Perks'
 
 
-const cates = [{img:'https://www.crafterscompanion.com/page//content/uploads/2022/02/IMG_7772-1024x683.jpg',category:'Tools'},
-{img:'https://www.crafterscompanion.com/page//content/uploads/2022/02/IMG_4963-1024x683.jpg',category:'More Tools'},
-{img:'https://www.crafterscompanion.com/page//content/uploads/2022/02/IMG_9100-1024x683.jpg',category:'Machines'} ,
-{img:'https://i.etsystatic.com/45256079/c/942/942/8/0/il/60ed38/5140412525/il_600x600.5140412525_nxcd.jpg',category:'Ropes'}  ,
-{img:'https://i.etsystatic.com/37495329/r/il/d2aec0/4310920560/il_340x270.4310920560_i6j3.jpg',category:'kit'}  ,
+const cates = [{img:'https://ucarecdn.com/ae56917f-a7a6-4ec0-b967-775b949b6877/shoescate.JPG',category:'men',type:'shoes'},
+{img:'https://ucarecdn.com/09462b5b-2130-477b-b4dd-16802e046b90/womencate.JPG',category:'women',type:'shoes'},
+{img:'https://ucarecdn.com/e6703908-03cc-4bc0-bd35-afa9a94d29a0/Capture.JPG',category:'collection'} ,
+
 
 ]
 const 
@@ -25,15 +24,7 @@ PreLoader = ({data}:any) => {
 
     <Container disableGutters className='wrap auto flex' sx={{pt:10,px:{sm:1},maxWidth:'xl',display:'flex'}}>
   
-    <Box className='flex auto row ' sx={{justifyContent:'space-between',width:'100%',maxWidth:'xl'}}>
-      {
-        ['https://www.crafterscompanion.com/page//content/uploads/2022/02/IMG_8026-1024x683.jpg','https://www.crafterscompanion.com/page//content/uploads/2022/02/IMG_9956-1024x683.jpg'].map(img=>{
-          return <Box className='cursor' onClick={()=>router.push('/collection/products')} key={img} sx={{width:{xs:'99%',sm:'49%',md:'48%'}}}>
-            <img src={img} alt="Category Image Shop Now" className="img" />
-          </Box>
-        })
-      }
-    </Box>
+ 
 
      <Box
                 className=' text-center auto center box'
@@ -65,12 +56,12 @@ PreLoader = ({data}:any) => {
 
             onClick={()=>router.push(`${i?.category.replace(/ /g, '-').toLocaleLowerCase() || 'collection'}/products`)}
             key={i?.img} className='cursor'
-             sx={{borderRadius:'50%',height:{xs:'48vw',sm:'24vw',md:'24vw',lg:'15vw'},
-             my:2,width:{xs:'48vw',sm:'24vw',md:'24vw',lg:'15vw'}}}>
-                    <img src={i?.img} alt={`${i?.category ,'image'}`} style={{borderRadius:'50%'}} className="img" />
-                    <Typography sx={{fontWeight:'500',fontSize:'.65em',textAlign: 'center',px:1}}>
+             sx={{borderRadius:'50%',height:{xs:'300px',sm:'450px'},
+             my:2,width:{xs:'48%',sm:'300px',md:'32%'}}}>
+                    <img src={i?.img} alt={`${i?.category ,'image'}`} style={{borderRadius:'2'}} className="img" />
+                    {/* <Typography sx={{fontWeight:'500',fontSize:'.65em',textAlign: 'center',px:1}}>
              {i?.category}
-            </Typography>
+            </Typography> */}
             </Box>
 
         })}

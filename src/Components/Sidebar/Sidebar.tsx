@@ -33,18 +33,20 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
   const Lista = () => (
     <Box
-      sx={{ width:  '300px',py:1 }}
+      sx={{ width:  {xs:'100%',sm:'300px',md:'400px'},py:1 }}
       role="presentation"
       onClick={toggleDrawer( false)}
       onKeyDown={toggleDrawer( false)}
     >
       <Box className='flex justify-between items-center '
-      sx={{margin:'0 .5em',borderBottom:'1px solid #00000040',    justifyContent: 'flex-end'}}
+      sx={{margin:' .5em'
+      // ,borderBottom:'1px solid #00000040',
+         , justifyContent: 'flex-end'}}
       
       >
         <Box>
           <Typography sx={{fontWeight:600}}>
-            Menu
+            Side Bar
           </Typography>
         </Box>
 
@@ -107,7 +109,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
     <div>
 
           <Drawer
-            anchor={'right'}
+            anchor={'left'}
             open={open}
             onClose={toggleDrawer(false)}
           >

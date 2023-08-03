@@ -38,7 +38,7 @@ const Preloader3 = ({res}:{res:any}) => {
             display: {
                 xs: 'flex'
             },
-            mt:20,
+            // mt:20,
             mb:2,
         }}>
             <Swiper

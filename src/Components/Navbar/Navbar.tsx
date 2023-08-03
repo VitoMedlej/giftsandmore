@@ -73,7 +73,7 @@ export default function Navbar() {
 
         background:'white',
         border: 'none',
-        position : 'fixed',
+        // position : 'fixed',
         flexGrow: 1
     }}>
         <Box className='flex bg white gap1 align-center items-center w100 center' sx={{
@@ -104,121 +104,62 @@ export default function Navbar() {
 
                 background:'white',
             // maxWidth: 'lg',
-                width:'100%',
+            boxShadow:'1px 1px 3px #00000030',
+                // width:'100%',
             margin: '0 auto',
-            boxShadow: 'none'
         }}>
             <Toolbar
     className='center  flex w100  auto'
 
                 sx={{
-                    border : `1px solid #00000012`,
+                    
+                    // border : `1px solid #00000012`,
                 background:'white',
                     maxWidth:'xl',
                 px:'0 !important',
-                
                 flexWrap: 'wrap'
             }}> 
-                  <Link className='flex center  aling-center items-center '  href='/' color='inherit'>
+                
+{/* <NavButtom/> */}
+
+               
+            
+<IconButton
+                            onClick={() => setOpen(!open)}
+                            edge="start"
+                            aria-label="menu"
+                            sx={{
+                            margin:0,
+                            color: 'black',
+                         
+                        }}>
+                            <IoIosMenu color='black'/>
+                       <Typography sx={{display:{xs:'none',sm:'flex'}, px:.5, fontWeight:100}}> 
+                                Menu
+                            </Typography>
+
+                        </IconButton>
+               
+                <Link className='flex center  aling-center items-center ' style={{ flex:1}}  href='/' color='inherit'>
 
 <Box
     sx={{
     mx: {
         sm: '1em'
     },
-    width:{xs:'90px',sm: '120px'}
+   
+    width:{xs:'90px',sm: '100px'}
 }}>
     <img
         className='img'
-        src={`/icon.png`}
+        src={`https://ucarecdn.com/02525c92-bb29-42fb-a57b-37f66be9e061/363298932_1005526440451332_5413838414448583539_n.jpg`}
         alt="the craft room logo"/>
 </Box>
 </Link>
-<NavButtom/>
-
-               
-            
-
-               
-
                 <Box
                     sx={{
                     px:1,
-                    display:{xs:'flex',md:'none'},
-
-                    flex: 1,
                     flexWrap: 'wrap',
-                    justifyContent: {
-                        xs: 'right',
-                    },
-                 
-                }}>
- 
-                    <Box
-                        sx={{
-                        display: {
-                            xs: 'flex'
-                        },
-                        // justifyContent: 'end'
-                    }}
-                        className='flex right'>
- 
-    <IconButton
-                            onClick={() => setOpen(!open)}
-                            size="large"
-                            edge="start"
-                            aria-label="menu"
-                            sx={{
-                            padding : '8px',
-                            color: 'black',
-                            // margin: '0.1em',
-                            display: {
-                                md: 'none'
-                            }
-                        }}>
-                            <IoIosMenu color='black'/>
-                        </IconButton>
-                        <IconButton
-                            onClick={() => setCartOpen(!cartOpen)}
-                            sx={{
-                            color: 'black'
-                        }}>
-                            {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
-
-                                <BsHandbag color='black'/>
-                            {/* </Badge> */}
-                            {/* <Typography>
-                                Cart
-                            </Typography> */}
-                        </IconButton>
-   {/* <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} target='_blank' className='flex decor-none' rel='noopener'>
-
-                        <IconButton
-                            onClick={() => setCartOpen(!cartOpen)}
-                            sx={{
-                            color: 'black'
-                        }}>
-                     
-                            <AiOutlinePhone color='black'/>
-
-                        </IconButton>
-    </a> */}
-                    
-                    </Box>
-
-                </Box>
-
-                <Box
-                    sx={{
-                    px:1,
-                    display:{xs:'none',md:'flex'},
-
-                    // flex: 1,
-                    flexWrap: 'wrap',
-                    // justifyContent: {
-                    //     xs: 'right',
-                    //     sm: 'end'
-                    // },
                  
                 }}>
  
@@ -238,49 +179,35 @@ export default function Navbar() {
                         }}>
 
                                 <GoSearch color='black'/>
-                          
+                           <Typography sx={{display:{xs:'none',sm:'flex'}, px:.5, fontWeight:100}}> 
+                                Search
+                            </Typography>
                         </IconButton>
                         <IconButton
                             onClick={() => setCartOpen(!cartOpen)}
                             sx={{
                             color: 'black'
                         }}>
-                            {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
                                 <BsHandbag color='black'/>
-                            {/* </Badge> */}
-                            {/* <Typography>
+                           <Typography sx={{display:{xs:'none',sm:'flex'}, px:.5, fontWeight:100}}> 
                                 Cart
-                            </Typography> */}
+                            </Typography>
                             </IconButton>
 
 
-                            <IconButton
-                            onClick={() => setOpen(!open)}
-                            edge="start"
-                            aria-label="menu"
-                            sx={{
-                            color: 'black',
-                            // margin: '0.1em',
-                            display: {
-                                md: 'none'
-                            }
-                        }}>
-                            <IoIosMenu color='black'/>
-                        </IconButton>
+                     
                     
                     </Box>
 
                 </Box>
-             <SearchInput
-mobile
-                    /> 
+          
 <SearchModal openModal={openModal} setOpenModal={setOpenModal }/>
              
             </Toolbar>
         </AppBar>
     </Box> 
 
-    < Divider sx={{color : '#00000017'}} />
+    {/* < Divider sx={{color : '#00000017'}} /> */}
      </>
     
     );
