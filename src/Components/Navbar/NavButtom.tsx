@@ -1,8 +1,8 @@
 import { Box, Container, Typography } from '@mui/material'
 import Link from 'next/link'
 import React from 'react'
+import { categories } from '../Sidebar/SideAccordion'
 // import MenuHover from './MenuHover'
-import { categories } from './Navbar'
 
 
 
