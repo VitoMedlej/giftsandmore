@@ -43,7 +43,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
             </Typography>
             <Link  href='/collection/products' className="decor-none">
 
-<Btn sx={{borer:'none',background:'transparent', color:'#2ec6d4',borderRadius:25,margin:'.25em auto'}}>
+<Btn sx={{border:'1px solid transparent',"hover":{border:'none !important',background:'transparent'},fontWeight:300,py:.5,background:'transparent',borderRadius:0,margin:'.25em auto'}}>
     All Products
 </Btn>
 </Link>

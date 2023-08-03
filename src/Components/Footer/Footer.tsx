@@ -1,10 +1,8 @@
 "use client"
 import Link from 'next/link';
-import {Typography , Box } from '@mui/material'
+import {Typography  } from '@mui/material'
 import './style.css'
 import SMicons from '../SMicons/SMicons';
-// import SMicons from './SMicons';
-// // import Logo from '../../assets/icons/logo';
 
 
 const Footer = () => (
@@ -18,11 +16,11 @@ const Footer = () => (
               {/* <a><h1 className="site-logo"><Logo />E-Shop</h1></a> */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675357773/logo_ghli5e.jpg */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
-            <img className='img ' src='/icon.png' alt="the craft room Logo" />
+            <img className='img ' src='https://ucarecdn.com/02525c92-bb29-42fb-a57b-37f66be9e061/363298932_1005526440451332_5413838414448583539_n.jpg' alt="Beyond Luxury Lebanon Logo" />
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.9em',color:"2b2b2b" }}  className='footer-p '>
-          Welcome to The Craft Room, where creativity becomes reality. Located in Lebanon, we offer a wide selection of arts and crafts supplies, including Cricut products, to help you unleash your creativity. Whether you’re a professional artist or just starting out, we have everything you need to bring your ideas to life. Shop now and discover the endless possibilities of crafting.
+          Beyond Luxury is your destination for luxury fashion in Lebanon. Our online shop offers a wide selection of premium quality clothing and accessories for the modern woman. From dresses to shoes, bags to jackets, we have everything you need to elevate your style. Shop now and enjoy fast delivery all over Lebanon.
           </Typography>
           <SMicons/>
 
@@ -54,22 +52,11 @@ const Footer = () => (
             
             {/* <li><a href="https://www.facebook.com/profile.php?id=100076163602459/" target="_blank" rel="noreferrer" >Facebook</a></li> */}
 
-            <li><a href="https://www.instagram.com/mini_chic_baby_wears/" target="_blank" rel="noreferrer" >@thecraftroom</a></li>
+            <li><a href='https://www.instagram.com/beyond.luxury__/' target="_blank" rel="noreferrer" >@beyond.luxury__</a></li>
             <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+{process.env.NEXT_PUBLIC_WA}</a></li>
           </ul>
         </div>
-        <Box className='flex wrap'> 
-                        <Typography sx={{width:'100%',fontWeight:500,pb:.5}}>
-                            We Also Accept:
-                        </Typography>
-                        <Box sx={{width:'80px'}}>
-                        <img src="https://whish.money/app/logos/whish_v2.png" alt="Whish Money Payment method logo" className="img contain" />
-                        </Box>
-                        <Box sx={{width:'80px',ml:2}}>
 
-<img src="https://www.omt.com.lb/storage/services/X0OGLcDfG3zrQ68JDEomA65t9.jpg" alt="Western Union Money Payment method logo" className="img contain" />
-</Box>
-                    </Box>
       </div>
     </div>
 

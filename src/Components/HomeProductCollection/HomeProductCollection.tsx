@@ -1,7 +1,8 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Divider, Link, Typography } from '@mui/material'
 import React from 'react'
 import ProductCard from '../ProductCard/ProductCard'
 import { IProduct } from '@/Types/Types'
+import Btn from '../Btn/Btn'
 
 const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => {
   return (
@@ -21,6 +22,13 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
             }}>
                 View Our Latest Products
             </Typography>
+            <Link  href='/collection/products' className="decor-none">
+
+<Btn sx={{border:'1px solid transparent',"hover":{border:'none !important',background:'transparent'},fontWeight:300,py:.5,background:'transparent',borderRadius:0,margin:'.25em auto'}}>
+    All Products
+</Btn>
+</Link>
+            <Divider  light />
               <Box sx={{mb:2}} className='flex wrap gap1 justify-center'>
                   {products && products?.length > 0 && products.map(i=>{
 

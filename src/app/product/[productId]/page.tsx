@@ -4,11 +4,10 @@ import HomeProductsCarousel from '@/Components/HomeProductsCarousel/HomeProducts
 import ProductImageCarousel from '@/Components/ProductImageCarousel/ProductImageCarousel'
 // import ProductOptionSelect from '@/Components/ProductOptionSelect/ProductOptionSelect'
 // import ProductReview from '@/Components/ProductReview/ProductReview'
-import {  Box, Divider, Grid, Typography } from '@mui/material'
+import {  Box, CircularProgress, Divider, Grid, Typography } from '@mui/material'
 import {BsWhatsapp} from 'react-icons/bs'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import BreadCrumb from '@/Components/BreadCrumb/BreadCrumb'
-import  Head from 'next/head'
 import useCart from '@/Hooks/useCart'
 import { useEffect, useState } from 'react'
 import { IProduct } from '@/Types/Types'
@@ -31,6 +30,7 @@ const Index = () => {
       product : null,
       moreProducts : []
     })
+  
     
     
        const InitialFetch = async () => {
@@ -44,8 +44,8 @@ const Index = () => {
           setLoading(false)
 
           }
-          return null
           setLoading(false)
+          return null
 
         }
         catch(er) {
@@ -56,7 +56,7 @@ const Index = () => {
         }
       }
       useEffect(() => {
-        
+        setLoading(true)
         InitialFetch()
         
         return  ()=> setLoading(false)
@@ -67,10 +67,10 @@ const Index = () => {
   return (
      
     
-      <Box sx={{mt:15}}>
+      <Box sx={{mt:2}}>
  
       <BreadCrumb  />
-{data?.product !== undefined &&   <Grid sx={{maxWidth:'lg',mx:1,pt:{sm:15,md:15,lg:9}}} className='auto' container>
+{!loading && data?.product !== undefined && data?.product?.title ? <Grid sx={{maxWidth:'lg',mx:1,pt:{sm:15,md:15,lg:9}}} className='auto' container>
        <Grid  item xs={12}  md={7} >
          <ProductImageCarousel images={data?.product?.images}/>
    
@@ -110,7 +110,8 @@ const Index = () => {
                      onClick={()=>addToCart(`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:data.product.price, selectedColor},true)}
              
               sx={{gap:.5,
-                borderRadius:25,
+                borderRadius:0,
+                color:'white',
              width:{xs:'100%',sm:'49%'}}}>
                  Add To Cart
                  <AiOutlineShoppingCart  fontSize={'medium'}/>
@@ -163,7 +164,10 @@ const Index = () => {
        </Grid>
          {/* <ProductReview/>  */}
        <HomeProductsCarousel Collectiontitle={"Shop More Products"} delay={3000} data={data?.moreProducts} />
-   </Grid> }
+   </Grid> : <Box className='flex auto center align-center' sx={{py:5}}>
+
+<CircularProgress />
+</Box> }
    </Box>
     
   )

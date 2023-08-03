@@ -56,7 +56,7 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,selectedC
                         margin: 0,
                         width:'100%',
                         cursor:'pointer',
-                        fontWeight: '400',
+                        fontWeight: '300',
                         fontSize:{sm:'1.1em',md:'1.3em'}
                     }}>
                        {title}
@@ -73,7 +73,7 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,selectedC
                     component='h4'
                         sx={{
                         margin: 0,
-                        fontWeight: '400',
+                        fontWeight: '200',
                         fontSize:'.9em'
                     }}>
                        {category}
@@ -81,7 +81,7 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,selectedC
                     <h2
                         style={{
                         fontSize: '1em',
-                        fontWeight: '500',
+                        fontWeight: '300',
                         color: 'green',
                         margin: ' .35em 0 0 0'
                     }}>
@@ -100,15 +100,17 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,selectedC
                    
                     <Btn 
                     onClick={()=>remove(_id)}
-                    v2={true} sx={{border:'none',padding:0,mx:0,mt:1,':hover':{background:'white'},fontSize:'.6em'}}>
+                    v2={true} sx={{border:'none',padding:0,px:0,mx:0,mt:1,':hover':{background:'white'}}}>
+               
+                        <Typography sx={{pt:'.1em',color:'red',fontWeight:'400',fontSize:'1.21em'}}>
+                            
+                        DELETE
+                        </Typography>
                         <AiOutlineDelete 
                         color='red'
                        size='1.25em'
+                       
                         /> 
-                        <Typography sx={{pt:'.1em',color:'red',fontWeight:'600',fontSize:'1em'}}>
-                            
-                        Remove
-                        </Typography>
                     </Btn>
                     
                 </Box>

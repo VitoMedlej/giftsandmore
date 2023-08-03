@@ -8,12 +8,10 @@ import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
 import ContextWrapper from '@/context/Contexts'
 
 export const metadata = {
-    title: 'The Craft Room | Arts & Crafts Supplies, Cricut Products',
-    description: `Shop at The Craft Room, where creativity becomes reality. Find all your arts and
-     crafts supplies, including best Cricut products in Lebanon`,
+    title: 'Beyond Luxury - Modern and Premium Quality Fashion in Lebanon',
+    description: `Shop the latest luxury fashion for modern women at Beyond Luxury. Premium quality clothing and accessories with delivery all over Lebanon. DM to order.`,
     icons: {
-        icon: 'https://ucarecdn.com/92989d57-0dd8-40f7-9b2b-7ab889e5cd11/343109195_759962312285' +
-                '830_7168937497940647871_n.jpg'
+        icon:`https://ucarecdn.com/02525c92-bb29-42fb-a57b-37f66be9e061/363298932_1005526440451332_5413838414448583539_n.jpg`
     }
 }
 
@@ -25,7 +23,7 @@ export default function RootLayout({children} : {
             <head>
             <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" />
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"/>
             </head>
 
             <body className='relative'>

@@ -12,8 +12,9 @@ import { useRouter } from 'next/navigation';
 const Preloader3 = ({res}:{res:any}) => {
     const router = useRouter()
     const [imgs,setImgs] = useState([
-        { img : 'https://cdn.shopify.com/s/files/1/0635/4468/8866/files/craft-tools-for-cutting.jpg?v=1657684586'},
-        { img : 'https://reviewed-com-res.cloudinary.com/image/fetch/s--7JZMZC9t--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_auto,w_1200/https://reviewed-production.s3.amazonaws.com/1582737147771/cricut-maker-2.jpg'},
+        { img : 'https://hips.hearstapps.com/hmg-prod/images/run-affordable-running-shoes-1676481206.jpg?resize=2048:*'},
+        { img : `https://u7q2x7c9.stackpathcdn.com/photos/26/88/390299_21873_XXL.webp`},
+        { img : 'https://insport.com.au/cdn/shop/collections/mens_foot_wear_kappa.png?v=1681882615&width=1800'},
      
      ])
     useEffect(() => {

@@ -7,14 +7,23 @@ import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 import MainCarousel from './MainCarousel/MainCarousel'
 import { useRouter } from 'next/navigation'
 import Perks from './Perks/Perks'
+import { IProduct } from '@/Types/Types'
 
 
 const cates = [{img:'https://ucarecdn.com/ae56917f-a7a6-4ec0-b967-775b949b6877/shoescate.JPG',category:'men',type:'shoes'},
 {img:'https://ucarecdn.com/09462b5b-2130-477b-b4dd-16802e046b90/womencate.JPG',category:'women',type:'shoes'},
 {img:'https://ucarecdn.com/e6703908-03cc-4bc0-bd35-afa9a94d29a0/Capture.JPG',category:'collection'} ,
-
-
 ]
+const productsz : IProduct[] = [{
+  title : 'fooer shoes 2x',
+  price: 124.99,
+  category: 'shoes',
+  _id : 'fas124124',
+  description : '',
+  images : ['https://shoe-avenue.com/cdn/shop/files/IMG_2303_360x.jpg?v=1687426062'],
+  attributes : [],
+  isFeatured: false,
+}]
 const 
 PreLoader = ({data}:any) => {
     const router= useRouter();
@@ -70,17 +79,18 @@ PreLoader = ({data}:any) => {
      </Box>
 
       <Box/>
-        <HomeProductCollection products={ data?.products }/>
+        <HomeProductsCarousel Collectiontitle={"Featured Products"} delay={3000} data={productsz}/>
+
+        <HomeProductCollection products={ productsz }/>
 
       
         
-        {/* <HomeProductsCarousel Collectiontitle={"Featured Products"} delay={3000} data={data?.featuredProducts}/> */}
 
         
-        <Perks/>
+        {/* <Perks/> */}
 
     </Container>
-        <ContactSection/>
+        {/* <ContactSection/> */}
   </Box>
   )
 }

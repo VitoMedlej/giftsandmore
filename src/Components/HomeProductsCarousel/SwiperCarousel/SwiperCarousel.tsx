@@ -76,19 +76,7 @@ const SwiperCarousel = ({data, delay} : {
                             _id={item._id}
                             category={item.category}/>
                     </SwiperSlide>
-                    // return <SwiperSlide className='swiper-wrapper1'
-                    // style={{width:'100%',height:'100%'}} key={item._id}>     {/* <HouseCard
-                    //   img={property.images[0] || property.images[1]}         width='95%'
-                    // id={property.id}         isFeatured={isFeatured !== undefined ? isFeatured :
-                    // true}         propertySize={property.propertySize}
-                    // type={property.type}         baths={property.bathrooms}
-                    // rooms={property.rooms}         currency={property.currency}
-                    // price={property.price}         title={property.title}
-                    // location={property.location}/> */}          <ProductCard
-                    // handleQuickView={handleQuickView}          title={item.title}
-                    // images={item.images}          price={item.price}          _id={item._id}
-                    //     category={item.category}          /> </SwiperSlide>
-
+                  
                 })
 }
 

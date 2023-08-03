@@ -11,7 +11,7 @@ import ProductCard from './ProductCard/ProductCard'
 
 const Preloader2 = ({data}:any) => {
     // console.log('data: ', data);
-    const [pageNB,setPageNB] = useState(0)
+    // const [pageNB,setPageNB] = useState(0)
     const router = useRouter()
     const [products,setProducts] = useState(data)
     const {category} = useParams() 
@@ -27,7 +27,7 @@ const Preloader2 = ({data}:any) => {
        
     //   })
   return (
-    <Container sx={{mt:15}} disableGutters maxWidth='lg'>
+    <Container sx={{mt:1}} disableGutters maxWidth='lg'>
     <Box
         sx={{
         width: '100%',

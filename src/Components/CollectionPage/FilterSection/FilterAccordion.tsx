@@ -11,7 +11,7 @@ import * as React from 'react';
 import SelectOneForm from './Forms/SelectOneForm';
 import { Box, MenuItem } from '@mui/material';
 import Btn from '@/Components/Btn/Btn';
-import { categories } from '@/Components/Navbar/Navbar';
+import { categories } from '@/Components/Sidebar/SideAccordion';
 // import SearchInput from '@/Components/Navbar/SearchInput';
 
 export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
@@ -44,7 +44,7 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
             List={
             
          
-                categories
+                [...categories,'collection']
              
            }
             value={options.category}
@@ -102,7 +102,7 @@ className='flex  center items-center'
                  
               
             })}
-               <Btn onClick={()=>handleSubmit()}>
+               <Btn sx={{fontWeight:100,color:'white',py:'.5em !important'}} onClick={()=>handleSubmit()}>
                         Submit
                     </Btn>
         </Box>

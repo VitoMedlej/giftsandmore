@@ -3,14 +3,15 @@ import React from 'react'
 
 let style1 = {
     color: 'black !important',
-    background: ' #2ec6d4',
-    border:'1px solid #2ec6d4',
-    borderRadius:'25 !important',
+    background: ' #1e237f',
+    border:'1px solid #1e237f',
+    borderRadius:'0 !important',
+
     
     ':hover': {
-        background: '#2ec6d4',
+        background: '#1e237f',
         color:'white !important',
-    border:'1px solid #2ec6d4'
+    border:'1px solid #1e237f'
 
     },
     display: 'flex',
@@ -28,12 +29,12 @@ let style2 = {
     my:1,
     py: 1.22,
     px: 2.52,
-    borderRadius:'25 !important',
+    borderRadius:'0 !important',
   
     ':hover':{  borderColor: 'black'},
     fontSize: '10px',
     
-    border:'1.1px solid #2ec6d4'
+    border:'1.1px solid #1e237f'
 }
 
 const Btn = ({v2,disabled,onClick,className,children,sx}:{className?:string,disabled?:boolean,onClick?:()=>void,sx?:any,v2?:boolean,children?:any}) => {

@@ -6,6 +6,9 @@ import {NextResponse} from 'next/server'
 import {type NextRequest} from 'next/server'
 
 export async function GET(req : NextRequest, res : NextApiResponse) {
+    try {
+
+
     const { searchParams } = new URL(req.url);
     let id=  searchParams.get('id') || null 
     if (!id) {
@@ -13,7 +16,7 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
       
     }
     const ProductsCollection = await client
-    .db("CRAFT")
+    .db("LUXURY")
     .collection("Products");
 
     let moreProducts: any[]= []
@@ -41,5 +44,13 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
         product,
         moreProducts
     });
+}
+catch ( e) {
+    console.log(' e: get by id:',  e);
+    return NextResponse.json({
+        success: false
+      
+    });
+}
 
 }

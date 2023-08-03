@@ -11,12 +11,13 @@ import { DrawerContext } from '@/context/Contexts';
 import {GrFormClose} from 'react-icons/gr'
 import SMicons from '../SMicons/SMicons';
 import { categories } from '../Navbar/Navbar';
+import SideAccordion from './SideAccordion';
 
 
 export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
  
   const {open, setOpen} = useContext(DrawerContext);
-  const router = useRouter();
+  // const router = useRouter();
   const toggleDrawer =
     ( open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -35,24 +36,26 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
     <Box
       sx={{ width:  {xs:'100%',sm:'300px',md:'400px'},py:1 }}
       role="presentation"
-      onClick={toggleDrawer( false)}
-      onKeyDown={toggleDrawer( false)}
+      // onClick={toggleDrawer( false)}
+      // onKeyDown={toggleDrawer( false)}
     >
       <Box className='flex justify-between items-center '
-      sx={{margin:' .5em'
+      sx={{margin:' 0 .5em'
       // ,borderBottom:'1px solid #00000040',
          , justifyContent: 'flex-end'}}
       
       >
         <Box>
-          <Typography sx={{fontWeight:600}}>
+          <Typography sx={{fontWeight:300}}>
             Side Bar
           </Typography>
         </Box>
+    <Divider light></Divider>
 
               <IconButton 
         
-        onClick={toggleDrawer(false)}>
+        onClick={toggleDrawer(false)}
+        >
                         <GrFormClose
                                 color='red'
                                 />
@@ -60,7 +63,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
                      
 
                                 </Box>
-      <List>
+      {/* <List>
       <ListItem
           onClick={()=>router.push(`/collection/products`)}
            disablePadding>
@@ -98,7 +101,9 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
         
         }
       </List>
-      <SMicons/>
+      <SMicons/> */}
+
+      <SideAccordion toggleDrawer={setOpen}/>
 
       <Divider />
       

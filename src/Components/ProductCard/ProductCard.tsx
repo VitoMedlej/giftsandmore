@@ -32,12 +32,13 @@ const ProductCard = ({
             border : '1px solid #000000a',
             py: 1,
             margin: '0em auto',
-            minWidth: {xs:'150px',sm:'32%',md:'283px',lg:'300px'},
+            minWidth: {xs:'150px',md:'200px',lg:'250px',xl:'300px'},
             width: width
                 ? width
                 : {
-                    xs: '47%',
-                    sm: '32%'
+                    xs: '48%',
+                    sm: '32%',
+                    md : '22%'
                 }
         }}>
             <Box 
@@ -54,47 +55,46 @@ const ProductCard = ({
                     className="img"/>
             </Box>
             
-            <Box 
+            <Box
+            className='center flex auto  col align-center items-center' 
             sx={{
                 px: .95
+                
             }}>
-                    <Typography
-                    sx={{
-                    fontWeight: '300',
-                    fontSize: '.76em'
-                }}>
-                    {category}
-                </Typography>
+                  
                
                 <Typography
             className='limited cursor '
 
                     onClick={() => router.push(`/product/${_id}`)}
                     sx={{
-                    fontSize: {xs:'.89em',sm:'1.195em'},
-                    fontWeight: '500'
+                    pt:.33,
+                    fontSize: {xs:'.99em',sm:'1.195em',md:'1.124em'},
+                    fontWeight: '400'
                 }}>
                     {title}
                 </Typography>
                 <Typography
                     sx={{
                     my: .5,
-                    color:'green',
-                    fontWeight: '400',
-                    fontSize: '1.16em'
+                    fontWeight: '300',
+                    fontSize: '1.0em'
                 }}>
-                    {price}$
+                    ${price}
                 </Typography>
                 <Btn
             className='cursor gap1'
                 
                      onClick={()=>addToCart(_id,{title,category,img:images[0],_id,price},true)}
-                    
+                   v2 
                     sx={{
-                        color:'white',
                         width:'100%',
-                   
-                    borderRadius:25,
+                        fontWeight:300,
+                        color:'#1e237f',
+                        border:'none',
+                        py:0,
+                        fontSize:'.67em',
+                    borderRadius:0,
                   
                  
                 }}>

@@ -16,7 +16,7 @@ const FilterSection = ({handleReset,sx,setProducts}:any) => {
         // query : '',
         
     })
-    console.log('options: ', options);
+   
     
     const handleSubmit = async () => {
         const url =  `/api/sort?min=${options.price[0]}&max=${options.price[1]}&sort=${options.sort}&category=${options.category}`  ;

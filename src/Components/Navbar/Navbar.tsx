@@ -19,30 +19,14 @@ import {useRouter} from 'next/navigation';
 import {BsHandbag} from 'react-icons/bs'
 import {GoSearch} from 'react-icons/go'
 
-import SearchInput from './SearchInput';
+// import SearchInput from './SearchInput';
 
-import NavButtom from './NavButtom';
+// import NavButtom from './NavButtom';
 import { useCartContext, useDrawerContext } from '@/context/Contexts';
 
 
 
-export const categories = [
-    'Teckwrap',
-    '3D puff',
-    ' materials'
-,    'Cricut Joy'
- ,  ' Cricut Maker'
 
-   , 'Tools and blades'
-    ,'Handmade goods'
-  ,  'Vintage items'
-   , 'Craft supplies'
-    ,'Fine art'
-    ,'Unique',
-    'paper craft ','stamping ','art supplies' ,'knitting' ,'sewing' 
-,
-     'other',
-]
 export default function Navbar() {
     const {open, setOpen} = useDrawerContext();
     const [openModal,
@@ -105,7 +89,6 @@ export default function Navbar() {
                 background:'white',
             // maxWidth: 'lg',
             boxShadow:'1px 1px 3px #00000030',
-                // width:'100%',
             margin: '0 auto',
         }}>
             <Toolbar
@@ -134,7 +117,7 @@ export default function Navbar() {
                          
                         }}>
                             <IoIosMenu color='black'/>
-                       <Typography sx={{display:{xs:'none',sm:'flex'}, px:.5, fontWeight:100}}> 
+                       <Typography sx={{display:{xs:'none',sm:'flex'}, px:.5, fontWeight:200}}> 
                                 Menu
                             </Typography>
 
@@ -153,7 +136,7 @@ export default function Navbar() {
     <img
         className='img'
         src={`https://ucarecdn.com/02525c92-bb29-42fb-a57b-37f66be9e061/363298932_1005526440451332_5413838414448583539_n.jpg`}
-        alt="the craft room logo"/>
+        alt="Beyond Luxury Lebanon logo"/>
 </Box>
 </Link>
                 <Box
@@ -179,7 +162,7 @@ export default function Navbar() {
                         }}>
 
                                 <GoSearch color='black'/>
-                           <Typography sx={{display:{xs:'none',sm:'flex'}, px:.5, fontWeight:100}}> 
+                           <Typography sx={{display:{xs:'none',sm:'flex'}, px:.5, fontWeight:200}}> 
                                 Search
                             </Typography>
                         </IconButton>
@@ -189,7 +172,7 @@ export default function Navbar() {
                             color: 'black'
                         }}>
                                 <BsHandbag color='black'/>
-                           <Typography sx={{display:{xs:'none',sm:'flex'}, px:.5, fontWeight:100}}> 
+                           <Typography sx={{display:{xs:'none',sm:'flex'}, px:.5, fontWeight:200}}> 
                                 Cart
                             </Typography>
                             </IconButton>
