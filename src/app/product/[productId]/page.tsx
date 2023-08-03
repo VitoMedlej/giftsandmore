@@ -14,11 +14,12 @@ import { IProduct } from '@/Types/Types'
 import { useParams } from 'next/navigation'
 import { server } from '@/Utils/Server'
 import { QuantityPicker } from '@/Components/Shared/QuantityPicker/QuantityPicker'
+import { useRouter } from 'next/navigation'
 
 const Index = () => {
     const {productId} = useParams()
     const {incrementQty} = useCart()
- 
+    const router = useRouter()
     const {addToCart}= useCart()
     const [loading,setLoading] = useState(false)
     const [selectedColor,setSelectedColor] = useState('')
@@ -63,7 +64,9 @@ const Index = () => {
 
       }, [])
 
-    
+  if (!data?.product && !loading) {
+return    router.push('/')
+  }
   return (
      
     
