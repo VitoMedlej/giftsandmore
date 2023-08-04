@@ -64,9 +64,7 @@ const Index = () => {
 
       }, [])
 
-  if (!data?.product && !loading) {
-return    router.push('/')
-  }
+  
   return (
      
     
