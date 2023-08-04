@@ -136,7 +136,7 @@ const Index = () => {
              </Box> */}
          </Box>}
 
-         { !data?.product?.colors && <Box className='flex' sx={{py:2}}>
+         { data?.product?.colors && <Box className='flex' sx={{py:2}}>
                  <Typography >
                  <strong>Colors:</strong>{' '}
                  </Typography>
