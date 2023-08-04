@@ -85,7 +85,7 @@ export default function TemporaryDrawer() {
                         : <Box className='auto center col flex items-center ' sx={{py:5}}>
 
                         <Box sx={{width:'60px'}}>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReJ1L9fmcCrMGqF0D0_kpEBDUzAr71C5Bw0fnXCzOvN_-rK5SOiLapcMwXo--Wd63pzw4&usqp=CAU" alt="Empty Cart Image" className="img" />
+                            <img src="https://img.freepik.com/premium-vector/shopping-cart-with-cross-mark-wireless-paymant-icon-shopping-bag-failure-paymant-sign-online-shopping-vector_662353-912.jpg" alt="Empty Cart Image" className="img" />
                         </Box>
                         <Typography sx={{fontSize:'.98em',width:'80%',py:1,textAlign:'center'}}> 
                             No Products Have Been Added.

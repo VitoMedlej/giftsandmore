@@ -88,7 +88,7 @@ export default function Navbar() {
                 background:'white',
             // maxWidth: 'lg',
             position:'relative',
-            boxShadow:'1px 1px 3px #00000030',
+            // boxShadow:'1px 1px 3px #00000030',
             margin: '0 auto',
         }}>
             <Toolbar

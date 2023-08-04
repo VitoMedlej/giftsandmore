@@ -1,3 +1,4 @@
+"use client";
 import * as React from 'react';
 import {MdExpandMore, MdFastfood} from 'react-icons/md'
 import { Box , AccordionDetails , AccordionSummary , Accordion ,Typography, ListItem, ListItemButton, ListItemIcon, ListItemText, List, Divider } from '@mui/material';
