@@ -54,3 +54,4 @@ catch ( e) {
 }
 
 }
+export const dynamic = 'force-dynamic'

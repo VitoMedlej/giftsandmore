@@ -1,5 +1,5 @@
 import Preloader2 from "@/Components/Preloader2"
-import {server} from "@/Utils/Server"
+// import {server} from "@/Utils/Server"
 import client from '@/database/mongodb';
 // import type {  NextApiResponse}
 // from 'next';

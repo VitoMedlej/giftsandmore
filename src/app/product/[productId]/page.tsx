@@ -14,12 +14,12 @@ import { IProduct } from '@/Types/Types'
 import { useParams } from 'next/navigation'
 import { server } from '@/Utils/Server'
 import { QuantityPicker } from '@/Components/Shared/QuantityPicker/QuantityPicker'
-import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation'
 
 const Index = () => {
     const {productId} = useParams()
     const {incrementQty} = useCart()
-    const router = useRouter()
+    // const router = useRouter()
     const {addToCart}= useCart()
     const [loading,setLoading] = useState(false)
     const [selectedColor,setSelectedColor] = useState('')
@@ -173,7 +173,7 @@ const Index = () => {
     
   )
 }
-
+export const dynamic = 'force-dynamic'
 export default Index
 
 
