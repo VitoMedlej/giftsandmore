@@ -39,13 +39,13 @@ export default async function Home() {
 try {
 
       // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ next: { revalidate: 10 } })
-      const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ next: { revalidate: 10 } })
+      const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ cache: 'no-store' })
       let res = await req.json();
       const imagesRequest = await fetch(`https://getpantry.cloud/apiv1/pantry/f9be8a83-5f64-463f-b46c-8d683f2205ef/basket/Images`,{ next: { revalidate: 400 } })
       let imagesResult : any = await  imagesRequest.json();
       // let res = {data:null}
       return (
-        <PreLoader images={imagesResult} data={res?.data}/>
+        <PreLoader images={imagesResult || null} data={res?.data}/>
        )
 } 
 catch (e) {
