@@ -8,21 +8,25 @@ import { useRouter } from 'next/navigation';
 
 
 export const categories = [
-  'Men',
-  'Women',
-  'Kids',
-  'Sale',
-  'Other'
-]
+  "Gifts",
+  "Travel",
+  "Fashion",
+  "Tech",
+  "Home",
+  "Jewelry",
+  "Beauty",
+  "Kids",
+];
 export const types = [
   'All',
-  'Shoes',
-  'Bags',
-  'T-Shirts',
-  'Dresses',
-  'Pants',
-  'Jackets',
-  'Accessories'
+
+  // 'Shoes',
+  // 'Bags',
+  // 'T-Shirts',
+  // 'Dresses',
+  // 'Pants',
+  // 'Jackets',
+  // 'Accessories'
 ];
 export default function BasicAccordion({toggleDrawer} : any) {
   const router = useRouter();
