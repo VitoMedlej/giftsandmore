@@ -16,7 +16,7 @@ const Footer = () => (
               {/* <a><h1 className="site-logo"><Logo />E-Shop</h1></a> */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675357773/logo_ghli5e.jpg */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
-            <img className='img ' src='https://ucarecdn.com/7ce2b5a5-620a-457e-a69d-fec5388db431/359711183_236017772585464_7278070160350273321_n.jpg' alt="Gifts and More Lebanon Logo" />
+            <img className='img ' src='`https://ucarecdn.com/9aea2091-3532-4626-8d74-fe9ede002163/giftandmorelogoPhotoRoompngPhotoRoom.png' alt="Gifts and More Lebanon Logo" />
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.9em',color:"2b2b2b" }}  className='footer-p '>

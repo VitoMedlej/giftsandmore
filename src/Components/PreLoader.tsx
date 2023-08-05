@@ -16,9 +16,9 @@ import ContactSection from './ContactSection/ContactSection'
 const cates = [
   
 {img:'https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://planouter.com/wp-content/uploads/elementor/thumbs/IMG-5355-2-1-scaled-qabsxj6l795rv87tkdnvhqxqilh42lhpy15k8uuffg.jpg',category:'collection'} ,
-{img:'https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://planouter.com/wp-content/uploads/elementor/thumbs/IMG-5355-2-1-scaled-qabsxj6l795rv87tkdnvhqxqilh42lhpy15k8uuffg.jpg',category:'collection'} ,
-{img:'https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://planouter.com/wp-content/uploads/elementor/thumbs/IMG-5355-2-1-scaled-qabsxj6l795rv87tkdnvhqxqilh42lhpy15k8uuffg.jpg',category:'collection'} ,
-{img:'https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://planouter.com/wp-content/uploads/elementor/thumbs/IMG-5355-2-1-scaled-qabsxj6l795rv87tkdnvhqxqilh42lhpy15k8uuffg.jpg',category:'collection'} ,
+{img:'https://ucarecdn.com/0b1cfa24-34cc-4e71-a828-f1ef28fb8101/361731995_614297654144392_471901974889171832_n.jpg',category:'collection'} ,
+{img:'https://ucarecdn.com/36c8bdee-a1ec-48fa-9442-98c1be9afdd7/352872424_1385051822067263_40037360897626698_n.jpg',category:'collection'} ,
+{img:'https://ucarecdn.com/3eb76af8-ce15-4955-b5fd-c5ef5ae89195/342722054_159793823706662_6955684632996877887_n.jpg',category:'collection'} ,
 ]
 
 const PreLoader = ({data, images}:any) => {

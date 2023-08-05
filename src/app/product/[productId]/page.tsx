@@ -136,14 +136,14 @@ const Index = () => {
              </Box> */}
          </Box>}
 
-         { data?.product?.colors && <Box className='flex' sx={{py:2}}>
+         { data?.product?.colors && data?.product?.colors?.length > 0 && <Box className='flex' sx={{py:2}}>
                  <Typography >
                  <strong>Colors:</strong>{' '}
                  </Typography>
              <Box  className='flex wrap row' sx={{gap:'.1em'}}>
                  {
                  
-                 ['red','green','white','black','yellow'].map(color=>{
+                 data?.product?.colors.map((color:string)=>{
                   return <Box className='cursor' key={color}
                   onClick={()=>setSelectedColor(color)}
                   sx={{mx:1,width:'25px',height:'25px',borderRadius:'50%',boxShadow:'1px 1px 3px gray',background:color,border:`2px solid ${color === selectedColor ? 'blue':'transparent'}`}}></Box>

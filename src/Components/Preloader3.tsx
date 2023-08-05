@@ -12,6 +12,7 @@ import { useRouter } from 'next/navigation';
 const Preloader3 = ({res}:{res:any}) => {
     const router = useRouter()
     const [imgs,setImgs] = useState([
+        {img : `https://media.glamour.com/photos/636a83577543e8480f8bfc1a/16:9/w_1600%2Cc_limit/best%2520lighted%2520makeup%2520mirrors.jpg`},
         { img : 'https://sassyselfdefense.com/cdn/shop/products/20230308_170326.jpg?v=1678324551&width=1200'},
        
      ])
