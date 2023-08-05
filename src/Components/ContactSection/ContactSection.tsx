@@ -9,7 +9,7 @@ import EmailInput from './EmailInput'
 const Perks = () => {
     return (
         <Box
-            className='flexed bg'
+            className='flexed '
             sx={{
                 mt: '5em',
                 flexWrap: 'wrap',
@@ -17,7 +17,7 @@ const Perks = () => {
                 py: '1.5em',
                 justifyContent: 'space-evenly',
                 width: '100%',
-                color: 'white'
+                color: 'black'
             }}>
             <Box
                 className='flex'
@@ -28,18 +28,23 @@ const Perks = () => {
                     alignItems: 'center',
                     flexDirection: 'column',
                 }}>
-                <Typography sx={{
-                    fontWeight: '600',
-                    fontSize: '1.7em'
-                }}>
-                 Sign Up For Our News Letter
-                </Typography>
-                <EmailInput/>
-                <Typography
-                    className='white'
-                    sx={{
-                        fontSize: '.8em'
-                    }}>Reach out to us through any of these support channels</Typography>
+              
+              <Typography
+                className='sectionTitle clr text-center auto center box'
+                sx={{
+                  pb:'.5em',
+                  pt:9,
+                  display:'flex',
+                fontSize: {
+                    xs: '1.42em',
+                    sm: '1.74em',
+                    md:'2em'
+                },
+                flex:1,
+                fontWeight: '500'
+            }}>
+              Contact Us Today
+            </Typography>
             </Box>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1em' }}>
                 {/* {[{title:'Phone Number',value:"70873045",isLink:false}, {isLink:true,title:'Instagram',value:'https://www.instagram.com/power_house_european/'}, {isLink:true,title:'Facebook',value:'https://www.facebook.com/online.european.outlet/'}].map(i => {
@@ -55,7 +60,7 @@ const Perks = () => {
                         flexDirection: 'row'
                     }}>
                     <Box className='flexed'>
-                        <AiOutlineInstagram  color= '#fff' />
+                        <AiOutlineInstagram  fontSize={'2em'} color= 'black' />
                     </Box>
                     <Box
                         sx={{
@@ -63,7 +68,7 @@ const Perks = () => {
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}>
-                        {<a className='white' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/beyond.luxury__/"}>
+                        {<a className='black' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/gifts.and.more_lb/"}>
 
 
                             <Typography
@@ -132,7 +137,7 @@ sx={{
                         flexDirection: 'row'
                     }}>
                     <Box className='flex items-center'>
-                        <AiOutlineWhatsApp  color= '#fff' />
+                        <AiOutlineWhatsApp fontSize={'2em'}  color= 'black' />
                     </Box>
                     <Box
                         sx={{
@@ -141,7 +146,7 @@ sx={{
                             justifyContent: 'center',
                             flexDirection: 'column'
                         }}>
-                        {<a className='white' target={`_blank`} style={{textDecoration:"none"}} rel='noreferrer' href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`}>
+                        {<a className='black' target={`_blank`} style={{textDecoration:"none"}} rel='noreferrer' href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`}>
 
 
                             <Typography

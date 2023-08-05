@@ -4,15 +4,15 @@ import React from 'react'
 
 let style1 = {
     color: 'black !important',
-    background: ' #1e237f',
-    border:'1px solid #1e237f',
+    background: '  #bca68a',
+    border:'1px solid  #bca68a',
     borderRadius:'0 !important',
 
     
     ':hover': {
-        background: '#1e237f',
+        background: ' #bca68a',
         color:'white !important',
-    border:'1px solid #1e237f'
+    border:'1px solid  #bca68a'
 
     },
     display: 'flex',
@@ -35,7 +35,7 @@ let style2 = {
     ':hover':{  borderColor: 'black'},
     fontSize: '10px',
     
-    border:'1.1px solid #1e237f'
+    border:'1.1px solid  #bca68a'
 }
 
 const Btn = ({v2,disabled,onClick,className,children,sx}:{className?:string,disabled?:boolean,onClick?:()=>void,sx?:any,v2?:boolean,children?:any}) => {

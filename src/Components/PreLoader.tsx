@@ -7,6 +7,8 @@ import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 import MainCarousel from './MainCarousel/MainCarousel'
 import { useRouter } from 'next/navigation'
 import Btn from './Btn/Btn'
+import Perks from './ContactSection/ContactSection'
+import ContactSection from './ContactSection/ContactSection'
 // import Perks from './Perks/Perks'
 // import { IProduct } from '@/Types/Types'
 
@@ -135,7 +137,7 @@ const PreLoader = ({data, images}:any) => {
         {/* <Perks/> */}
 
     </Container>
-        {/* <ContactSection/> */}
+        <ContactSection/>
   </Box>
   )
 }

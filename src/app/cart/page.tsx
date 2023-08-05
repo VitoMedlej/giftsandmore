@@ -36,12 +36,12 @@ const EmptyCartAlert = () => {
 
                 }}>
                     <img
-                        src="https://cdn-icons-png.flaticon.com/512/2762/2762885.png"
+                        src="https://th.bing.com/th/id/OIP.Fekwzvuz-XWbGOzLTweKMgAAAA?pid=ImgDet&w=174&h=174&rs=1"
                         alt="Empty Cart Image"
                         className="img"/>
                 </Box>
                 <Typography fontSize='2em' fontWeight='bold'>
-                    Your Cart Is Empty!
+                    Your Bag Is Empty!
                 </Typography>
               
                 <Link className='flex auto decor-none gap' href='/collection/products'>
@@ -84,7 +84,7 @@ const Cart = () => {
     return (
         <Box sx={{
             pb: 5,
-            pt:20,
+            pt:5,
             maxWidth:'xl',
             margin:'0 auto',
             px: 1
@@ -156,6 +156,7 @@ const Cart = () => {
                     className='decor-none bg'>
 
                     <Btn
+                    disabled={!cartItems || cartItems?.length === 0}
                     sx={{width:'100%',borderRadius:25,mt:2.5}}>Checkout Now</Btn>
                     </Link>
 

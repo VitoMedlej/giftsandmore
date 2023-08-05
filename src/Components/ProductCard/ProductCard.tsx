@@ -91,7 +91,7 @@ const ProductCard = ({
                     sx={{
                         width:'100%',
                         fontWeight:300,
-                        color:'#1e237f',
+                        color:' #bca68a',
                         border:'none',
                         py:0,
                         fontSize:'.67em',
@@ -99,7 +99,7 @@ const ProductCard = ({
                   
                  
                 }}>
-                    Add To Cart
+                    Add To Bag
                 </Btn>
             </Box>
         </Box>

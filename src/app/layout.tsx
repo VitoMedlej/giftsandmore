@@ -8,8 +8,8 @@ import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
 import ContextWrapper from '@/context/Contexts'
 
 export const metadata = {
-    title: 'Beyond Luxury - Modern and Premium Quality Fashion in Lebanon',
-    description: `Shop the latest luxury fashion for modern women at Beyond Luxury. Premium quality clothing and accessories with delivery all over Lebanon. DM to order.`,
+    title: 'Gifts & More LB | Online Gift Shop In Lebanon',
+    description: `Looking for unique gifts in Lebanon? Explore Gifts & More LB's online store! We offer delivery to all of lebanon | Unique Gifts for All Occasions `,
     icons: {
         icon:`https://ucarecdn.com/7ce2b5a5-620a-457e-a69d-fec5388db431/359711183_236017772585464_7278070160350273321_n.jpg`
     }

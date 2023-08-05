@@ -114,7 +114,7 @@ const Index = () => {
                 borderRadius:0,
                 color:'white',
              width:{xs:'100%',sm:'49%'}}}>
-                 Add To Cart
+                 Add To Bag
                  <AiOutlineShoppingCart  fontSize={'medium'}/>
              </Btn>
              <Btn   sx={{border:'none',background:'transparent', color:'green',gap:.5,mt:.5,":hover":{color:'black'},width:{xs:'100%',sm:'49%'}}}>

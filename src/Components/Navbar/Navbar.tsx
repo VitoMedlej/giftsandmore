@@ -122,7 +122,7 @@ export default function Navbar() {
     <img
         className='img'
         src={`https://ucarecdn.com/9aea2091-3532-4626-8d74-fe9ede002163/giftandmorelogoPhotoRoompngPhotoRoom.png`}
-        alt="Beyond Luxury Lebanon logo"/>
+        alt="gifts.and.more_lb Lebanon logo"/>
 </Box>
 </Link>
 

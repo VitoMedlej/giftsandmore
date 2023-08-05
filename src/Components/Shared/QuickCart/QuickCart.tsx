@@ -85,10 +85,10 @@ export default function TemporaryDrawer() {
                         : <Box className='auto center col flex items-center ' sx={{py:5}}>
 
                         <Box sx={{width:'60px'}}>
-                            <img src="https://img.freepik.com/premium-vector/shopping-cart-with-cross-mark-wireless-paymant-icon-shopping-bag-failure-paymant-sign-online-shopping-vector_662353-912.jpg" alt="Empty Cart Image" className="img" />
+                            <img src="https://th.bing.com/th/id/OIP.Fekwzvuz-XWbGOzLTweKMgAAAA?pid=ImgDet&w=174&h=174&rs=1" alt="Empty Cart Image" className="img" />
                         </Box>
                         <Typography sx={{fontSize:'.98em',width:'80%',py:1,textAlign:'center'}}> 
-                            No Products Have Been Added.
+                           Add Some Products To Your Bag!
                         </Typography>
                         </Box> 
                         }
@@ -118,14 +118,14 @@ export default function TemporaryDrawer() {
                             mx:1
                     ,borderRadius:0,
                             background:'transparent',my:1,
-                            ':hover':{background:'#1a4671',color:'white !important'}}}
+                            ':hover':{background:' #bca68a',color:'white !important'}}}
                         onClick={()=>{setCartOpen(false),router.push('/collection/products')}}
                          >
                         Continue Shopping
                         </Btn>
                         <Btn
                         className='text-center auto'
-                        sx={{mx:1,border:'none',':hover':{background:'white',color:'#1a4671'}}} 
+                        sx={{mx:1,border:'none',':hover':{background:'white',color:' #bca68a'}}} 
                         onClick={()=>{setCartOpen(false),router.push('/cart')}}
                         v2={true} >
                         View Cart Page

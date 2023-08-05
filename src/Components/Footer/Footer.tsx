@@ -16,11 +16,11 @@ const Footer = () => (
               {/* <a><h1 className="site-logo"><Logo />E-Shop</h1></a> */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675357773/logo_ghli5e.jpg */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
-            <img className='img ' src='https://ucarecdn.com/7ce2b5a5-620a-457e-a69d-fec5388db431/359711183_236017772585464_7278070160350273321_n.jpg' alt="Beyond Luxury Lebanon Logo" />
+            <img className='img ' src='https://ucarecdn.com/7ce2b5a5-620a-457e-a69d-fec5388db431/359711183_236017772585464_7278070160350273321_n.jpg' alt="Gifts and More Lebanon Logo" />
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.9em',color:"2b2b2b" }}  className='footer-p '>
-          Beyond Luxury is your destination for luxury fashion in Lebanon. Our online shop offers a wide selection of premium quality clothing and accessories for the modern woman. From dresses to shoes, bags to jackets, we have everything you need to elevate your style. Shop now and enjoy fast delivery all over Lebanon.
+          Welcome to Gifts & More LB, your one-stop online gift store in Lebanon, where the art of giving is celebrated with an extensive range of unique and thoughtful presents. With a passion for exceptional gifting experiences, we curate a diverse collection of products that cater to every occasion and recipient.
           </Typography>
           <SMicons/>
 
@@ -52,7 +52,7 @@ const Footer = () => (
             
             {/* <li><a href="https://www.facebook.com/profile.php?id=100076163602459/" target="_blank" rel="noreferrer" >Facebook</a></li> */}
 
-            <li><a href='https://www.instagram.com/beyond.luxury__/' target="_blank" rel="noreferrer" >@beyond.luxury__</a></li>
+            <li><a href='https://www.instagram.com/gifts.and.more_lb/' target="_blank" rel="noreferrer" >@gifts.and.more_lb</a></li>
             <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+{process.env.NEXT_PUBLIC_WA}</a></li>
           </ul>
         </div>
