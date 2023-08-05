@@ -2,11 +2,11 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Raleway", sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 *, h1, h2, h3, h4, h5, h6, p, button, input, select, textarea, a {
-  font-family: "Raleway", sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .w100 {
@@ -61,7 +61,7 @@ body {
 }
 
 .bg {
-  background: #1e237f !important;
+  background: #bca68a !important;
 }
 
 .white {
@@ -106,7 +106,7 @@ button[disabled] {
 }
 
 .clr {
-  color: #1e237f !important;
+  color: #bca68a !important;
 }
 
 .auto {

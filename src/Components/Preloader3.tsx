@@ -12,10 +12,8 @@ import { useRouter } from 'next/navigation';
 const Preloader3 = ({res}:{res:any}) => {
     const router = useRouter()
     const [imgs,setImgs] = useState([
-        { img : 'https://hips.hearstapps.com/hmg-prod/images/run-affordable-running-shoes-1676481206.jpg?resize=2048:*'},
-        { img : `https://u7q2x7c9.stackpathcdn.com/photos/26/88/390299_21873_XXL.webp`},
-        { img : 'https://insport.com.au/cdn/shop/collections/mens_foot_wear_kappa.png?v=1681882615&width=1800'},
-     
+        { img : 'https://sassyselfdefense.com/cdn/shop/products/20230308_170326.jpg?v=1678324551&width=1200'},
+       
      ])
     useEffect(() => {
     if (res && res?.MainCarousel && res?.MainCarousel?.length > 0) {
@@ -31,10 +29,11 @@ const Preloader3 = ({res}:{res:any}) => {
             // py: {xs:'.75em',sm:'2em',md:'3em'},
             // width: {xs:'98%',md:'74%',lg:'80%'},
             width:'100%',
+            maxWidth:'lg',
             // maxWidth: 'lg',
             minHeight:'300px',
-            maxHeight:{xs:'600px',sm:'80vh'},
-            height : {xs:'100%',sm:'500px',md:'600px'},
+            maxHeight:{xs:'500px',sm:'70vh'},
+            height : {xs:'100%',sm:'450px',md:'500px'},
              
             margin: '0 auto',
             display: {

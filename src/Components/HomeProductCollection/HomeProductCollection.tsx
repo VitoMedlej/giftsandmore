@@ -8,28 +8,23 @@ import Btn from '../Btn/Btn'
 const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => {
   return (
     <Box sx={{my:4}} className='center auto'>
-            <Typography
-                className='sectionTitle text-center center auto box'
+             <Typography
+                className='sectionTitle clr text-center auto center box'
                 sx={{
                   pb:'.5em',
-                px:1,
-                pt:9,
-                  textAlign:'center !important',
+                  pt:9,
+                  display:'flex',
                 fontSize: {
-                    xs: '1.2em',
-                    sm: '1.4em'
+                    xs: '1.42em',
+                    sm: '1.74em',
+                    md:'2em'
                 },
-                fontWeight: '300'
+                flex:1,
+                fontWeight: '500'
             }}>
-                View Our Latest Products
+              Shop Our Latest Products
             </Typography>
-            <Link  href='/collection/products' className="decor-none">
-
-<Btn sx={{border:'1px solid transparent',"hover":{border:'none !important',background:'transparent'},fontWeight:300,py:.5,background:'transparent',borderRadius:0,margin:'.25em auto'}}>
-    All Products
-</Btn>
-</Link>
-            <Divider  light />
+      
               <Box sx={{mb:2}} className='flex wrap gap1 justify-center'>
                   {products && products?.length > 0 && products.map(i=>{
 

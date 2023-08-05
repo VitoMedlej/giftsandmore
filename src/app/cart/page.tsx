@@ -62,7 +62,7 @@ const EmptyCartAlert = () => {
 const Cart = () => {
     const [cartItems,setCartItems] = useState<ICartItem[]>([])
     const total= totalCal(cartItems) || 0; 
-    let localCart : ICartItem[] = loadState('04128rdrt') || []
+    let localCart : ICartItem[] = loadState('g41i2f0ts') || []
     useEffect(() => {
         if (localCart) {
             
@@ -73,12 +73,12 @@ const Cart = () => {
     const refetchState = () => {
         // let localCart : ICartItem[] = loadState('userbag') || []
 
-        setCartItems(loadState('04128rdrt'))
+        setCartItems(loadState('g41i2f0ts'))
         
     }
     const remove = (id:string) => {
         let state = cartItems.filter(x => `${x._id}` !== id);
-         saveState('04128rdrt', state);
+         saveState('g41i2f0ts', state);
          setCartItems(state);
      }
     return (

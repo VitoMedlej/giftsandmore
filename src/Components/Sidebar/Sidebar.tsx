@@ -115,7 +115,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
     <div>
 
           <Drawer
-            anchor={'left'}
+            anchor={'right'}
             open={open}
             onClose={toggleDrawer(false)}
           >

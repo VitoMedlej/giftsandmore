@@ -4,24 +4,19 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import {IoIosMenu} from 'react-icons/io'
-// import {CiShoppingCart} from 'react-icons/ci'
-
+// import {CiShoppingCart} from 'react-icons/ci
 import { useEffect, useState} from 'react';
 // import { CartContext, DrawerContext } from '../../../pages/_app'; import
 import SearchModal from './SearchModal';
 import Link from 'next/link';
 import {Badge, Divider, Typography} from '@mui/material';
-// import { loadState } from '../../Utils/LocalstorageFn';
 import {useRouter} from 'next/navigation';
-// import {AiOutlinePhone, AiOutlineSearch, AiOutlineMenu} from 'react-icons/ai'
-// import {CiSearch,CiShoppingCart} from 'react-icons/ci'
-import {BsHandbag} from 'react-icons/bs'
-import {GoSearch} from 'react-icons/go'
+import {IoBagOutline ,IoMenuOutline} from 'react-icons/io5'
+import {IoIosSearch  } from 'react-icons/io'
 
-// import SearchInput from './SearchInput';
 
 import { useCartContext, useDrawerContext } from '@/context/Contexts';
+import NavButtom from './NavButtom';
 
 
 
@@ -39,7 +34,7 @@ export default function Navbar() {
     // const localCart = [1]
     useEffect(() => {
         const cart : any = []
-        // const cart = loadState('04128rdrt') || []
+        // const cart = loadState('g41i2f0ts') || []
         if (cart) {
 
             setLocalCart(cart)
@@ -62,9 +57,9 @@ export default function Navbar() {
         <Box className='flex bg white gap1 align-center items-center w100 center' sx={{
                     maxWidth:'xl',
             
-            py:.45}} >
+            py:.75}} >
             <Typography sx={{fontSize:{xs:'.7em',sm:'.8em'}}} className='center text-center'>
-              Delivery All Over Lebanon |  whatsapp📲: +961 03874743
+            Cash on delivery all over Lebanon 3$ | Whatsapp: +961 78837096
             </Typography>
                    {/* <Typography
                                 sx={{
@@ -99,7 +94,8 @@ export default function Navbar() {
                     // border : `1px solid #00000012`,
                 background:'white',
             boxShadow:'1px 1px 3px #00000017',
-
+                    width:'100%',
+                    justifyCotntent:'space-between !important',
                     maxWidth:'xl',
             position:'relative',
 
@@ -110,26 +106,13 @@ export default function Navbar() {
 
                
             
-<IconButton
-                            onClick={() => setOpen(!open)}
-                            edge="start"
-                            aria-label="menu"
-                            sx={{
-                            margin:0,
-                            color: 'black',
-                         
-                        }}>
-                            <IoIosMenu color='black'/>
-                       <Typography sx={{display:{xs:'none',sm:'flex'}, px:.5, fontWeight:200}}> 
-                                Menu
-                            </Typography>
 
-                        </IconButton>
                
-                <Link className='flex center  aling-center items-center ' style={{ flex:1}}  href='/' color='inherit'>
+                <Link className='flex center  aling-center ' style={{ justifyContent:'flex-start !important'}}  href='/' color='inherit'>
 
 <Box
     sx={{
+        
     mx: {
         sm: '1em'
     },
@@ -138,13 +121,19 @@ export default function Navbar() {
 }}>
     <img
         className='img'
-        src={`https://ucarecdn.com/02525c92-bb29-42fb-a57b-37f66be9e061/363298932_1005526440451332_5413838414448583539_n.jpg`}
+        src={`https://ucarecdn.com/9aea2091-3532-4626-8d74-fe9ede002163/giftandmorelogoPhotoRoompngPhotoRoom.png`}
         alt="Beyond Luxury Lebanon logo"/>
 </Box>
 </Link>
+
+    <NavButtom/>
+
                 <Box
                     sx={{
                     px:1,
+                    flex: 1,
+                    display: 'flex',
+                    justifyContent: 'flex-end',
                     flexWrap: 'wrap',
                  
                 }}>
@@ -164,24 +153,33 @@ export default function Navbar() {
                             color: 'black'
                         }}>
 
-                                <GoSearch color='black'/>
-                           <Typography sx={{display:{xs:'none',sm:'flex'}, px:.5, fontWeight:200}}> 
-                                Search
-                            </Typography>
+                                <IoIosSearch color='black'/>
+                     
                         </IconButton>
                         <IconButton
                             onClick={() => setCartOpen(!cartOpen)}
                             sx={{
                             color: 'black'
                         }}>
-                                <BsHandbag color='black'/>
-                           <Typography sx={{display:{xs:'none',sm:'flex'}, px:.5, fontWeight:200}}> 
-                                Cart
-                            </Typography>
+                                <IoBagOutline color='black'/>
+                       
                             </IconButton>
 
 
                      
+<IconButton
+                            onClick={() => setOpen(!open)}
+                            edge="start"
+                            aria-label="menu"
+                            sx={{
+                            margin:0,
+                            color: 'black',
+                         
+                        }}>
+                            <IoMenuOutline color='black'/>
+                  
+
+                        </IconButton> 
                     
                     </Box>
 
