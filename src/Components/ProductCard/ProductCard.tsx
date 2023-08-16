@@ -91,7 +91,7 @@ const ProductCard = ({
                     sx={{
                         width:'100%',
                         fontWeight:300,
-                        color:' #bca68a',
+                        color:' black',
                         border:'none',
                         py:0,
                         fontSize:'.67em',

@@ -6,7 +6,10 @@ import React from 'react'
 
 import {AiOutlineWhatsApp,AiOutlineInstagram,AiFillFacebook} from 'react-icons/ai'
 import EmailInput from './EmailInput'
+import useLanguage from '@/Hooks/useLanguage'
 const Perks = () => {
+  const {text} = useLanguage()
+
     return (
         <Box
             className='flexed '
@@ -43,7 +46,9 @@ const Perks = () => {
                 flex:1,
                 fontWeight: '500'
             }}>
-              Contact Us Today
+              
+              {text('Contact Us Today',`اتصل بنا`)}
+
             </Typography>
             </Box>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1em' }}>

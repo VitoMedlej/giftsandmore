@@ -4,8 +4,11 @@ import React from 'react'
 import ProductCard from '../ProductCard/ProductCard'
 import { IProduct } from '@/Types/Types'
 import Btn from '../Btn/Btn'
+import useLanguage from '@/Hooks/useLanguage'
 
 const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => {
+  const {text} = useLanguage()
+
   return (
     <Box sx={{my:4}} className='center auto'>
              <Typography
@@ -22,7 +25,7 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
                 flex:1,
                 fontWeight: '500'
             }}>
-              Shop Our Latest Products
+              {text('Shop Our Latest Products',`تسوق أحدث منتجاتنا`)}
             </Typography>
       
               <Box sx={{mb:2}} className='flex wrap gap1 justify-center'>

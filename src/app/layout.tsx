@@ -6,6 +6,7 @@ import Sidebar from '@/Components/Sidebar/Sidebar'
 import ScrollToTop from '@/Components/ScrollToTop/ScrollToTop'
 import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
 import ContextWrapper from '@/context/Contexts'
+import AnimatedText from '@/Components/Navbar/AnimatedText'
 
 export const metadata = {
     title: 'Gifts & More LB | Online Gift Shop In Lebanon',
@@ -29,6 +30,7 @@ export default function RootLayout({children} : {
             <body className='relative'>
 
                 <ContextWrapper>
+      <AnimatedText/>
                     <Navbar/>
                     <Sidebar cates={undefined}/>
                     <QuickCart/>

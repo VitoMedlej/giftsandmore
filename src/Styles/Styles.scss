@@ -12,7 +12,7 @@ body {
 .w100 {
     width:100%
 }
-$color : #bca68a !important;
+$color : #000000 !important;
 .img {
     object-fit: cover;
     width:100%;
@@ -124,3 +124,32 @@ button[disabled]{
 .green {
     color: green;
 }
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+  }
+  
+  .animated-text {
+    white-space: nowrap;
+    animation: moveText 3s infinite;
+    transition: all 3s ease infinite;
+    transform: translateX(100%); /* Start from the right side */
+  }
+  
+  @keyframes moveText {
+    0% {
+      transform: translateX(-300%);
+    }
+    
+    50% {
+      transform: translateX(-150%); /* Middle of the animation, off-screen to the left */
+    }
+    
+    100% {
+      transform: translateX(300%); /* Back to the right side */
+    }
+  }

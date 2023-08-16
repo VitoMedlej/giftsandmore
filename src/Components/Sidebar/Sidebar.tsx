@@ -104,7 +104,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
       </List>
       <SMicons/> */}
 
-      <SideAccordion toggleDrawer={setOpen}/>
+      <SideAccordion  toggleDrawer={setOpen}/>
 
       <Divider />
       
@@ -115,7 +115,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
     <div>
 
           <Drawer
-            anchor={'right'}
+            anchor={'left'}
             open={open}
             onClose={toggleDrawer(false)}
           >

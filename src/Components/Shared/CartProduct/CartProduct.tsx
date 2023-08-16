@@ -57,8 +57,9 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,selectedC
                         margin: 0,
                         width:'100%',
                         cursor:'pointer',
+                        maxWidth:'500px',
                         fontWeight: '300',
-                        fontSize:{sm:'1.1em',md:'1.3em'}
+                        fontSize:{sm:'1em',md:'1.1em'}
                     }}>
                        {title}
                     {selectedColor &&   <Box 

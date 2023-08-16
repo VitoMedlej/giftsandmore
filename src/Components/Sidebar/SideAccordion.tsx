@@ -3,19 +3,30 @@ import * as React from 'react';
 import {MdExpandMore, MdFastfood} from 'react-icons/md'
 import { Box , AccordionDetails , AccordionSummary , Accordion ,Typography, ListItem, ListItemButton, ListItemIcon, ListItemText, List, Divider } from '@mui/material';
 import { useRouter } from 'next/navigation';
+import Btn from '../Btn/Btn';
+import { useLangContext } from '@/context/Contexts';
+import useLanguage from '@/Hooks/useLanguage';
 
 
 
 
 export const categories = [
-  "Gifts",
-  "Travel",
-  "Fashion",
-  "Tech",
-  "Home",
-  "Jewelry",
-  "Beauty",
-  "Kids",
+  'Budget Binders',
+  'Passport Holder',
+  'Self Defense',
+  'Dual Glasses and Lense Case',
+  'Self-Care',
+  'Bracelets','Sale'
+];
+export const multilangCategories = [
+  {en:'Budget Binders',ar:'روابط الميزانية'},
+  {en:'Passport Holder',ar:'حامل جواز السفر'},
+  {en:'Self Defense',ar:'دفاع عن النفس'},
+  {en:'Dual Glasses and Lense Case',ar:"نظارات مزدوجة وحقيبة عدسة"},
+  {en:'Self-Care',ar:'رعاية ذاتية'},
+  {en:'Bracelets',ar:`أساور`}
+  
+  ,{en:'Sale',ar:'العروضات'}
 ];
 export const types = [
   'All',
@@ -30,6 +41,8 @@ export const types = [
 ];
 export default function BasicAccordion({toggleDrawer} : any) {
   const router = useRouter();
+  const {lang, setLang} = useLangContext();
+  const {text} = useLanguage()
 
   return (
     <Box sx={{zIndex:241241241}}>
@@ -48,44 +61,53 @@ export default function BasicAccordion({toggleDrawer} : any) {
                 textTransform: 'capitalize'
               }}
             >
-                    <Typography sx={{fontWeight:600}}>All Categories</Typography>
+                    <Typography sx={{
+              textAlign:text('left','right'),
+                      
+                      fontWeight:600}}> {text('All Categories','جميع الفئات')}</Typography>
               </ListItemText>
                     <Divider></Divider>
             </ListItemButton>
           </ListItem>
-{categories.map(category=>{
+{multilangCategories.map(category=>{
   
-      return <Accordion sx={{minWidth:'280px', width:{xs:'100%'} }}  key={category}>
-        <AccordionSummary
-          expandIcon={<MdExpandMore />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography sx={{fontWeight:600}}>{category}</Typography>
-        </AccordionSummary>
-        <AccordionDetails sx={{py:0,px:0}}>
-        <List>
+      return     <ListItem 
+      onClick={()=>{
+        toggleDrawer(false)
+        router.push(`/${category.en}/products`)
+       }}
+       disablePadding>
 
-     {types.map(type=>{
+<ListItemButton sx={{py:1 ,  fontWeight:'600 !important',}}>
 
-    return    <ListItem key={type}
-          onClick={()=>{router.push(`/${category.toLocaleLowerCase() || 'collection'}/products?type=${type.toLocaleLowerCase()}`);toggleDrawer(false)}}
-           disablePadding>
-            <ListItemButton sx={{py:0}}>
-           
-              <ListItemText
-              sx={{
-                color:'black',
-                textTransform: 'capitalize'
-              }}
-              primary={`${type}`} />
-            </ListItemButton>
-          </ListItem> })}
-        </List>
+      <ListItemText
+      sx={{
+        color:'black',
+        fontWeight:'600 !important',
+        textTransform: 'capitalize'
+      }}
+    >
+            <Typography sx={{
+              textAlign:text('left','right'),
+              fontWeight:600}}>{text(category.en,category.ar)}</Typography>
+      </ListItemText>
+</ListItemButton>
 
-        </AccordionDetails>
-      </Accordion>})}
+      </ListItem>   
+      
+      })}
+            <Divider></Divider>
 
+<Btn
+onClick={()=>setLang(lang === 'en' ? 'ar' :  'en')}
+
+sx={{border:'none',width:'100%',color:'blue',fontSize:'.8em'}} v2>
+                            {lang  === 'en'? 'English' : 'Arabic'}
+                        </Btn>
+            <Divider></Divider>
+                        <Btn sx={{border:'none',width:'100%',color:'blue',fontSize:'.8em'}} v2>
+          $ - USD 
+                          </Btn>
     </Box>
   );
 }

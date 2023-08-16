@@ -9,20 +9,23 @@ import { useRouter } from 'next/navigation'
 import Btn from './Btn/Btn'
 import Perks from './ContactSection/ContactSection'
 import ContactSection from './ContactSection/ContactSection'
+import useLanguage from '@/Hooks/useLanguage'
 // import Perks from './Perks/Perks'
 // import { IProduct } from '@/Types/Types'
 
 
-const cates = [
-  
-{img:'https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://planouter.com/wp-content/uploads/elementor/thumbs/IMG-5355-2-1-scaled-qabsxj6l795rv87tkdnvhqxqilh42lhpy15k8uuffg.jpg',category:'collection'} ,
-{img:'https://ucarecdn.com/0b1cfa24-34cc-4e71-a828-f1ef28fb8101/361731995_614297654144392_471901974889171832_n.jpg',category:'collection'} ,
-{img:'https://ucarecdn.com/36c8bdee-a1ec-48fa-9442-98c1be9afdd7/352872424_1385051822067263_40037360897626698_n.jpg',category:'collection'} ,
-{img:'https://ucarecdn.com/3eb76af8-ce15-4955-b5fd-c5ef5ae89195/342722054_159793823706662_6955684632996877887_n.jpg',category:'collection'} ,
-]
+
 
 const PreLoader = ({data, images}:any) => {
-    const router= useRouter();
+  const {text} = useLanguage()
+  const router= useRouter();
+  const cates = [
+    
+  {img:'https://ucarecdn.com/9377700c-4d14-409d-b80c-6ed606641cb0/327136091_749988793406928_6850892064082220408_n.jpg',category:text('Sale','العروضات')} ,
+  {img:'https://i.etsystatic.com/27838430/r/il/01b9c9/2920342831/il_1140xN.2920342831_f5so.jpg',category: text('Budget Binders','مجلدات الميزانية') } ,
+  {img:'https://th.bing.com/th/id/OIP.x11jysR_VALww3yiv1l3NgHaHa?pid=ImgDet&rs=1',category:  text('Bracelets','اساور')} ,
+  {img:'https://ucarecdn.com/9cabb206-5ce7-4291-b75a-a74a18d675c1/336969431_920254869121358_7359947221995293304_n.jpg',category:  text('Passport Holder','حامل جواز السفر')}
+  ]
   return (
     <Box >
       <MainCarousel images={images}/>
@@ -51,7 +54,8 @@ const PreLoader = ({data, images}:any) => {
                 flex:1,
                 fontWeight: '500'
             }}>
-              View Different Collections
+              
+              {text('View Different Collections','عرض مجموعات مختلفة')}
             </Typography>
          
 
@@ -80,7 +84,7 @@ const PreLoader = ({data, images}:any) => {
      </Box>
 
       <Box/>
-      <Grid container sx={{mx:1,my:5}} >
+      <Grid container sx={{flexDirection:text('row','row-reverse'), mx:1,my:5}} >
           <Grid xs={12} sx={{py:4}} sm={6}>
                 
          <Typography
@@ -88,6 +92,8 @@ const PreLoader = ({data, images}:any) => {
                 sx={{
                   pb:1,
                   pt:{xs:1,sm:4,md:5},
+                  justifyContent: text('start','end'),
+
                   display:'flex',
                 fontSize: {
                     xs: '2.142em',
@@ -97,14 +103,17 @@ const PreLoader = ({data, images}:any) => {
                 flex:1,
                 fontWeight: '500'
             }}>
-              View Different Collections
+                          {text('View Different Collections','عرض مجموعات مختلفة')}
+
             </Typography>
               
          <Typography
-                className='sectionTitle    center box'
+                className='sectionTitle     box'
                 sx={{
-                  width:{xs:'100%',sm:'90%',md:'85%'},
+                  width:{xs:'100%',sm:text('90%','100%'),md:text('85%','100%')},
                   display:'flex',
+                  justifyContent: text('start','end'),
+                  textAlign: text('start','end'),
                 fontSize: {
                     xs: '.942em',
                     sm: '1em',
@@ -113,11 +122,18 @@ const PreLoader = ({data, images}:any) => {
                 flex:1,
                 fontWeight: '500'
             }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, magni modi! Nobis praesentium, a reiciendis possimus
-               explicabo voluptatem ipsa ad? Maxime non pariatur praesentium obcaecati.
+              
+
+              {text(`Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, magni modi! Nobis praesentium, a reiciendis possimus
+               explicabo voluptatem ipsa ad? Maxime non pariatur praesentium obcaecati.`,`لوريم إيبسوم دولور الجلوس على نطاق النخبة. برايسنتيوم ، ماجني مودي! نوبيس برايسنتيوم ، ريسينديس بوسيموس
+               explicabo voluptatem IPSA الإعلان؟ Maxime non pariatur praesentium obcaecati.`)}
+
             </Typography>
-            <Btn className='bg' sx={{border:'none',':hover':{border:'none',color:'white'},borderRadius:2000,my:2}}>
-              Shop Now
+            <Btn className='bg' sx={{
+                  justifyContent: text('start','end'),
+              
+              border:'none',':hover':{border:'none',color:'white'},borderRadius:2000,my:2}}>
+              {text('Shop Now','تسوق الآن')}
             </Btn>
           </Grid>
           <Grid xs={12}  sm={6}>

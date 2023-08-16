@@ -3,16 +3,16 @@ import { Button } from '@mui/material'
 import React from 'react'
 
 let style1 = {
-    color: 'black !important',
-    background: '  #bca68a',
-    border:'1px solid  #bca68a',
+    color: 'white !important',
+    background: '  black',
+    border:'1px solid  black',
     borderRadius:'0 !important',
 
     
     ':hover': {
-        background: ' #bca68a',
+        background: ' black',
         color:'white !important',
-    border:'1px solid  #bca68a'
+    border:'1px solid  black'
 
     },
     display: 'flex',
@@ -22,7 +22,7 @@ let style1 = {
     fontSize: '12px'
 }
 let style2 = {
-    color: 'black',
+    color: 'white',
   
     display: 'flex',
     fontWeight:'700',
@@ -35,7 +35,7 @@ let style2 = {
     ':hover':{  borderColor: 'black'},
     fontSize: '10px',
     
-    border:'1.1px solid  #bca68a'
+    border:'1.1px solid  black'
 }
 
 const Btn = ({v2,disabled,onClick,className,children,sx}:{className?:string,disabled?:boolean,onClick?:()=>void,sx?:any,v2?:boolean,children?:any}) => {

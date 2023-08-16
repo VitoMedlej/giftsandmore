@@ -13,10 +13,11 @@ import {Badge, Divider, Typography} from '@mui/material';
 import {useRouter} from 'next/navigation';
 import {IoBagOutline ,IoMenuOutline} from 'react-icons/io5'
 import {IoIosSearch  } from 'react-icons/io'
+import {HiOutlineUser} from 'react-icons/hi'
 
-
-import { useCartContext, useDrawerContext } from '@/context/Contexts';
+import { useCartContext, useDrawerContext, useLangContext } from '@/context/Contexts';
 import NavButtom from './NavButtom';
+import Btn from '../Btn/Btn';
 
 
 
@@ -26,20 +27,20 @@ export default function Navbar() {
     const [openModal,
         setOpenModal] = useState(false);
     
-    const [localCart,
-        setLocalCart] = useState([]);
+    // const [localCart,
+    //     setLocalCart] = useState([]);
 
     const {cartOpen, setCartOpen} = useCartContext();
     const router = useRouter()
     // const localCart = [1]
-    useEffect(() => {
-        const cart : any = []
-        // const cart = loadState('g41i2f0ts') || []
-        if (cart) {
+    // useEffect(() => {
+    //     const cart : any = []
+    //     // const cart = loadState('g41i2f0ts') || []
+    //     if (cart) {
 
-            setLocalCart(cart)
-        }
-    }, [cartOpen])
+    //         setLocalCart(cart)
+    //     }
+    // }, [cartOpen])
 
 
     return ( <> <Box
@@ -54,26 +55,8 @@ export default function Navbar() {
         position : 'relative !important',
         flexGrow: 1
     }}>
-        <Box className='flex bg white gap1 align-center items-center w100 center' sx={{
-                    maxWidth:'xl',
-            
-            py:.75}} >
-            <Typography sx={{fontSize:{xs:'.7em',sm:'.8em'}}} className='center text-center'>
-            Cash on delivery all over Lebanon 3$ | Whatsapp: +961 78837096
-            </Typography>
-                   {/* <Typography
-                                sx={{
-                                
-                                px: '.1em',
-                                // color: 'black',
-                                display : {
-                                    xs: 'none',
-                                    lg: 'flex'
-                                }
-                            }}>
-                               +{process.env.NEXT_PUBLIC_WA}
-                            </Typography> */}
-        </Box>
+
+
         <AppBar
     className='center relative  flex'
 
@@ -108,66 +91,10 @@ export default function Navbar() {
             
 
                
-                <Link className='flex center  aling-center ' style={{ justifyContent:'flex-start !important'}}  href='/' color='inherit'>
+         
 
-<Box
-    sx={{
-        
-    mx: {
-        sm: '1em'
-    },
-   
-    width:{xs:'90px',sm: '100px'}
-}}>
-    <img
-        className='img'
-        src={`https://ucarecdn.com/9aea2091-3532-4626-8d74-fe9ede002163/giftandmorelogoPhotoRoompngPhotoRoom.png`}
-        alt="gifts.and.more_lb Lebanon logo"/>
-</Box>
-</Link>
-
-    <NavButtom/>
-
-                <Box
-                    sx={{
-                    px:1,
-                    flex: 1,
-                    display: 'flex',
-                    justifyContent: 'flex-end',
-                    flexWrap: 'wrap',
-                 
-                }}>
- 
-                    <Box
-                        sx={{
-                        display: {
-                            xs: 'flex'
-                        },
-                        // justifyContent: 'end'
-                    }}
-                        className='flex right'>
- 
- <IconButton
-                            onClick={() => setOpenModal(!openModal)}
-                            sx={{
-                            color: 'black'
-                        }}>
-
-                                <IoIosSearch color='black'/>
-                     
-                        </IconButton>
-                        <IconButton
-                            onClick={() => setCartOpen(!cartOpen)}
-                            sx={{
-                            color: 'black'
-                        }}>
-                                <IoBagOutline color='black'/>
-                       
-                            </IconButton>
-
-
-                     
-<IconButton
+    {/* <NavButtom/> */}
+    <IconButton
                             onClick={() => setOpen(!open)}
                             edge="start"
                             aria-label="menu"
@@ -180,6 +107,75 @@ export default function Navbar() {
                   
 
                         </IconButton> 
+    <IconButton
+                            onClick={() => setOpenModal(!openModal)}
+                            sx={{
+                            color: 'black'
+                        }}>
+
+                                <IoIosSearch color='black'/>
+                     
+                        </IconButton>
+                <Box
+                    sx={{
+                    px:1,
+                    flex: 1,
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                    flexWrap: 'wrap',
+                    alignItems: 'center',
+                 
+                }}>
+                           <Link className='flex center auto   align-center ' style={{ justifyContent:'flex-start !important'}}  href='/' color='inherit'>
+
+<Box
+    sx={{
+        
+    mx: {
+        sm: '1em'
+    },
+   
+    width:{xs:'90px',sm: '100px'}
+}}>
+    <img
+        className='img'
+        src={`https://ucarecdn.com/01ea6d0a-fdbf-4a2f-b647-e76b2d700e32/365014401_1944248375937735_7655171259538237739_n.jpg`}
+        alt="gifts.and.more_lb Lebanon logo"/>
+</Box>
+</Link>
+
+                    <Box
+                        sx={{
+                        display: {
+                            xs: 'flex'
+                        },
+                        // justifyContent: 'end'
+                    }}
+                        className='flex right'>
+ 
+                  
+
+                        <IconButton
+                            onClick={() => setCartOpen(!cartOpen)}
+                            sx={{
+                            color: 'black'
+                        }}>
+                                <IoBagOutline color='black'/>
+                       
+                            </IconButton>
+
+                            <IconButton
+                            onClick={() => setCartOpen(!cartOpen)}
+                            sx={{
+                            color: 'black'
+                        }}>
+                                <HiOutlineUser color='black'/>
+                       
+                            </IconButton>
+
+
+                     
+
                     
                     </Box>
 
