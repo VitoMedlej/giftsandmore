@@ -16,10 +16,10 @@ import AddressForm from '@/Components/checkoutComponents/AddressForm';
 import ReviewForm from '@/Components/checkoutComponents/ReviewForm';
 import { server } from '@/Utils/Server';
 import { loadState, saveState } from '@/Utils/LocalstorageFn';
+import useLanguage from '@/Hooks/useLanguage';
 
 
 
-const steps = ['Shipping address', 'Review your order'];
 
 function getStepContent(step: number,setInfo:any,handleChange:any,info:any,setActiveStep:any) {
   switch (step) {
@@ -37,7 +37,11 @@ function getStepContent(step: number,setInfo:any,handleChange:any,info:any,setAc
 const theme = createTheme();
 
 export default function Checkout() {
+  const {text} = useLanguage()
+
   const [activeStep, setActiveStep] = React.useState(0);
+  const steps = [text('Shipping address', 'عنوان الشحن')
+  ,text('Review your order', 'مراجعة الطلب')];
 
   
   const handleBack = () => {
@@ -107,10 +111,10 @@ export default function Checkout() {
   <ThemeProvider theme={theme}>
       <CssBaseline />
   
-      <Container component="main" maxWidth="sm" sx={{ mt:20, mb: 4 }}>
+      <Container component="main" maxWidth="sm" sx={{ mt:12, mb: 4 }}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
           <Typography component="h1" variant="h4" align="center">
-            Checkout
+            {text('Checkout', 'الدفع')}
           </Typography>
           <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
             {steps.map((label) => (
@@ -122,10 +126,10 @@ export default function Checkout() {
           {activeStep === steps.length ? (
             <React.Fragment>
               <Typography variant="h5" gutterBottom>
-                Thank you for your order.
+                {text('Thank you for your order.', 'شكرًا لطلبك.')}
               </Typography>
               <Typography variant="subtitle1">
-                Your order number has been recorded! We will message you soon, so please stay alert.
+              {text('Your order number has been recorded! We will message you soon, so please stay alert.', 'تم تسجيل رقم طلبك! سنرسل لك رسالة قريبًا، لذا يرج')}
               </Typography>
             </React.Fragment>
           ) : (
@@ -134,7 +138,7 @@ export default function Checkout() {
               <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                 {activeStep !== 0 && (
                   <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
-                    Back
+                    {text('Back', 'السابق')}
                   </Button>
                 )}
                 <Button
@@ -143,9 +147,9 @@ export default function Checkout() {
                      form="myform"
                   // variant="contained"
                   onClick={handleNext}
-                  // sx={{ mt: 3, ml: 1 }}
+                  sx={{ mt: 3, ml: 1 }}
                 >
-                  {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
+                  {activeStep === steps.length - 1 ? text('Place order', 'تأكيد الطلب') : text('Next', 'التالي')}
                 </Button>
               </Box>
             </React.Fragment>

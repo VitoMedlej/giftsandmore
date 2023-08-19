@@ -7,6 +7,7 @@ import Grid from '@mui/material/Grid';
 import { Divider } from '@mui/material';
 import { loadState } from '@/Utils/LocalstorageFn';
 import totalCal from '@/Utils/totalCal';
+import useLanguage from '@/Hooks/useLanguage';
 
 
 // const products = [
@@ -38,6 +39,7 @@ import totalCal from '@/Utils/totalCal';
       // return 0
 // }  
 export default function Review({setActiveStep}:{setActiveStep:any}) {
+  const {text} = useLanguage()
 
   const products = loadState('g41i2f0ts')
  
@@ -50,7 +52,7 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
-        Order summary
+        {text('Order Summary', 'ملخص الطلب')}
       </Typography>
       <List disablePadding>
         {products?.length > 0 && products.map((product:any) => (
@@ -69,7 +71,7 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
 </ListItem> */}
         <ListItem sx={{ px: 0 }}>
 
-          <ListItemText primary="Total" />
+          <ListItemText primary={text('Total', 'الإجمالي')} />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
             ${total}
           </Typography>
@@ -78,7 +80,7 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
           <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-          Order Summary
+          {text('Order Summary', 'ملخص الطلب')}
           </Typography>
                 <Typography gutterBottom>{info.firstName}</Typography>
                 <Typography gutterBottom>{info.lastName}</Typography>

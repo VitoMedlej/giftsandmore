@@ -9,9 +9,12 @@ import { useRouter } from 'next/navigation';
 // import DirectionsIcon from '@mui/icons-material/Directions';
 // 
 import {GoSearch} from 'react-icons/go'
+import useLanguage from '@/Hooks/useLanguage';
 
 export default function SearchInput({sx,mobile}:{mobile?:boolean,sx?:any}) {
   const router = useRouter()
+  const {text} = useLanguage()
+  
   const [value,
     setValue] = React.useState('');
     const handleSearch = (e : React.FormEvent < HTMLFormElement >) => {
@@ -51,7 +54,7 @@ export default function SearchInput({sx,mobile}:{mobile?:boolean,sx?:any}) {
         sx={{
           display: 'flex',
           ml: 1,w:'100%', flex: 1 }}
-        placeholder="Search Anything"
+        placeholder={text("Search Anything","ابحث عن أي شيء")}
         inputProps={{ 'aria-label': 'search products' }}
       />
       <IconButton

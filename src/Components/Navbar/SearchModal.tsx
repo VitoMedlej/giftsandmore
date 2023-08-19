@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import SearchInput from './SearchInput';
 import { useRouter } from 'next/navigation';
+import useLanguage from '@/Hooks/useLanguage';
 
 
 
@@ -26,6 +27,7 @@ interface IModal {
 }
 export default function BasicModal({openModal,setOpenModal}:IModal) {
   const handleClose = () => setOpenModal(false);
+  const {text} = useLanguage()
 
   return (
     <div>
@@ -37,7 +39,11 @@ export default function BasicModal({openModal,setOpenModal}:IModal) {
       >
         <Box sx={style}>
         <Typography>
-            Search By name, type or category...
+            {
+              text(`Search By name, type or category...`,
+              `...البحث بالاسم أو النوع أو الفئة `
+              )
+            }
         </Typography>
         <SearchInput
         sx={{width:'100%'}}

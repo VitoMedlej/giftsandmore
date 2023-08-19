@@ -9,6 +9,7 @@ import CartProduct from '@/Components/Shared/CartProduct/CartProduct';
 import { ICartItem } from '@/Types/Types';
 import { loadState, saveState } from '@/Utils/LocalstorageFn';
 import totalCal from '@/Utils/totalCal';
+import useLanguage from '@/Hooks/useLanguage';
 
 const titleStyle = {
     fontSize: '1.3em',
@@ -60,6 +61,8 @@ const EmptyCartAlert = () => {
 
 
 const Cart = () => {
+  const {text} = useLanguage()
+
     const [cartItems,setCartItems] = useState<ICartItem[]>([])
     const total= totalCal(cartItems) || 0; 
     let localCart : ICartItem[] = loadState('g41i2f0ts') || []
@@ -132,7 +135,7 @@ const Cart = () => {
                   
                     <Typography sx={{
                         ...titleStyle
-                    }}>Order Summary</Typography>
+                    }}>{text('Order Summary', 'ملخص الطلب')}</Typography>
                   
                 
                     <Divider></Divider>
@@ -143,7 +146,7 @@ const Cart = () => {
                   }}
                     className='flexed'> 
 
-                <span>Total:
+                <span>{text('Total', 'الإجمالي')}:
 
                     <Typography sx={{
                         fontWeight: '600'
@@ -157,14 +160,14 @@ const Cart = () => {
 
                     <Btn
                     disabled={!cartItems || cartItems?.length === 0}
-                    sx={{width:'100%',borderRadius:25,mt:2.5}}>Checkout Now</Btn>
+                    sx={{width:'100%',borderRadius:25,mt:2.5}}>{text('Checkout Now', 'اتمام الشراء الآن')}</Btn>
                     </Link>
 
                     <Link href='/collection/products' className='decor-none'>
 
                     <Btn
                     
-                     sx={{mx:0,':hover':{background:'white',color:'black'},background:'transparent',borderRadius:'25px',width:'100%',mt:1}}>Continue Shopping</Btn>
+                     sx={{mx:0,':hover':{background:'black',color:'white'},background:'transparent',borderRadius:'25px',color:'black',width:'100%',mt:1}}>{text('Continue Shopping', 'مواصلة التسوق')}</Btn>
                     </Link>
                 
                 </Box>

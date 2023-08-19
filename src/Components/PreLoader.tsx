@@ -14,18 +14,41 @@ import useLanguage from '@/Hooks/useLanguage'
 // import { IProduct } from '@/Types/Types'
 
 
-
+const cates = [
+  {
+    img: 'https://ucarecdn.com/9377700c-4d14-409d-b80c-6ed606641cb0/327136091_749988793406928_6850892064082220408_n.jpg',
+    category: {
+      en: 'Sale',
+      ar: 'العروضات'
+    }
+  },
+  {
+    img: 'https://i.etsystatic.com/27838430/r/il/01b9c9/2920342831/il_1140xN.2920342831_f5so.jpg',
+    category: {
+      en: 'Budget Binders',
+      ar: 'مجلدات الميزانية'
+    }
+  },
+  {
+    img: 'https://th.bing.com/th/id/OIP.x11jysR_VALww3yiv1l3NgHaHa?pid=ImgDet&rs=1',
+    category: {
+      en: 'Bracelets',
+      ar: 'اساور'
+    }
+  },
+  {
+    img: 'https://ucarecdn.com/9cabb206-5ce7-4291-b75a-a74a18d675c1/336969431_920254869121358_7359947221995293304_n.jpg',
+    category: {
+      en: 'Passport Holder',
+      ar: 'حامل جواز السفر'
+    }
+  }
+];
 
 const PreLoader = ({data, images}:any) => {
   const {text} = useLanguage()
   const router= useRouter();
-  const cates = [
-    
-  {img:'https://ucarecdn.com/9377700c-4d14-409d-b80c-6ed606641cb0/327136091_749988793406928_6850892064082220408_n.jpg',category:text('Sale','العروضات')} ,
-  {img:'https://i.etsystatic.com/27838430/r/il/01b9c9/2920342831/il_1140xN.2920342831_f5so.jpg',category: text('Budget Binders','مجلدات الميزانية') } ,
-  {img:'https://th.bing.com/th/id/OIP.x11jysR_VALww3yiv1l3NgHaHa?pid=ImgDet&rs=1',category:  text('Bracelets','اساور')} ,
-  {img:'https://ucarecdn.com/9cabb206-5ce7-4291-b75a-a74a18d675c1/336969431_920254869121358_7359947221995293304_n.jpg',category:  text('Passport Holder','حامل جواز السفر')}
-  ]
+
   return (
     <Box >
       <MainCarousel images={images}/>
@@ -64,7 +87,7 @@ const PreLoader = ({data, images}:any) => {
         {cates.map(i=>{
             return <Box
 
-            onClick={()=>router.push(`${i?.category.replace(/ /g, '-').toLocaleLowerCase() || 'collection'}/products`)}
+            onClick={()=>router.push(`${i?.category.en.replace(/ /g, '-').toLocaleLowerCase() || 'collection'}/products`)}
             key={i?.img} className='cursor relative'
              sx={{borderRadius:'50%',height:{xs:'300px',sm:'350px'},
              my:2,width:{xs:'48%',sm:'32%',md:'22%'}}}>
@@ -74,7 +97,7 @@ const PreLoader = ({data, images}:any) => {
                     </Box>
                     <Typography sx={{position:'absolute', fontWeight:'500',color:'white'
                     ,textShadow:'1px 1px 3px #0000005e',bottom:'4%',fontSize:'1.35em',textAlign: 'center',px:1}}>
-             {i?.category}
+             {text(i?.category.en,i?.category.ar)}
             </Typography>
             </Box>
 
@@ -84,7 +107,7 @@ const PreLoader = ({data, images}:any) => {
      </Box>
 
       <Box/>
-      <Grid container sx={{flexDirection:text('row','row-reverse'), mx:1,my:5}} >
+      <Grid container sx={{flexDirection:text('row','row-reverse'), mx:1,my:8}} >
           <Grid xs={12} sx={{py:4}} sm={6}>
                 
          <Typography
@@ -110,10 +133,41 @@ const PreLoader = ({data, images}:any) => {
          <Typography
                 className='sectionTitle     box'
                 sx={{
-                  width:{xs:'100%',sm:text('90%','100%'),md:text('85%','100%')},
+                  width:{xs:'95%',sm:text('90%','100%'),md:text('85%','100%')},
                   display:'flex',
                   justifyContent: text('start','end'),
                   textAlign: text('start','end'),
+                fontSize: {
+                    xs: '.942em',
+                    sm: '1em',
+                    md:'1em'
+                },
+
+
+
+
+
+                px:1,
+
+                flex:1,
+                fontWeight: '500'
+            }}>
+              
+
+              {text(`Gifts and More LB" is your haven for thoughtful gifts that transcend the ordinary. From heartfelt tokens for loved ones to unique finds that mark special moments, our shop offers a diverse selection catering to every taste. Step in and discover presents that bring joy and stories to life. Whether you're seeking a specific occasion's gift or satisfying your curiosity, Gifts and More LB is your go-to for meaningful, unforgettable surprises.`,
+             `Gifts and More LB" هو ملاذك للهدايا الفاخرة التي تتجاوز المألوف. من الرموز المؤثرة لأحبائك إلى العناصر الفريدة التي تحتفل بلحظات خاصة، يقدم متجرنا تشكيلة متنوعة تلبي كل الأذواق. ادخل واكتشف الهدايا التي تجلب البهجة وتروي قصصًا. سواء كنت تبحث عن هدية لمناسبة معينة أو تشعر بفضولك يتنبض، "Gifts and More LB" هو وجهتك للمفاجآت المعنوية والتي لا تُنسى.` 
+             )}
+
+            </Typography>
+            <Typography
+                className='sectionTitle     box'
+                sx={{
+                  width:{xs:'95%',sm:text('90%','100%'),md:text('85%','100%')},
+                  display:'flex',
+                  justifyContent: text('start','end'),
+                  textAlign: text('start','end'),
+                  pt:4,
+                  px:1,
                 fontSize: {
                     xs: '.942em',
                     sm: '1em',
@@ -124,17 +178,17 @@ const PreLoader = ({data, images}:any) => {
             }}>
               
 
-              {text(`Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, magni modi! Nobis praesentium, a reiciendis possimus
-               explicabo voluptatem ipsa ad? Maxime non pariatur praesentium obcaecati.`,`لوريم إيبسوم دولور الجلوس على نطاق النخبة. برايسنتيوم ، ماجني مودي! نوبيس برايسنتيوم ، ريسينديس بوسيموس
-               explicabo voluptatem IPSA الإعلان؟ Maxime non pariatur praesentium obcaecati.`)}
+              {text(`Indulge in the art of gift-giving at "Gifts and More LB." Our carefully curated collection reflects our passion for sourcing distinctive products. From handcrafted trinkets to imported treasures, we offer a constantly evolving assortment that embodies creativity. With exceptional service, we're here to help you find that perfect something, making every gifting opportunity a chance to create lasting memories`,
+             `استمتع بفن الإهداء في "Gifts and More LB". مجموعتنا المرتبة بعناية تعكس شغفنا في اختيار المنتجات المميزة. من الحلي الحرفية إلى الكنوز المستوردة المختارة بعناية، نقدم تشكيلة متجددة باستمرار تجسد الإبداع. من خلال خدمة استثنائية، نحن هنا لمساعدتك في اكتشاف ذلك الشيء المثالي، مما يجعل كل فرصة للإهداء فرصة لخلق ذكريات دائمة.` 
+             )}
 
             </Typography>
-            <Btn className='bg' sx={{
+            {/* <Btn className='bg' sx={{
                   justifyContent: text('start','end'),
               
               border:'none',':hover':{border:'none',color:'white'},borderRadius:2000,my:2}}>
               {text('Shop Now','تسوق الآن')}
-            </Btn>
+            </Btn> */}
           </Grid>
           <Grid xs={12}  sm={6}>
               <Box sx={{height:'500px'}}>

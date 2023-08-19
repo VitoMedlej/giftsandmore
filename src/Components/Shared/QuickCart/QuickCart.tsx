@@ -11,6 +11,7 @@ import { loadState, saveState } from '@/Utils/LocalstorageFn';
 import Btn from '@/Components/Btn/Btn';
 import CartProduct from '../CartProduct/CartProduct';
 import {GrFormClose} from 'react-icons/gr'
+import useLanguage from '@/Hooks/useLanguage';
 
 export default function TemporaryDrawer() {
     const router = useRouter()
@@ -37,6 +38,8 @@ export default function TemporaryDrawer() {
         saveState('g41i2f0ts', state);
         setCartItems(state);
     }
+  const {text} = useLanguage()
+
     return (
         <div>
             <Drawer  anchor={'top'} open={cartOpen} onClose={toggleDrawer(false)}>
@@ -109,7 +112,7 @@ export default function TemporaryDrawer() {
                     }}
                        onClick={()=>{setCartOpen(false),router.push('/checkout')}}
                        disabled={cartItems.length < 1}>
-                            Checkout
+                            {text('Checkout', 'الدفع')}
                        </Btn>
                         <Btn
                          
@@ -124,14 +127,14 @@ export default function TemporaryDrawer() {
                             ':hover':{background:' white',color:'black !important'}}}
                         onClick={()=>{setCartOpen(false),router.push('/collection/products')}}
                          >
-                        Continue Shopping
+                       {text('Continue Shopping', 'مواصلة التسوق')}
                         </Btn>
                         <Btn
                         className='text-center auto'
                         sx={{mx:1,border:'none',color:'black',':hover':{background:'white',color:' black'}}} 
                         onClick={()=>{setCartOpen(false),router.push('/cart')}}
                         v2={true} >
-                        View Cart Page
+                     {text('View Cart Page', 'صفحة عرض السلة')}
                         </Btn>
                     </Box>
 
