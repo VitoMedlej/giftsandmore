@@ -29,9 +29,19 @@ export default function Navbar() {
     
     // const [localCart,
     //     setLocalCart] = useState([]);
-
+    
     const {cartOpen, setCartOpen} = useCartContext();
     const router = useRouter()
+    const handleUser =  ()=> {
+        const user = localStorage && localStorage.getItem('8s01er-0recds')
+            if (user && JSON.parse(user)) {
+                router.push('/wishlist')
+                return
+            }
+            else {
+                router.push('/account/login')
+            }
+    }
     // const localCart = [1]
     // useEffect(() => {
     //     const cart : any = []
@@ -165,7 +175,7 @@ export default function Navbar() {
                             </IconButton>
 
                             <IconButton
-                            onClick={() => setCartOpen(!cartOpen)}
+                            onClick={handleUser}
                             sx={{
                             color: 'black'
                         }}>

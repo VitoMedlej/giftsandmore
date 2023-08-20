@@ -21,9 +21,9 @@ import {
 import Link from 'next/link'
 import { useState} from 'react';
 import {AiOutlineEye,AiOutlineLock,AiOutlineEyeInvisible} from 'react-icons/ai';
+import { useRouter } from 'next/navigation';
 
-// import LoginHook from '../../../src/Hooks/accountHooks/LoginHook';
-// import {VisibilityOff, Visibility} from '@mui/icons-material';
+
 
 export function Copyright(props : any) {
     return (
@@ -43,8 +43,9 @@ export function Copyright(props : any) {
 }
 
 const theme = createTheme();
-
 const LoginForm = () => {
+const router= useRouter()
+
     const [showPassword,
         setShowPassword] = useState(false);
     const [isLoading,
@@ -61,12 +62,13 @@ const LoginForm = () => {
     };
     // const {error,password, setPassword , handleSubmit, isLoading} = LoginHook()
     const handleSubmit = async (event : any ) => {    
-        try {
         event.preventDefault();
+        try {
+            console.log('creds: ', creds);
         if (!creds?.email || !creds?.password) {
             return;
         }   
-        const req = await fetch(`${process.env.NODE_ENV}/login`,{
+        const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/login`,{
             method: "post",
             headers: {
             'Accept': 'application/json',
@@ -81,7 +83,12 @@ const LoginForm = () => {
             })
             })
         const res = await req.json();
-        console.log('res: ', res);
+        if (res?.success && res?.jwt  && res?.jwt?.length > 5  && res?.user) {
+            localStorage.setItem('5if16wt1',JSON.stringify(res?.jwt))
+            localStorage.setItem('8s01er-0recds',JSON.stringify(res?.user))
+            
+            router.push('/wishlist')
+        }
     }
     catch(err) {
         console.log('err: ', err);
@@ -160,8 +167,8 @@ const LoginForm = () => {
                                 width: '100%'
                             }}
                             
-                            value={creds.email}
-                            onChange={(e)=>setCreds({...creds,email:e.target.value})}
+                            value={creds.password}
+                            onChange={(e)=>setCreds({...creds,password:e.target.value})}
                                 id="outlined-adornment-password"
                                 type={showPassword
                                 ? 'text'

@@ -21,6 +21,7 @@ import {
 import Link from 'next/link'
 import { useState} from 'react';
 import {AiOutlineEye,AiOutlineLock,AiOutlineEyeInvisible} from 'react-icons/ai';
+import { useRouter } from 'next/navigation';
 
 // import LoginHook from '../../../src/Hooks/accountHooks/LoginHook';
 // import {VisibilityOff, Visibility} from '@mui/icons-material';
@@ -59,15 +60,40 @@ const LoginForm = () => {
     const handleMouseDownPassword = (event : React.MouseEvent < HTMLButtonElement >) => {
         event.preventDefault();
     };
-    // const {error,password, setPassword , handleSubmit, isLoading} = LoginHook()
-    const handleSubmit = async (event : any ) => {    
-        try {
-        event.preventDefault();
-        const req = await fetch(`${process.env.NODE_ENV}/register`,{
+const router= useRouter()
 
-        })
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const handleSubmit = async (event : any ) => {    
+        event.preventDefault();
+        try {
+            
+        if (!creds?.email || !creds?.password || creds.password.length < 4 ||  !emailRegex.test(creds.email) || !creds?.name) {
+            return;
+        }   
+        const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/create-user`,{
+            method: "post",
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            
+            //make sure to serialize your JSON body
+            body: JSON.stringify({
+            name : creds.name,
+            email: creds.email,
+            password: creds.password,
+
+            })
+            })
         const res = await req.json();
         console.log('res: ', res);
+        if (res?.success && res?.jwt && res?.user  && res?.jwt?.length > 5 ) {
+            localStorage.setItem('5if16wt1',JSON.stringify(res?.jwt))
+            localStorage.setItem('8s01er-0recds',JSON.stringify(res?.user))
+            
+            return router.push('/wishlist')
+            
+        }
     }
     catch(err) {
         console.log('err: ', err);
@@ -158,7 +184,7 @@ const LoginForm = () => {
                                 width: '100%'
                             }}
                             
-                            value={creds.email}
+                            value={creds.password}
                             onChange={(e)=>setCreds({...creds,password:e.target.value})}
                                 id="outlined-adornment-password"
                                 name='password'

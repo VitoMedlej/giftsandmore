@@ -9,52 +9,48 @@ const bcrypt = require('bcrypt');
 
 export async function POST(req : NextRequest, res : NextApiResponse) {
     try {
+        const { email, name, password } = await req.json();
+        
+        if (!email || !name || !password) {
+            return NextResponse.json({ success: false });
+        }
 
+        const Users = await client.db("GIFTS").collection("CLIENTS");
 
-    const { searchParams } = new URL(req.url);
-    let email=  searchParams.get('email') || null 
-    let password =  searchParams.get('password') || null 
-    console.log('email: ', email,password);
-    if (!password || !email) {
-        return NextResponse.json({success: false});      
+        const existingUser = await Users.findOne({ email });
+
+        if (existingUser) {
+            return NextResponse.json({ success: false, message: 'Email already exists' });
+        }
+
+        const hashedPassword = await bcrypt.hash(password.replace(/\s+/g, ''), 10);
+
+        const newUser = {
+            email,
+            name,
+            password: hashedPassword
+        };
+
+        const insertedUser = await Users.insertOne(newUser);
+
+        if (!insertedUser) {
+            throw 'Error creating user';
+        }
+
+        const token = await jwt.sign(
+            { id: insertedUser._id, name, email },
+            '4124kopwkf-0riq0924i12jrionqwoirw09124v90fjioqwjr0v12-vjsfmxwepowpfvheinhrmoiwr', // Replace with your actual secret key
+            { expiresIn: '92h' }
+        );
+
+        if (!token) {
+            throw 'Error generating token';
+        }
+
+        return NextResponse.json({ success: true, jwt: token, user:{name,email} });
+
+    } catch (e) {
+        console.log('Error:', e);
+        return NextResponse.json({ success: false });
     }
-    const Users = await client
-    .db("GIFTS")
-    .collection("CLIENTS");
-
-    // let moreProducts: any[]= []
-    const selectedUser = await Users
-        .findOne({email});
-
-
-
-     
-    if (!selectedUser ) {
-        return NextResponse.json({success: false});
-    }
-
-
-    const isSameUser = await bcrypt.compare(password.replace(/\s+/g, ''), selectedUser.password);
-      
-    if(isSameUser) {
-       const token = await jwt.sign({ id:selectedUser._id,name:selectedUser.name,
-        email:selectedUser.email }, `4124kopwkf-0riq0924i12jrionqwoirw09124v90fjioqwjr0v12-vjsfmxwepowpfvheinhrmoiwr`,{ expiresIn: '94h' });
-       if (!token) {throw 'Error generating token'}
-       return NextResponse.json({success:true, authorized: true,jwt: token});
-
-
-       }
-
-
-
 }
-catch ( e) {
-    console.log(' e: get by id:',  e);
-    return NextResponse.json({
-        success: false
-      
-    });
-}
-
-}
-export const dynamic = 'force-dynamic'

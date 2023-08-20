@@ -68,7 +68,6 @@ const Cart = () => {
     let localCart : ICartItem[] = loadState('g41i2f0ts') || []
     useEffect(() => {
         if (localCart) {
-            
             setCartItems(localCart)
     }
       
