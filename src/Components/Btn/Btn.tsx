@@ -38,10 +38,10 @@ let style2 = {
     border:'1.1px solid  black'
 }
 
-const Btn = ({v2,disabled,onClick,className,children,sx}:{className?:string,disabled?:boolean,onClick?:()=>void,sx?:any,v2?:boolean,children?:any}) => {
+const Btn = ({v2,submit,disabled,onClick,className,children,sx}:{submit?:boolean,className?:string,disabled?:boolean,onClick?:()=>void,sx?:any,v2?:boolean,children?:any}) => {
   return (
     <Button
-   
+   type={submit ? 'submit' : 'button'}
     className={`trans ${className ? className : ''}`}
     disabled={disabled || false}
     onClick={onClick &&onClick}

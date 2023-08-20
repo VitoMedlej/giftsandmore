@@ -14,6 +14,7 @@ import { IProduct } from '@/Types/Types'
 import { useParams } from 'next/navigation'
 import { server } from '@/Utils/Server'
 import { QuantityPicker } from '@/Components/Shared/QuantityPicker/QuantityPicker'
+import ProductReview from '@/Components/ProductReview/ProductReview'
 // import { useRouter } from 'next/navigation'
 
 const Index = () => {
@@ -163,7 +164,7 @@ const Index = () => {
              </Typography>
          </Box>
        </Grid>
-         {/* <ProductReview/>  */}
+         <ProductReview/> 
        <HomeProductsCarousel Collectiontitle={"Shop More Products"} delay={3000} data={data?.moreProducts} />
    </Grid> : <Box className='flex auto center align-center' sx={{py:5}}>
 

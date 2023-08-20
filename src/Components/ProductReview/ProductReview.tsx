@@ -26,7 +26,7 @@ const ProductReview = () => {
                         pb: .25,
                         pt: 1.2
                     }}>
-                        Product Review:
+                        Product Reviews:
                     </Typography>
                     <Box>
                    {false ?     <Typography className='gray' component={'p'}>

@@ -6,14 +6,21 @@ import React, { FormEvent, useState } from 'react'
 import Btn from '@/Components/Btn/Btn';
 import { server } from '@/Utils/Server';
 import FilterAccordion from './FilterAccordion';
+import { useParams, useRouter } from 'next/navigation';
 // import SearchInput from '@/Components/Navbar/SearchInput';
 
 const FilterSection = ({handleReset,sx,setProducts}:any) => {
+    const {category} = useParams()
+    function transformFormat(input:string) {
+        const words = input.split('-'); // Split the input string at '-'
+        const transformedWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+        return transformedWords.join(' '); // Join the words with a space
+      }
+      
     const [options,setOptions] = useState({
         price : [1,100000],
         sort : 'latest',
-        category : 'collection',
-        // query : '',
+        category : category ? transformFormat(category) :'collection',
         
     })
    
