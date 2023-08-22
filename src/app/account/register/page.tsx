@@ -26,22 +26,7 @@ import { useRouter } from 'next/navigation';
 // import LoginHook from '../../../src/Hooks/accountHooks/LoginHook';
 // import {VisibilityOff, Visibility} from '@mui/icons-material';
 
-export function Copyright(props : any) {
-    return (
-        <Typography
-            className='link'
-            variant="body2"
-            color="text.secondary"
-            align="center"
-            {...props}>
-            {'Copyright © '}
-            <a target='_blank' href="https://onbeirut.com">
-                OnBeirut Agency
-            </a>{' '} {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
+
 
 const theme = createTheme();
 
@@ -238,9 +223,20 @@ disabled={isLoading}
                         </Grid>
                     </Box>
                 </Box>
-                <Copyright sx={{
-                    my: 4
-                }}/>
+          <Box sx={{my:4}}>
+          <Typography
+            className='link'
+            variant="body2"
+            color="text.secondary"
+            align="center"
+          >
+            {'Copyright © '}
+            <a target='_blank' href="https://onbeirut.com">
+                OnBeirut Agency
+            </a>{' '} {new Date().getFullYear()}
+            {'.'}
+        </Typography>
+          </Box>
             </Container>
         </ThemeProvider>
     );
