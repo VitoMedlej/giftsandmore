@@ -72,6 +72,7 @@ export default function BasicAccordion({toggleDrawer} : any) {
 {multilangCategories.map(category=>{
   
       return     <ListItem 
+      key={category.en}
       onClick={()=>{
         toggleDrawer(false)
         router.push(`/${category.en}/products`)
