@@ -25,22 +25,6 @@ import { useRouter } from 'next/navigation';
 
 
 
-export function Copyright(props : any) {
-    return (
-        <Typography
-            className='link'
-            variant="body2"
-            color="text.secondary"
-            align="center"
-            {...props}>
-            {'Copyright © '}
-            <a target='_blank' href="https://onbeirut.com">
-                OnBeirut Agency
-            </a>{' '} {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
 
 const theme = createTheme();
 const LoginForm = () => {
@@ -220,9 +204,23 @@ disabled={isLoading}
                         </Grid>
                     </Box>
                 </Box>
-                <Copyright sx={{
-                    my: 4
-                }}/>
+               
+<Box sx={{my:4}}>
+
+<Typography
+            className='link'
+            variant="body2"
+            color="text.secondary"
+            align="center"
+          >
+            {'Copyright © '}
+            <a target='_blank' href="https://onbeirut.com">
+                OnBeirut Agency
+            </a>{' '} {new Date().getFullYear()}
+            {'.'}
+        </Typography>
+        </Box>
+
             </Container>
         </ThemeProvider>
     );
