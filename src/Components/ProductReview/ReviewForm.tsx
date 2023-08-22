@@ -3,7 +3,7 @@ import React from 'react'
 import Btn from '../Btn/Btn';
 import { useParams } from 'next/navigation';
 
-const ReviewForm = () => {
+const ReviewForm = ({data,setData}:any) => {
     const {productId} = useParams()
 
   const [review,setReview] = React.useState({reviewerDetails:{name:'',reviewerEmail:''},reviewText:'',reviewStars:5});
@@ -20,7 +20,7 @@ const ReviewForm = () => {
   };
   
   
-  const handleSumbit = async () => {
+  const handleSubmit = async () => {
       console.log('productId: ', productId);
     if (!review.reviewerDetails || !productId || !review.reviewerDetails.name || !review.reviewerDetails.reviewerEmail || !review.reviewText) {
         return;
@@ -37,6 +37,21 @@ const ReviewForm = () => {
         
         const res = await response.json();
         console.log('res: ', res);
+        if (res?.success) {
+            if (data?.product) {
+                const updatedProduct = {
+                    ...data.product,
+                    reviews: [...data?.product?.reviews, review]
+                  };
+                
+                  setData({
+                    product: updatedProduct,
+                    moreProducts: data?.moreProducts
+                  });
+            }
+            setReview({reviewerDetails:{name:'',reviewerEmail:''},reviewText:'',reviewStars:5})
+        }
+
       } catch (error) {
         console.error('Error:', error);
       }
@@ -112,7 +127,8 @@ const ReviewForm = () => {
                 variant="outlined"/>
             <Btn
             submit
-            onClick={()=>handleSumbit}
+            disabled={!review.reviewerDetails || !productId || !review.reviewerDetails.name || !review.reviewerDetails.reviewerEmail || !review.reviewText}
+            onClick={()=>handleSubmit()}
                 v2
                 sx={{
                 borderRadius: 1,

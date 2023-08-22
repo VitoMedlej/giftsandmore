@@ -5,7 +5,9 @@ import React from 'react'
 import Btn from '../Btn/Btn'
 // import {GrAdd} from 'react-icons/gr'
 import {useRouter} from 'next/navigation'
-import useCart from '@/Hooks/useCart'
+import useCart from '@/Hooks/useCart';
+import {AiOutlineHeart,AiFillHeart} from 'react-icons/ai'
+
 const ProductCard = ({
     title,
     price,
@@ -25,7 +27,7 @@ const ProductCard = ({
 }) => {
     const router = useRouter()
     const {addToCart}= useCart()
-
+    const [liked,setLiked] = React.useState(false)
     return (
         <Box
             className='  trans'
@@ -83,24 +85,49 @@ const ProductCard = ({
                 }}>
                     ${price}
                 </Typography>
+                <Box className="flex row">
+
                 <Btn
-            className='cursor gap1'
+            className='cursor '
                 
                      onClick={()=>addToCart(_id,{title,category,img:images[0],_id,price},true)}
                    v2 
                     sx={{
-                        width:'100%',
                         fontWeight:300,
                         color:' black',
                         border:'none',
                         py:0,
-                        fontSize:'.67em',
+                        fontSize:'.8em',
                     borderRadius:0,
-                  
+                        width:'70%'
                  
                 }}>
                     Add To Bag
                 </Btn>
+                <Btn
+            className='cursor '
+                
+                     onClick={()=>setLiked(!liked)}
+                   v2 
+                    sx={{
+                        fontWeight:300,
+                        color:'red',
+                        border:'none',
+                        py:0,
+                        fontSize:'1em',
+                    borderRadius:0,
+
+                        width:'30%'
+                 
+                }}>
+                  {liked
+                  ?
+                  <AiFillHeart color='red'/>
+                  :
+                  <AiOutlineHeart/>
+                  }                    
+                </Btn>
+                </Box>
             </Box>
         </Box>
     )

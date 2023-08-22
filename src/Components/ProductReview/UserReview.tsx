@@ -1,7 +1,8 @@
 import {Box, Typography, Rating} from '@mui/material'
 import React from 'react'
 
-const UserReview = () => {
+const UserReview = ({review}:any) => {
+    console.log('review final: ', review);
     return (
         <Box
             sx={{
@@ -32,9 +33,9 @@ const UserReview = () => {
                         sx={{
                         fontWeight: 500
                     }}
-                        component={'h4'}>User Name</Typography>
+                        component={'h4'}>{review.reviewerDetails?.name}</Typography>
 
-                    <Rating readOnly name="simple-controlled" value={5}/>
+                    <Rating readOnly name="simple-controlled" value={review.reviewStars || 1}/>
 
                 </Box>
 
@@ -46,7 +47,7 @@ const UserReview = () => {
                 fontSize: 15
             }}
                 className='gray'
-                component={'p'}>User Name</Typography>
+                component={'p'}>{review?.reviewText}</Typography>
         </Box>
     )
 }

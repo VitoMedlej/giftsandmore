@@ -1,4 +1,5 @@
 import client from '@/database/mongodb';
+import { ObjectId } from 'mongodb';
 import type {NextApiResponse}
 from 'next';
 import {NextResponse} from 'next/server'
@@ -15,17 +16,18 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
       const ProductsCollection = await client.db("GIFTS").collection("Products");
   
       // Find the product by its ID
-      const product = await ProductsCollection.findOne({ _id: productId });
+      const product = await ProductsCollection  .findOne({_id:new ObjectId(`${productId}`)});
   
       if (!product) {
         return NextResponse.json({ success: false, message: "Product not found" });
       }
   
       // Add the review to the product's reviews array
-      product.reviews.push(review);
+      // Create a new reviews array with the new review, handling the case when reviews is undefined
+    const updatedReviews = product.reviews ? [...product.reviews, review] : [review];
   
       // Update the product with the new review
-      await ProductsCollection.updateOne({ _id: productId }, { $set: { reviews: product.reviews } });
+      await ProductsCollection.updateOne({ _id: new ObjectId(`${productId}`) }, { $set: { reviews: updatedReviews } });
   
       return NextResponse.json({ success: true, message: "Review added successfully" });
     } catch (error) {

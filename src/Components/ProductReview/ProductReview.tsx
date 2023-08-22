@@ -8,7 +8,7 @@ import ReviewForm from './ReviewForm';
 
 
 
-const ProductReview = () => {
+const ProductReview = ({reviews,data,setData}:any) => {
 
     return (
         <Grid container sx={{py:4}}>
@@ -29,13 +29,17 @@ const ProductReview = () => {
                         Product Reviews:
                     </Typography>
                     <Box>
-                   {false ?     <Typography className='gray' component={'p'}>
+                   {!reviews || reviews?.length < 1 ?     <Typography className='gray' component={'p'}>
                             No reviews yet
                         </Typography> :
 
                         <>
-                     
-                      <UserReview/>
+                        {
+                            reviews.map((review:any) =>{
+
+                            return    <UserReview key={review?.reviewText} review={review}/>
+                            })
+                        }
 
                         </>
 
@@ -47,7 +51,7 @@ const ProductReview = () => {
             <Grid sx={{
             mt: 4
         }} xs={12} sm={6} item>
-            <ReviewForm/>
+            <ReviewForm data={data} setData={setData}/>
               
             </Grid>
         </Grid>
