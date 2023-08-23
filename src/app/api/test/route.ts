@@ -49,8 +49,9 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
     return NextResponse.json({
         success: true,
         data: {
-            forwarded:null
-           
+            forwarded:JSON.stringify(forwarded),
+            ip : JSON.stringify(ip),
+            requestHeaders : JSON.stringify(requestHeaders)
         }
     });
 }
