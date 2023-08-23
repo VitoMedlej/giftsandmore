@@ -48,14 +48,25 @@ const cates = [
 const PreLoader = ({data, images}:any) => {
   const {text} = useLanguage()
   const router= useRouter();
+  const runfuckery = async () => {
+    try {
 
+      const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/test`,{ cache: 'no-store' })
+      let res = await req.json();
+      console.log('res: ', res);
+    }
+    catch (e) {
+      console.log('e: test home fucekry ', e);
+
+    }
+  }
   return (
     <Box >
       <MainCarousel images={images}/>
 
     <Container disableGutters className='wrap auto flex' sx={{pt:10,px:{sm:1},maxWidth:'xl',display:'flex'}}>
   
- 
+    
 
      <Box
                 className=' text-center auto center box'
@@ -65,6 +76,7 @@ const PreLoader = ({data, images}:any) => {
         
          <Typography
                 className='sectionTitle clr text-center auto center box'
+                onClick={()=>runfuckery()}
                 sx={{
                   pb:'.5em',
                   pt:9,
