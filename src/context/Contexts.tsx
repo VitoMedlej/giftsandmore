@@ -19,7 +19,7 @@ const ContextWrapper  = ({children}:  {
         const [cartOpen,
             setCartOpen] = useState(false);
             const [lang,
-                setLang] = useState('ar');
+                setLang] = useState('en');
             return (
                 
                 <DrawerContext.Provider value={{open,setOpen}}>

@@ -8,9 +8,8 @@ import useLanguage from '@/Hooks/useLanguage';
 
 const Footer = () =>
 {
-const {text} = useLanguage()
   
-
+const {text} = useLanguage();
 return (
 
   <footer className="site-footer " style={{color:'black',background:'white'}}>
@@ -32,8 +31,6 @@ return (
           <Typography component='h1' sx={{ fontSize: '.9em',color:"2b2b2b" }}  className='footer-p '>
         
         {text(`Welcome to Gifts & More LB, your one-stop online gift store in Lebanon, where the art of giving is celebrated with an extensive range of unique and thoughtful presents. With a passion for exceptional gifting experiences, we curate a diverse collection of products that cater to every occasion and recipient.`,
-        
-        
         `مرحبًا بكم في Gifts & More LB ، متجر الهدايا الشامل عبر الإنترنت في لبنان ، حيث يتم الاحتفال بفن العطاء من خلال مجموعة واسعة من الهدايا الفريدة والمدروسة. مع شغفنا بتجارب الهدايا الاستثنائية ، نقوم برعاية مجموعة متنوعة من المنتجات التي تناسب كل مناسبة ومتلق.`
         )}
         

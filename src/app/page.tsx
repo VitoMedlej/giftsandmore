@@ -38,13 +38,15 @@ export default async function Home() {
 //   }, [])
 try {
 
+  
+
       // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ next: { revalidate: 10 } })
-      // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ cache: 'no-store' })
-      // let res = await req.json();
+      const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ cache: 'no-store' })
+      let res = await req.json();
       // const imagesRequest = await fetch(`https://getpantry.cloud/apiv1/pantry/7ba4a79d-ed05-4837-bd80-1b315d0506ce/basket/Images`,{ next: { revalidate: 400 } })
       // let imagesResult : any = await  imagesRequest.json();
       let imagesResult = {}
-      let res = {data:null}
+      // let res = {data:null}
       return (
         <PreLoader images={imagesResult || null} data={res?.data}/>
        )

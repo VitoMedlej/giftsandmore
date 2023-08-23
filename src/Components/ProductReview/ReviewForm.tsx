@@ -20,7 +20,7 @@ const ReviewForm = ({data,setData}:any) => {
   };
   
   
-  const handleSubmit = async () => {
+const handleSubmit = async () => {
       console.log('productId: ', productId);
     if (!review.reviewerDetails || !productId || !review.reviewerDetails.name || !review.reviewerDetails.reviewerEmail || !review.reviewText) {
         return;
@@ -38,10 +38,21 @@ const ReviewForm = ({data,setData}:any) => {
         const res = await response.json();
         console.log('res: ', res);
         if (res?.success) {
-            if (data?.product) {
+            if (data?.product && data?.product?.reviews) {
                 const updatedProduct = {
                     ...data.product,
                     reviews: [...data?.product?.reviews, review]
+                  };
+                
+                  setData({
+                    product: updatedProduct,
+                    moreProducts: data?.moreProducts
+                  });
+            }
+            else {
+                const updatedProduct = {
+                    ...data.product,
+                    reviews: [ review]
                   };
                 
                   setData({

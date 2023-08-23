@@ -32,6 +32,8 @@ export default function Navbar() {
     
     const {cartOpen, setCartOpen} = useCartContext();
     const router = useRouter()
+    const {lang, setLang} = useLangContext();
+    
     const handleUser =  ()=> {
         const user = localStorage && localStorage.getItem('8s01er-0recds')
             if (user && JSON.parse(user)) {
@@ -164,7 +166,14 @@ export default function Navbar() {
                         className='flex right'>
  
                   
+                        <Btn v2 
+                        
+onClick={()=>setLang(lang === 'en' ? 'ar' :  'en')}
+                        
+                        sx={{border:'none',color:'black',fontSize:'.8em'}}>
+{lang  === 'en'? 'EN' : 'العربية'}
 
+                        </Btn>
                         <IconButton
                             onClick={() => setCartOpen(!cartOpen)}
                             sx={{

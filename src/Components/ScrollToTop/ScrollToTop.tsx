@@ -16,7 +16,7 @@ const ScrollUp = () => {
     borderRadius:25,
     padding:0,':hover':{background:'transparent'},background:'none'}}>
          <Box sx={{mr:1,background:'white',py:1,px:3,boxShadow:'1px 1px 3px #00000021',borderRadius:25,color:'black'}}>
-          Reach Us
+          Message Us
       </Box>
       <Box className='center flex align-center' sx={{width:'40px'}}>
 
