@@ -48,7 +48,6 @@ const router= useRouter()
     const handleSubmit = async (event : any ) => {    
         event.preventDefault();
         try {
-            console.log('creds: ', creds);
         if (!creds?.email || !creds?.password) {
             return;
         }   

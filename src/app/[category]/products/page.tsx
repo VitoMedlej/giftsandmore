@@ -22,7 +22,6 @@ const Page = async(ctx : any) => {
     //     ? `${category}`.replace(/-/g, ' ')
     //     : 'collection'}`, { cache: 'no-store' })
     // const res = await req.json()
-    // console.log('res: ', res);
 
 
     // const { nextUrl } = req;

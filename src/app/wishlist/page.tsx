@@ -1,29 +1,45 @@
 "use client"
 import Btn from '@/Components/Btn/Btn'
+import ProductCard from '@/Components/ProductCard/ProductCard'
+import { IProductCard } from '@/Types/Types'
+import { loadState, saveState } from '@/Utils/LocalstorageFn'
 import { Box, Divider, Grid, Typography } from '@mui/material'
 import { useRouter } from 'next/navigation'
 import React, { use, useEffect, useState } from 'react'
 
 const Index = () => {
     const [localUser,setLocalUser] = useState<{name?:string,email?:string} | null>(null)
+    const [wishlistItems, setWishlistItems] = useState([]);
+
     const router= useRouter()
-    const fetchUser = async () => {
+    const fetchUserAndList = async () => {
             const user = localStorage.getItem('8s01er-0recds')
             if (user) {
                    let parsedUser = JSON.parse(user)
                    if (!parsedUser) {return}
                    setLocalUser(parsedUser)
             }
-    }
+            const existingWishlist = loadState('w1sh90his2r59t') || [];
+            setWishlistItems(existingWishlist);
+        }
     const logout = () => {
         localStorage.removeItem('8s01er-0recds')
         localStorage.removeItem('5if16wt1')
         setLocalUser(null)
 
     }
+    const handleRemoveFromWishlist = (_id : string) => {
+        const updatedWishlist = wishlistItems.filter((item:any) => item?._id !== _id);
+        saveState('w1sh90his2r59t', updatedWishlist);
+        setWishlistItems(updatedWishlist);
+    };
     useEffect(()=>{
-        fetchUser()
+        fetchUserAndList()
+        
+        
     },[])
+
+  
 
   return (
     <Box sx={{my:8,mx:2}}>
@@ -41,19 +57,27 @@ const Index = () => {
                     </Box>
             </Grid>
             <Grid xs={12} sm={4} md={8.9}>
-                <Box sx={{borderLeft:{sm:'1px solid #00000c21' },width:'100%',height:'1000px'}}> 
+                <Box sx={{mt:{xs:6,sm:0},borderLeft:{sm:'1px solid #00000c21' },width:'100%',height:'1000px'}}> 
                 <Typography sx={{textAlign:'center',mb:1,fontSize:'1.5em',fontWeight:'600'}}>
                        Your Wish List
                     </Typography>
-                    {
-                        false ? <Box>
+                    <Box className="flex row wrap center auto">
 
-                        </Box>
+                    {
+                        wishlistItems && wishlistItems?.length > 0 ? wishlistItems.map((item:IProductCard)=>{
+                            if (!item?._id) return;
+                            return <ProductCard
+                            key={item?._id}
+                            onRemove={() => handleRemoveFromWishlist(item._id)}
+                            whishedItem={true} _id={item?._id} title={item?.title} price={item?.price} images={[`${item?.img}`]} category={item?.category}/>
+                        })
                         :
-                        <Typography sx={{textAlign:'center',mb:1,fontSize:'.8em',fontWeight:'400'}}>
+                        <Typography className='center auto' sx={{textAlign:'center',mb:1,fontSize:'.8em',fontWeight:'400'}}>
                         You have not added any products yet.
                      </Typography>
                     }
+                    </Box>
+
                 </Box>
             </Grid>
 

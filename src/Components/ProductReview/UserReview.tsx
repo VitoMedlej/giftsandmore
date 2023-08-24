@@ -1,8 +1,9 @@
+"use client"
+
 import {Box, Typography, Rating} from '@mui/material'
 import React from 'react'
 
 const UserReview = ({review}:any) => {
-    console.log('review final: ', review);
     return (
         <Box
             sx={{

@@ -25,3 +25,16 @@ export interface ICartItem {
     shortdesc ?: string;
     selectedColor ?: string;
 }
+
+export interface IProductCard {
+    _id: string,
+    title: string,
+    price: number,
+    images: string[],
+    img ?: string,
+    category: string,
+    width?: string | number
+    height?: string | number;
+    whishedItem ?:boolean,
+    onRemove?: (_id: string) => void
+}

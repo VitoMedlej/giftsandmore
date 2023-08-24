@@ -1,3 +1,4 @@
+"use client"
 import { Box, Typography, Rating, TextField } from '@mui/material';
 import React from 'react'
 import Btn from '../Btn/Btn';
@@ -21,7 +22,6 @@ const ReviewForm = ({data,setData}:any) => {
   
   
 const handleSubmit = async () => {
-      console.log('productId: ', productId);
     if (!review.reviewerDetails || !productId || !review.reviewerDetails.name || !review.reviewerDetails.reviewerEmail || !review.reviewText) {
         return;
     }
@@ -36,7 +36,6 @@ const handleSubmit = async () => {
         });
         
         const res = await response.json();
-        console.log('res: ', res);
         if (res?.success) {
             if (data?.product && data?.product?.reviews) {
                 const updatedProduct = {

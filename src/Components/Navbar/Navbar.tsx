@@ -14,6 +14,7 @@ import {useRouter} from 'next/navigation';
 import {IoBagOutline ,IoMenuOutline} from 'react-icons/io5'
 import {IoIosSearch  } from 'react-icons/io'
 import {HiOutlineUser} from 'react-icons/hi'
+import {AiTwotoneHeart} from 'react-icons/ai'
 
 import { useCartContext, useDrawerContext, useLangContext } from '@/context/Contexts';
 import NavButtom from './NavButtom';
@@ -27,13 +28,22 @@ export default function Navbar() {
     const [openModal,
         setOpenModal] = useState(false);
     
-    // const [localCart,
-    //     setLocalCart] = useState([]);
+    const [isUserValid,
+        setValid] = useState(false);
     
     const {cartOpen, setCartOpen} = useCartContext();
     const router = useRouter()
     const {lang, setLang} = useLangContext();
-    
+    const checkUser = () =>{
+        const user = localStorage && localStorage.getItem('8s01er-0recds')
+        if (user) {
+            setValid(true)
+            return
+            }
+            setValid(false)
+
+        }   
+        
     const handleUser =  ()=> {
         const user = localStorage && localStorage.getItem('8s01er-0recds')
             if (user && JSON.parse(user)) {
@@ -44,15 +54,10 @@ export default function Navbar() {
                 router.push('/account/login')
             }
     }
-    // const localCart = [1]
-    // useEffect(() => {
-    //     const cart : any = []
-    //     // const cart = loadState('g41i2f0ts') || []
-    //     if (cart) {
 
-    //         setLocalCart(cart)
-    //     }
-    // }, [cartOpen])
+    useEffect(() => {
+        checkUser()
+    }, [])
 
 
     return ( <> <Box
@@ -188,7 +193,13 @@ onClick={()=>setLang(lang === 'en' ? 'ar' :  'en')}
                             sx={{
                             color: 'black'
                         }}>
-                                <HiOutlineUser color='black'/>
+                                {
+                                    isUserValid ?
+                                    <AiTwotoneHeart color='red'/> :
+
+                                    <HiOutlineUser color='black'/>
+
+                                } 
                        
                             </IconButton>
 

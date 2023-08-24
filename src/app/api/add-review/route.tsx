@@ -10,8 +10,6 @@ import {type NextRequest} from 'next/server'
 export async function POST(req: NextRequest, res: NextApiResponse) {
     try {
         const  { productId, review }= await req.json();
-        console.log('review: ', review);
-        console.log('productId: ', productId);
   
       const ProductsCollection = await client.db("GIFTS").collection("Products");
   

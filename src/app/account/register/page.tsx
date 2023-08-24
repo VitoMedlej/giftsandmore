@@ -71,7 +71,6 @@ const router= useRouter()
             })
             })
         const res = await req.json();
-        console.log('res: ', res);
         if (res?.success && res?.jwt && res?.user  && res?.jwt?.length > 5 ) {
             localStorage.setItem('5if16wt1',JSON.stringify(res?.jwt))
             localStorage.setItem('8s01er-0recds',JSON.stringify(res?.user))

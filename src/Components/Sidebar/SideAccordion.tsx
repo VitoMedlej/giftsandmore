@@ -106,9 +106,7 @@ sx={{border:'none',width:'100%',color:'blue',fontSize:'.8em'}} v2>
                             {lang  === 'en'? 'English' : 'Arabic'}
                         </Btn>
             <Divider></Divider>
-                        <Btn sx={{border:'none',width:'100%',color:'blue',fontSize:'.8em'}} v2>
-          $ - USD 
-                          </Btn>
+                     
     </Box>
   );
 }

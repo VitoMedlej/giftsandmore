@@ -6,7 +6,10 @@ import Btn from '../Btn/Btn'
 // import {GrAdd} from 'react-icons/gr'
 import {useRouter} from 'next/navigation'
 import useCart from '@/Hooks/useCart';
-import {AiOutlineHeart,AiFillHeart} from 'react-icons/ai'
+import { IProductCard } from '@/Types/Types'
+import WishlistButton from './WhishlistButton'
+
+
 
 const ProductCard = ({
     title,
@@ -15,19 +18,14 @@ const ProductCard = ({
     category,
     _id,
     width,
-    height
-} : {
-    _id: string,
-    title: string,
-    price: number,
-    images: string[],
-    category: string,
-    width?: string | number
-    height?: string | number
-}) => {
+    height,
+    whishedItem,
+    onRemove
+} : IProductCard) => {
     const router = useRouter()
     const {addToCart}= useCart()
     const [liked,setLiked] = React.useState(false)
+    
     return (
         <Box
             className='  trans'
@@ -87,7 +85,7 @@ const ProductCard = ({
                 </Typography>
                 <Box className="flex row">
 
-                <Btn
+            {!whishedItem &&    <Btn
             className='cursor '
                 
                      onClick={()=>addToCart(_id,{title,category,img:images[0],_id,price},true)}
@@ -103,30 +101,14 @@ const ProductCard = ({
                  
                 }}>
                     Add To Bag
-                </Btn>
-                <Btn
-            className='cursor '
-                
-                     onClick={()=>setLiked(!liked)}
-                   v2 
-                    sx={{
-                        fontWeight:300,
-                        color:'red',
-                        border:'none',
-                        py:0,
-                        fontSize:'1em',
-                    borderRadius:0,
-
-                        width:'30%'
-                 
-                }}>
-                  {liked
-                  ?
-                  <AiFillHeart color='red'/>
-                  :
-                  <AiOutlineHeart/>
-                  }                    
-                </Btn>
+                </Btn>}
+                <WishlistButton onRemove={onRemove} productId={_id} product={{ title,
+    price,
+    images,
+    category,
+    _id,
+    width,
+    height}}/>
                 </Box>
             </Box>
         </Box>

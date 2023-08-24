@@ -3,7 +3,6 @@ import React from 'react'
 
 const useLanguage = () => {
     const {lang} = useLangContext();
-    console.log('lang: ', lang);
 
     
     

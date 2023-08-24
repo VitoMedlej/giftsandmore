@@ -7,6 +7,7 @@ import ScrollToTop from '@/Components/ScrollToTop/ScrollToTop'
 import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
 import ContextWrapper from '@/context/Contexts'
 import AnimatedText from '@/Components/Navbar/AnimatedText'
+import AlertChip from '@/Components/AlertChip/AlertChip'
 
 export const metadata = {
     title: 'Gifts & More LB | Online Gift Shop In Lebanon',
@@ -33,13 +34,14 @@ export default function RootLayout({children} : {
       <AnimatedText/>
                     <Navbar/>
                     <Sidebar cates={undefined}/>
+                    <AlertChip/>
                     <QuickCart/>
                     <ScrollToTop/>
 
                      {children}
                     {/* {children} */}
-                </ContextWrapper>
                 <Footer/>
+                </ContextWrapper>
             </body>
         </html>
     )

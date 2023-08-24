@@ -3,11 +3,8 @@ import React from 'react'
 import { Box,  Container, Grid, Typography } from "@mui/material"
 // import ContactSection from './ContactSection/ContactSection'
 import HomeProductCollection from './HomeProductCollection/HomeProductCollection'
-import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 import MainCarousel from './MainCarousel/MainCarousel'
 import { useRouter } from 'next/navigation'
-import Btn from './Btn/Btn'
-import Perks from './ContactSection/ContactSection'
 import ContactSection from './ContactSection/ContactSection'
 import useLanguage from '@/Hooks/useLanguage'
 // import Perks from './Perks/Perks'
@@ -48,18 +45,7 @@ const cates = [
 const PreLoader = ({data, images}:any) => {
   const {text} = useLanguage()
   const router= useRouter();
-  const runfuckery = async () => {
-    try {
-
-      const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/test`,{ cache: 'no-store' })
-      let res = await req.json();
-      console.log('res: ', res);
-    }
-    catch (e) {
-      console.log('e: test home fucekry ', e);
-
-    }
-  }
+ 
   return (
     <Box >
       <MainCarousel images={images}/>
@@ -76,7 +62,6 @@ const PreLoader = ({data, images}:any) => {
         
          <Typography
                 className='sectionTitle clr text-center auto center box'
-                onClick={()=>runfuckery()}
                 sx={{
                   pb:'.5em',
                   pt:9,
@@ -108,7 +93,7 @@ const PreLoader = ({data, images}:any) => {
 
                     </Box>
                     <Typography sx={{position:'absolute', fontWeight:'500',color:'white'
-                    ,textShadow:'1px 1px 3px #0000005e',bottom:'4%',fontSize:'1.35em',textAlign: 'center',px:1}}>
+                    ,textShadow:'1px 1px 3px #00000000',bottom:'4%',fontSize:'1.35em',textAlign: 'center',px:1}}>
              {text(i?.category.en,i?.category.ar)}
             </Typography>
             </Box>
@@ -120,13 +105,13 @@ const PreLoader = ({data, images}:any) => {
 
       <Box/>
       <Grid container sx={{flexDirection:text('row','row-reverse'), mx:1,my:8}} >
-          <Grid xs={12} sx={{py:4}} sm={6}>
+          <Grid xs={12} sx={{py:{xs:4,sm:0}}} sm={6}>
                 
          <Typography
                 className='sectionTitle clr  auto  box'
                 sx={{
                   pb:1,
-                  pt:{xs:1,sm:4,md:5},
+                  pt:{xs:2,sm:0,md:0},
                   justifyContent: text('start','end'),
 
                   display:'flex',
@@ -178,7 +163,7 @@ const PreLoader = ({data, images}:any) => {
                   display:'flex',
                   justifyContent: text('start','end'),
                   textAlign: text('start','end'),
-                  pt:4,
+                  pt:{xs:4,sm:0},
                   px:1,
                 fontSize: {
                     xs: '.942em',
@@ -190,7 +175,7 @@ const PreLoader = ({data, images}:any) => {
             }}>
               
 
-              {text(`Indulge in the art of gift-giving at "Gifts and More LB." Our carefully curated collection reflects our passion for sourcing distinctive products. From handcrafted trinkets to imported treasures, we offer a constantly evolving assortment that embodies creativity. With exceptional service, we're here to help you find that perfect something, making every gifting opportunity a chance to create lasting memories`,
+              {text(`Indulge in the art of gift-giving at "Gifts and More LB." Our carefully curated collection reflects our passion for sourcing distinctive products. From handcrafted trinkets to imported treasures, we offer a constantly evolving assortment that embodies creativity. With exceptional service.`,
              `استمتع بفن الإهداء في "Gifts and More LB". مجموعتنا المرتبة بعناية تعكس شغفنا في اختيار المنتجات المميزة. من الحلي الحرفية إلى الكنوز المستوردة المختارة بعناية، نقدم تشكيلة متجددة باستمرار تجسد الإبداع. من خلال خدمة استثنائية، نحن هنا لمساعدتك في اكتشاف ذلك الشيء المثالي، مما يجعل كل فرصة للإهداء فرصة لخلق ذكريات دائمة.` 
              )}
 

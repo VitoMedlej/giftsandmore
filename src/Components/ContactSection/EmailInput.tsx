@@ -1,3 +1,5 @@
+"use client"
+
 import { Paper, InputBase, IconButton } from '@mui/material'
 import { useRouter } from 'next/navigation'
 import React from 'react'

@@ -1,5 +1,5 @@
 "use client";
-import {useContext} from 'react';
+import {useContext, useState} from 'react';
 import {Drawer,List,Divider,
   Box, Typography} from '@mui/material';
 // import {IoShirtOutline,IoShirtSharp} from 'react-icons/io5';
@@ -13,6 +13,8 @@ import {GrFormClose} from 'react-icons/gr'
 // import SMicons from '../SMicons/SMicons';
 // import { categories } from '../Navbar/Navbar';
 import SideAccordion from './SideAccordion';
+import CountryModal from '../CountryModal/CountryModal';
+import Btn from '../Btn/Btn';
 
 
 export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
@@ -32,6 +34,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
       setOpen(open);
     };
+    const [modalOpen, setModalOpen] = useState(false);
 
   const Lista = () => (
     <Box
@@ -40,6 +43,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
       // onClick={toggleDrawer( false)}
       // onKeyDown={toggleDrawer( false)}
     >
+      <CountryModal setModalOpen={setModalOpen} modalOpen={modalOpen} />
       <Box className='flex justify-between items-center '
       sx={{margin:' 0 .5em'
       // ,borderBottom:'1px solid #00000040',
@@ -105,7 +109,11 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
       <SMicons/> */}
 
       <SideAccordion  toggleDrawer={setOpen}/>
-
+      <Btn 
+      onClick={()=>setModalOpen(!modalOpen)}
+      sx={{border:'none',width:'100%',color:'blue',fontSize:'.8em'}} v2>
+          Change Currency - USD
+                          </Btn>
       <Divider />
       
     </Box>
