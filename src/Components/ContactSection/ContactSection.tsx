@@ -18,7 +18,7 @@ const Perks = () => {
             <Box sx={{mb:4,justifyContent:{xs:'center',sm:'justify-between'}}} className="flex wrap  ">
 
 {[1,2,3].map(i=>{
-    return <Box key={i} sx={{mt:1,width:{xs:'99%',sm:'32%'}}} className='flex row center  items-center'>
+    return <Box key={i} sx={{mt:1,width:{xs:'48%',sm:'32%'}}} className='flex row center  items-center'>
     <Box sx={{mx:.5}}>
             <AiFillAudio  fontSize='2em'/>
     </Box>

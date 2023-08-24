@@ -24,7 +24,7 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,selectedC
                 display:'flex',
                 gap:'1em',
             flex:1,
-            padding: '1em',
+            padding: {xs:0,sm:'1em'},
             ':hover': {
                 backgroundColor: '#0000000f',
                 borderRadius: '6px'
@@ -33,7 +33,7 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,selectedC
             <Box
                 sx={{
                 mr: '.5em',
-                width: '100px',
+                width: {xs:'80px',sm:'100px'},
                 height: '100px',
                 borderRadius: '6px'
             }}>
@@ -45,7 +45,7 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,selectedC
                     className='img contain'
                     alt="Cart Product Img"/>
             </Box>
-            <Box className='wrap' sx={{display:'flex',width:'100%'}}>
+            <Box className='wrap' sx={{display:'flex',width:'100%',flexDirection:{xs:'column',sm:'row'}}}>
 
                 <Box>
                     <Link style={{color:'black'}} className='decor-none black' href={`/product/${_id}`} >
