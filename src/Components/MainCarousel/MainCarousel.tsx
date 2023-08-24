@@ -9,7 +9,7 @@ const MainCarousel =   ({images} : {images : string[] | [] | null}) => {
     try {
 
         // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ next: { revalidate: 10 } })
-        // const req = await fetch(`https://getpantry.cloud/apiv1/pantry/11c7944e-bdec-4962-bcad-f24fe432bca6/basket/Images`,{ next: { revalidate: 400 } })
+        // const req = await fetch(`https://getpantry.cloud/apiv1/pantry/6e7bb4b1-a9a5-4912-b2d5-5f1cdb3abbfd/basket/Images`,{ next: { revalidate: 400 } })
         // let res : any = await  req.json();
         // let res = {data:null}
         return (
@@ -27,7 +27,7 @@ const MainCarousel =   ({images} : {images : string[] | [] | null}) => {
 
    
 //      const fetcher = async () => {
-//     const req = await fetch(`https://getpantry.cloud/apiv1/pantry/11c7944e-bdec-4962-bcad-f24fe432bca6/basket/Images`,{ next: { revalidate: 400 } })
+//     const req = await fetch(`https://getpantry.cloud/apiv1/pantry/6e7bb4b1-a9a5-4912-b2d5-5f1cdb3abbfd/basket/Images`,{ next: { revalidate: 400 } })
 //     let res : any = await  req.json() ;
 //     console.log('res: ', res);
 //     if (res && res?.MainCarousel) {
