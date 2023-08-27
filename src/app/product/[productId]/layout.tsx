@@ -6,7 +6,7 @@ export const metadata = {
   title: 'Gifts & More LB | Online Gift Shop In Lebanon',
     description: `Looking for unique gifts in Lebanon? Explore Gifts & More LB's online store! We offer delivery to all of lebanon | Unique Gifts for All Occasions `,
   icons: {
-      icon:`https://ucarecdn.com/7ce2b5a5-620a-457e-a69d-fec5388db431/359711183_236017772585464_7278070160350273321_n.jpg`
+      icon:`https://ucarecdn.com/01ea6d0a-fdbf-4a2f-b647-e76b2d700e32/365014401_1944248375937735_7655171259538237739_n.jpg`
   }
 }
 

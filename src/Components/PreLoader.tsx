@@ -7,6 +7,7 @@ import MainCarousel from './MainCarousel/MainCarousel'
 import { useRouter } from 'next/navigation'
 import ContactSection from './ContactSection/ContactSection'
 import useLanguage from '@/Hooks/useLanguage'
+import Testimonial from './Testimonial/Testiomial'
 // import Perks from './Perks/Perks'
 // import { IProduct } from '@/Types/Types'
 
@@ -204,6 +205,7 @@ const PreLoader = ({data, images}:any) => {
         {/* <Perks/> */}
 
     </Container>
+        <Testimonial/>
         <ContactSection/>
   </Box>
   )

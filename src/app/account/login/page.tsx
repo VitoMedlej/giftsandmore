@@ -29,12 +29,11 @@ import { useRouter } from 'next/navigation';
 const theme = createTheme();
 const LoginForm = () => {
 const router= useRouter()
-
+const [error, setError] = useState(''); 
     const [showPassword,
         setShowPassword] = useState(false);
     const [isLoading,
         setLoading] = useState(false);
-        const error = ''
         const [creds,
             setCreds] = useState({email:'',password:''})
     const handleClickShowPassword = () => {
@@ -69,13 +68,13 @@ const router= useRouter()
         if (res?.success && res?.jwt  && res?.jwt?.length > 5  && res?.user) {
             localStorage.setItem('5if16wt1',JSON.stringify(res?.jwt))
             localStorage.setItem('8s01er-0recds',JSON.stringify(res?.user))
-            
+
             router.push('/wishlist')
         }
     }
     catch(err) {
         console.log('err: ', err);
-            
+        setError('Something went wrong..')
     }
     }
 

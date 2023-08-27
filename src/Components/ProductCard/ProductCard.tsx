@@ -1,13 +1,16 @@
 "use client"
 // import {IProduct} from '@/Types/Types'
 import {Box, Typography} from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Btn from '../Btn/Btn'
 // import {GrAdd} from 'react-icons/gr'
 import {useRouter} from 'next/navigation'
 import useCart from '@/Hooks/useCart';
 import { IProductCard } from '@/Types/Types'
 import WishlistButton from './WhishlistButton'
+import { countriesList } from '../CountryModal/CountrySelect'
+import { useRateContext } from '@/context/Contexts'
+import usePrice from '@/Hooks/usePrice'
 
 
 
@@ -25,7 +28,11 @@ const ProductCard = ({
     const router = useRouter()
     const {addToCart}= useCart()
     const [liked,setLiked] = React.useState(false)
-    
+  const {adjustPrice} = usePrice()
+
+
+
+  
     return (
         <Box
             className='  trans'
@@ -81,7 +88,7 @@ const ProductCard = ({
                     fontWeight: '300',
                     fontSize: '1.0em'
                 }}>
-                    ${price}
+                    {adjustPrice(price)}
                 </Typography>
                 <Box className="flex row">
 

@@ -15,6 +15,7 @@ import { useParams } from 'next/navigation'
 import { server } from '@/Utils/Server'
 import { QuantityPicker } from '@/Components/Shared/QuantityPicker/QuantityPicker'
 import ProductReview from '@/Components/ProductReview/ProductReview'
+import usePrice from '@/Hooks/usePrice'
 // import { useRouter } from 'next/navigation'
 
 const Index = () => {
@@ -34,6 +35,7 @@ const Index = () => {
     })
   
   
+    const {adjustPrice} = usePrice()
 
     
        const InitialFetch = async () => {
@@ -94,7 +96,9 @@ const Index = () => {
             
              <Typography 
                  component={'h1'} sx={{my:.25,fontWeight:500,color:'green',fontSize:{xs:'1em',sm:'1.25sem'}}}>
-                 ${data?.product?.price || 0}
+                 {
+                  adjustPrice(data?.product?.price || 0)
+                 }
              </Typography>
          </Box>
    

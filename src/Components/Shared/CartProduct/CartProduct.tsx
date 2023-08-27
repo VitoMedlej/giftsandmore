@@ -10,10 +10,13 @@ import Link from 'next/link';
 import { ICartItem } from '@/Types/Types';
 import useCart from '@/Hooks/useCart';
 import Btn from '@/Components/Btn/Btn';
+import { useRateContext } from '@/context/Contexts';
+import usePrice from '@/Hooks/usePrice';
 
 
 
 const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,selectedColor}:ICartItem) => {
+    const {adjustPrice} = usePrice()
  
     const {incrementQty} = useCart()
     return (
@@ -87,7 +90,7 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,selectedC
                         color: 'green',
                         margin: ' .35em 0 0 0'
                     }}>
-                        ${price}
+                        {adjustPrice(price)}
                     </h2>
                     {/* <h2
                         style={{

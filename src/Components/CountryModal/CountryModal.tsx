@@ -7,7 +7,8 @@ import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { loadState, saveState } from '@/Utils/LocalstorageFn';
-
+import CountrySelect from './CountrySelect';
+import { useRateContext } from '@/context/Contexts';
 const style = {
   position: 'absolute' as 'absolute',
   top: '50%',
@@ -23,9 +24,12 @@ const style = {
 export default function TransitionsModal({modalOpen,setModalOpen} : {modalOpen : boolean, setModalOpen : any}) {
   const handleOpen = () => setModalOpen(true);
   const handleClose = () => setModalOpen(false);
-    
-  React.useEffect(() => {
+  const {rate,setRate} = useRateContext()
+ 
 
+
+  React.useEffect(() => {
+    
       const isModalOpened = loadState('isModalOpened')
       if (!isModalOpened) {
         setModalOpen(true);
@@ -58,8 +62,8 @@ export default function TransitionsModal({modalOpen,setModalOpen} : {modalOpen :
             <Typography id="transition-modal-description" className='text-center center' sx={{ mt: 2 }}>
             Please Select Your Country/Currency.
             </Typography>
+          <CountrySelect rate={rate} setRate={setRate}/>
           </Box>
-
         </Fade>
       </Modal>
     </div>

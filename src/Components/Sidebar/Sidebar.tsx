@@ -8,13 +8,14 @@ import { IconButton } from '@mui/material';
 // import { useRouter } from 'next/navigation';
 // import {MdFastfood} from 'react-icons/md';
 
-import { DrawerContext } from '@/context/Contexts';
+import { DrawerContext, useRateContext } from '@/context/Contexts';
 import {GrFormClose} from 'react-icons/gr'
 // import SMicons from '../SMicons/SMicons';
 // import { categories } from '../Navbar/Navbar';
 import SideAccordion from './SideAccordion';
 import CountryModal from '../CountryModal/CountryModal';
 import Btn from '../Btn/Btn';
+import { countriesList } from '../CountryModal/CountrySelect';
 
 
 export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
@@ -35,6 +36,16 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
       setOpen(open);
     };
     const [modalOpen, setModalOpen] = useState(false);
+    const {rate,setRate} = useRateContext()
+
+    const findExchangeRate = (searchRate : number) => {
+      const foundCountry = countriesList.find(
+        (country) => parseFloat(`${country?.exchangeRate}`) === searchRate
+      );
+  
+      return foundCountry ? foundCountry : {currency:1, exchangeRate:1,name : 'USA'};
+    };
+
 
   const Lista = () => (
     <Box
@@ -112,7 +123,9 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
       <Btn 
       onClick={()=>setModalOpen(!modalOpen)}
       sx={{border:'none',width:'100%',color:'blue',fontSize:'.8em'}} v2>
-          Change Currency - USD
+          Change Currency - {
+    findExchangeRate(rate || 1)?.currency 
+          }
                           </Btn>
       <Divider />
       
