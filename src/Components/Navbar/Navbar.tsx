@@ -79,7 +79,7 @@ export default function Navbar() {
 
             sx={{
 
-
+                height:{xs:'90px',sm: '100px'},
                 background:'white',
             // maxWidth: 'lg',
             position:'relative',
@@ -87,7 +87,7 @@ export default function Navbar() {
             margin: '0 auto',
         }}>
             <Toolbar
-    className='center  flex w100  auto'
+    className='center relative flex w100  auto'
 
                 sx={{
                     
@@ -97,7 +97,6 @@ export default function Navbar() {
                     width:'100%',
                     justifyCotntent:'space-between !important',
                     maxWidth:'xl',
-            position:'relative',
 
                 px:'0 !important',
                 flexWrap: 'wrap'
@@ -143,16 +142,17 @@ export default function Navbar() {
                     alignItems: 'center',
                  
                 }}>
-                           <Link className='flex center auto   align-center ' style={{ justifyContent:'flex-start !important'}}  href='/' color='inherit'>
+                           <Link className='flex center auto absolute  align-center ' style={{ justifyContent:'flex-start !important'}}  href='/' color='inherit'>
 
 <Box
     sx={{
-        
+ 
     mx: {
         sm: '1em'
     },
    
     width:{xs:'90px',sm: '100px'}
+    , height:{xs:'90px',sm: '100px'}
 }}>
     <img
         className='img'
@@ -166,19 +166,13 @@ export default function Navbar() {
                         display: {
                             xs: 'flex'
                         },
+
                         // justifyContent: 'end'
                     }}
                         className='flex right'>
  
                   
-                        <Btn v2 
-                        
-onClick={()=>setLang(lang === 'en' ? 'ar' :  'en')}
-                        
-                        sx={{border:'none',color:'black',fontSize:'.8em'}}>
-{lang  === 'en'? 'EN' : 'العربية'}
-
-                        </Btn>
+                     
                         <IconButton
                             onClick={() => setCartOpen(!cartOpen)}
                             sx={{
