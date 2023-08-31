@@ -35,7 +35,7 @@ const Preloader3 = ({res}:{res:any}) => {
             maxHeight:{xs:'550px',sm:'80vh'},
             height : {xs:'100%',sm:'500px',md:'600px'},
              
-            margin: '0 auto',
+            margin: '.5em auto',
             display: {
                 xs: 'flex'
             },

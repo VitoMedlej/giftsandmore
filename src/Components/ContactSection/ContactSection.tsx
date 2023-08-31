@@ -12,12 +12,12 @@ import useLanguage from '@/Hooks/useLanguage'
 const contacInfo = [
     {
       title: { en: 'Have a question?', ar: 'هل لديك سؤال؟' },
-      value: '123456',
+      value: '+961 71337521',
       Icon: AiFillPhone,
     },
     {
       title: { en: 'Follow us on Instagram', ar: 'تابعنا على إنستغرام' },
-      value: '@example_instagram',
+      value: '@gifts.and.more_lb',
       Icon: AiFillInstagram,
     },
     {

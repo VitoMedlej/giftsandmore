@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation'
 import ContactSection from './ContactSection/ContactSection'
 import useLanguage from '@/Hooks/useLanguage'
 import Testimonial from './Testimonial/Testiomial'
+import OrderAlert from './OrderAlert/OrderAlert'
 // import Perks from './Perks/Perks'
 // import { IProduct } from '@/Types/Types'
 
@@ -48,9 +49,10 @@ const PreLoader = ({data, images}:any) => {
   const router= useRouter();
  
   return (
-    <Box >
+    <Box className='relative'>
       <MainCarousel images={images}/>
 
+        <OrderAlert/>
     <Container disableGutters className='wrap auto flex' sx={{pt:10,px:{sm:1},maxWidth:'xl',display:'flex'}}>
   
     

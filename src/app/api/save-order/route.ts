@@ -10,7 +10,8 @@ export  async function POST(req: NextRequest, res: NextApiResponse) {
     // Process a POST request
     if (!order) return NextResponse.json({success:false})
        const insertReq = await client.db("GIFTS").collection("Orders").insertOne(order);
-       if (insertReq.acknowledged) {         
+       const NewOrder = await client.db("GIFTS").collection("NewOrder").insertOne({order,orderedAtTime:`${new Date().toISOString}`});
+       if (insertReq.acknowledged && NewOrder?.acknowledged) {         
          return NextResponse.json({success:true});
         }
 }
