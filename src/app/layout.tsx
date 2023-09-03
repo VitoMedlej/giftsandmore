@@ -31,14 +31,13 @@ export default function RootLayout({children} : {
             <body className='relative'>
 
                 <ContextWrapper>
-      {/* <AnimatedText/> */}
+      <AnimatedText/>
                     <Navbar/>
-                    <Sidebar cates={undefined}/>
                     <AlertChip/>
                     <QuickCart/>
                     <ScrollToTop/>
 
-                     {children}
+                     {/* {children} */}
                     {/* {children} */}
                 <Footer/>
                 </ContextWrapper>

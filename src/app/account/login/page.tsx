@@ -47,9 +47,29 @@ const [error, setError] = useState('');
     const handleSubmit = async (event : any ) => {    
         event.preventDefault();
         try {
-        if (!creds?.email || !creds?.password) {
-            return;
-        }   
+            if (!creds?.email) {
+                setError('Please enter a valid email address');
+                return;
+            }
+            
+            // Regular expression to validate email format
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            
+            if (!emailRegex.test(creds.email)) {
+                setError('Invalid email format');
+                return;
+            }
+            
+            // Password Validation
+            if (!creds?.password) {
+                setError('Please enter a password');
+                return;
+            }
+            
+            if (creds.password.length < 6) {
+                setError('Password must be at least 6 characters long');
+                return;
+            }  
         const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/login`,{
             method: "post",
             headers: {
@@ -112,7 +132,7 @@ const [error, setError] = useState('');
                         ? 'red'
                         : 'black'}
                         component="h1">
-                        {error
+                        {error?.length > 1
                             ? error
                             : 'Sign in'}
                     </Typography>

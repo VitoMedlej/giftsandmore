@@ -91,8 +91,9 @@ const MarqueeComponent = () => {
 
   useEffect(() => {
     wrapperRefs.current.forEach((wrapper:any, index:any) => {
-      const boxWidth = 250;
-      const totalWidth = boxWidth * 7; // * n of boxes
+      const boxWidth = 300;
+      // const totalWidth = boxWidth * 1; // * n of boxes
+      const totalWidth = 3000; // * n of boxes
       const boxes = wrapper.querySelectorAll('.box');
       const dirFromLeft = `+=${totalWidth}`;
       const dirFromRight = `-=${totalWidth}`;
@@ -117,7 +118,7 @@ const MarqueeComponent = () => {
       }
 
       const timeline = gsap.timeline();
-      timeline.add(marquee(boxes, 15, dirFromLeft), 1 + index);
+      timeline.add(marquee(boxes, 14, dirFromLeft), 1 + index);
 
       return () => {
         timeline.kill();
@@ -140,9 +141,9 @@ const MarqueeComponent = () => {
         {/* </div> */}
         <div className="boxes">
     {/* <div className="box">all over Lebanon 3$</div> */}
-    <div className="box">Cash </div>
-    <div className="box">on</div>
-    <div className="box">delivery</div>
+    <div className="box">Cash on delivery all over Lebanon 3$ | Free Delivery for orders above 50$</div>
+    {/* <div className="box">on</div> */}
+    {/* <div className="box">delivery</div> */}
     {/* <div className="box">Free Delivery for</div> */}
     {/* <div className="box">orders above $50</div> */}
     {/* <div className="box">Cash on delivery</div> */}

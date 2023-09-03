@@ -19,6 +19,8 @@ import {AiTwotoneHeart} from 'react-icons/ai'
 import { useCartContext, useDrawerContext, useLangContext } from '@/context/Contexts';
 import NavButtom from './NavButtom';
 import Btn from '../Btn/Btn';
+import Sidebar from '../Sidebar/Sidebar';
+import CountryModal from '../CountryModal/CountryModal';
 
 
 
@@ -54,6 +56,7 @@ export default function Navbar() {
                 router.push('/account/login')
             }
     }
+    const [modalOpen, setModalOpen] = useState(false);
 
     useEffect(() => {
         checkUser()
@@ -73,7 +76,8 @@ export default function Navbar() {
         flexGrow: 1
     }}>
 
-
+<Sidebar modalOpen={modalOpen} setModalOpen={setModalOpen}/>
+<CountryModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
         <AppBar
     className='center relative  flex'
 

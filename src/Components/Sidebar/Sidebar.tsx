@@ -13,12 +13,11 @@ import {GrFormClose} from 'react-icons/gr'
 // import SMicons from '../SMicons/SMicons';
 // import { categories } from '../Navbar/Navbar';
 import SideAccordion from './SideAccordion';
-import CountryModal from '../CountryModal/CountryModal';
 import Btn from '../Btn/Btn';
 import { countriesList } from '../CountryModal/CountrySelect';
 
 
-export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
+export default function TemporaryDrawer({modalOpen,setModalOpen}:{modalOpen:boolean ,setModalOpen:any}) {
  
   const {open, setOpen} = useContext(DrawerContext);
   // const router = useRouter();
@@ -35,7 +34,6 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
       setOpen(open);
     };
-    const [modalOpen, setModalOpen] = useState(false);
     const {rate,setRate} = useRateContext()
 
     const findExchangeRate = (searchRate : number) => {
@@ -54,7 +52,6 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
       // onClick={toggleDrawer( false)}
       // onKeyDown={toggleDrawer( false)}
     >
-      <CountryModal setModalOpen={setModalOpen} modalOpen={modalOpen} />
       <Box className='flex justify-between items-center '
       sx={{margin:' 0 .5em'
       // ,borderBottom:'1px solid #00000040',
@@ -121,7 +118,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
       <SideAccordion  toggleDrawer={setOpen}/>
       <Btn 
-      onClick={()=>setModalOpen(!modalOpen)}
+      // onClick={()=>setModalOpen(!modalOpen)}
       sx={{border:'none',width:'100%',color:'blue',fontSize:'.8em'}} v2>
           Change Currency - {
     findExchangeRate(rate || 1)?.currency 

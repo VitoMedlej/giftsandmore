@@ -35,7 +35,8 @@ const LoginForm = () => {
         setShowPassword] = useState(false);
     const [isLoading,
         setLoading] = useState(false);
-        const error = ''
+const [error, setError] = useState(''); 
+
         const [creds,
             setCreds] = useState({email:'',password:'',name:''})
     const handleClickShowPassword = () => {
@@ -52,9 +53,35 @@ const router= useRouter()
         event.preventDefault();
         try {
             
-        if (!creds?.email || !creds?.password || creds.password.length < 4 ||  !emailRegex.test(creds.email) || !creds?.name) {
-            return;
-        }   
+            if (!creds?.email) {
+                setError('Please enter a valid email address');
+                return;
+            }
+            
+            // Regular expression to validate email format
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            
+            if (!emailRegex.test(creds.email)) {
+                setError('Invalid email format');
+                return;
+            }
+            
+            // Password Validation
+            if (!creds?.password) {
+                setError('Please enter a password');
+                return;
+            }
+            
+            if (creds.password.length < 4) {
+                setError('Password must be at least 4 characters long');
+                return;
+            }
+            
+            // Name Validation
+            if (!creds?.name || creds?.name?.length < 3) {
+                setError('Please enter a valid name');
+                return;
+            }
         const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/create-user`,{
             method: "post",
             headers: {
@@ -81,7 +108,7 @@ const router= useRouter()
     }
     catch(err) {
         console.log('err: ', err);
-            
+        setError('Error creating account..')    
     }
     }
 
