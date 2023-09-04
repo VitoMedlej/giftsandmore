@@ -37,7 +37,7 @@ export default function RootLayout({children} : {
                     <QuickCart/>
                     <ScrollToTop/>
 
-                     {/* {children} */}
+                     {children}
                     {/* {children} */}
                 <Footer/>
                 </ContextWrapper>
