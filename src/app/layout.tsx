@@ -32,7 +32,7 @@ export default function RootLayout({children} : {
             <body className='relative'>
 
                 <ContextWrapper>
-      <AnimatedText/>
+      {/* <AnimatedText/> */}
                     <Navbar/>
                     <AlertChip/>
                     <QuickCart/>
