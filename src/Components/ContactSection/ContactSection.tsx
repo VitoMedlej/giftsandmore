@@ -15,16 +15,16 @@ const contacInfo = [
       value: '+961 71337521',
       Icon: AiFillPhone,
     },
-    {
-      title: { en: 'Follow us on Instagram', ar: 'تابعنا على إنستغرام' },
-      value: '@gifts.and.more_lb',
-      Icon: AiFillInstagram,
-    },
-    {
-      title: { en: 'Email us', ar: 'أرسل لنا بريدًا إلكترونيًا' },
-      value: 'contact@example.com',
-      Icon: AiFillMail,
-    },
+    // {
+    //   title: { en: 'Follow us on Instagram', ar: 'تابعنا على إنستغرام' },
+    //   value: '@gifts.and.more_lb',
+    //   Icon: AiFillInstagram,
+    // },
+    // {
+    //   title: { en: 'Email us', ar: 'أرسل لنا بريدًا إلكترونيًا' },
+    //   value: 'contact@example.com',
+    //   Icon: AiFillMail,
+    // },
   ];
 const Perks = () => {
   const {text} = useLanguage()
