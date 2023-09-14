@@ -150,7 +150,7 @@ const PreLoader = ({data, images}:any) => {
                 px:1,
 
                 flex:1,
-                fontWeight: '500'
+                fontWeight: '100'
             }}>
               
 
@@ -174,7 +174,7 @@ const PreLoader = ({data, images}:any) => {
                     md:'1em'
                 },
                 flex:1,
-                fontWeight: '500'
+                fontWeight: '100'
             }}>
               
 
