@@ -198,7 +198,7 @@ const PreLoader = ({data, images}:any) => {
       </Grid>
         {/* <HomeProductsCarousel Collectiontitle={"Featured Products"} delay={3000} data={data?.featuredProducts || null}/> */}
 
-        <HomeProductCollection products={data?.products || null }/>
+        <HomeProductCollection data={data || null }/>
 
       
         

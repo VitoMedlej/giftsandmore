@@ -48,7 +48,7 @@ try {
       // let imagesResult = {}
       // let res = {data:null}
       return (
-        <PreLoader images={imagesResult || null} data={res?.data}/>
+        <PreLoader images={imagesResult || null} data={res?.data?.products}/>
        )
 } 
 catch (e) {
