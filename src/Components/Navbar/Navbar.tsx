@@ -83,7 +83,7 @@ export default function Navbar() {
 
             sx={{
 
-                height:{xs:'90px',sm: '100px'},
+                height:{xs:'65px',sm: '100px'},
                 background:'white',
             // maxWidth: 'lg',
             position:'relative',
@@ -156,7 +156,7 @@ export default function Navbar() {
     },
    
     width:{xs:'90px',sm: '100px'}
-    , height:{xs:'90px',sm: '100px'}
+    , height:{xs:'65px',sm: '100px'}
 }}>
     <img
         className='img'

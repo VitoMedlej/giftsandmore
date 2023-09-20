@@ -32,10 +32,10 @@ const Preloader3 = ({res}:{res:any}) => {
             maxWidth:'lg',
             // maxWidth: 'lg',
             minHeight:'350px',
-            maxHeight:{xs:'550px',sm:'80vh'},
+            maxHeight:{xs:'380px',sm:'80vh'},
             height : {xs:'100%',sm:'500px',md:'600px'},
              
-            margin: '.5em auto',
+            margin: '0em auto',
             display: {
                 xs: 'flex'
             },

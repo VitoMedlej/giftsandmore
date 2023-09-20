@@ -154,12 +154,17 @@ const PreLoader = ({data, images}:any) => {
             }}>
               
 
-              {text(`Gifts and More LB" is your haven for thoughtful gifts that transcend the ordinary. From heartfelt tokens for loved ones to unique finds that mark special moments, our shop offers a diverse selection catering to every taste. Step in and discover presents that bring joy and stories to life. Whether you're seeking a specific occasion's gift or satisfying your curiosity, Gifts and More LB is your go-to for meaningful, unforgettable surprises.`,
+              {/* {text(`Gifts and More LB" is your haven for thoughtful gifts that transcend the ordinary. From heartfelt tokens for loved ones to unique finds that mark special moments, our shop offers a diverse selection catering to every taste. Step in and discover presents that bring joy and stories to life. Whether you're seeking a specific occasion's gift or satisfying your curiosity, Gifts and More LB is your go-to for meaningful, unforgettable surprises.`,
              `Gifts and More LB" هو ملاذك للهدايا الفاخرة التي تتجاوز المألوف. من الرموز المؤثرة لأحبائك إلى العناصر الفريدة التي تحتفل بلحظات خاصة، يقدم متجرنا تشكيلة متنوعة تلبي كل الأذواق. ادخل واكتشف الهدايا التي تجلب البهجة وتروي قصصًا. سواء كنت تبحث عن هدية لمناسبة معينة أو تشعر بفضولك يتنبض، "Gifts and More LB" هو وجهتك للمفاجآت المعنوية والتي لا تُنسى.` 
+             )} */}
+               {text(`Discover the latest trends and perfect gifts at Gifts&More.lb. We curate a unique selection of hot and sought-after items. Whether you're shopping for loved ones or treating yourself, our collection has you covered with fashion, gadgets, and more. Explore our catalog today!"`,
+             `اكتشف أحدث الصيحات والهدايا المثالية في Gifts&More.lb. نحن ننظم مجموعة فريدة من العناصر الساخنة والمرغوبة. سواء كنت تتسوق لأحبائك أو تدلل نفسك، فإن مجموعتنا ستغطيك بالأزياء والأدوات والمزيد. اكتشف الكتالوج الخاص بنا اليوم!"`
              )}
 
+
+
             </Typography>
-            <Typography
+            {/* <Typography
                 className='sectionTitle     box'
                 sx={{
                   width:{xs:'95%',sm:text('90%','100%'),md:text('85%','100%')},
@@ -182,7 +187,7 @@ const PreLoader = ({data, images}:any) => {
              `استمتع بفن الإهداء في "Gifts and More LB". مجموعتنا المرتبة بعناية تعكس شغفنا في اختيار المنتجات المميزة. من الحلي الحرفية إلى الكنوز المستوردة المختارة بعناية، نقدم تشكيلة متجددة باستمرار تجسد الإبداع. من خلال خدمة استثنائية، نحن هنا لمساعدتك في اكتشاف ذلك الشيء المثالي، مما يجعل كل فرصة للإهداء فرصة لخلق ذكريات دائمة.` 
              )}
 
-            </Typography>
+            </Typography> */}
             {/* <Btn className='bg' sx={{
                   justifyContent: text('start','end'),
               
