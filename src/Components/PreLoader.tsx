@@ -53,7 +53,23 @@ const PreLoader = ({data, images}:any) => {
       <MainCarousel images={images}/>
 
         <OrderAlert/>
-    <Container disableGutters className='wrap auto flex' sx={{pt:10,px:{sm:1},maxWidth:'xl',display:'flex'}}>
+        <Typography
+                className='sectionTitle clr text-center auto center box'
+                sx={{
+                  py:'.5em',
+                  display:'flex',
+                fontSize: {
+                    xs: '2.12em',
+                    sm: '2.74em',
+                    md:'2em'
+                },
+                flex:1,
+                fontWeight: '700'
+            }}>
+              
+              {text('Gifts that make moments memorable ','عرض مجموعات مختلفة')}
+            </Typography>
+    <Container disableGutters className='wrap auto flex' sx={{pt:2,px:{sm:1},maxWidth:'xl',display:'flex'}}>
   
     
 
@@ -82,15 +98,15 @@ const PreLoader = ({data, images}:any) => {
             </Typography>
          
 
-            <Box className='wrap  space-evenly' sx={{width:'100%',my:3,display:{xs:'flex'}}}>
+            <Box className='wrap  center' sx={{width:'100%',my:3,display:{xs:'flex'}}}>
 
         {cates.map(i=>{
             return <Box
 
             onClick={()=>router.push(`${i?.category.en.replace(/ /g, '-').toLocaleLowerCase() || 'collection'}/products`)}
             key={i?.img} className='cursor relative'
-             sx={{borderRadius:'50%',height:{xs:'300px',sm:'350px'},
-             my:2,width:{xs:'48%',sm:'32%',md:'22%'}}}>
+             sx={{borderRadius:'50%',height:{xs:'43vw',sm:'300px'},
+             margin:1,width:{xs:'43vw',sm:'300px',md:'22%'}}}>
                     <img src={i?.img} alt={`${i?.category ,'image'}`} style={{borderRadius:'2'}} className="img" />
                     <Box sx={{width:'100%',height:'100%',position:'absolute',top:0,right:0,background:'black',opacity:.2}}>
 
@@ -142,13 +158,7 @@ const PreLoader = ({data, images}:any) => {
                     sm: '1em',
                     md:'1em'
                 },
-
-
-
-
-
                 px:1,
-
                 flex:1,
                 fontWeight: '100'
             }}>
