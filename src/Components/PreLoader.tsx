@@ -223,7 +223,7 @@ const PreLoader = ({data, images}:any) => {
 
     </Container>
         <Testimonial/>
-        <ContactSection/>
+        {/* <ContactSection/> */}
   </Box>
   )
 }
