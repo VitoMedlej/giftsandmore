@@ -75,7 +75,7 @@ const Index = () => {
       <Box sx={{mt:2}}>
  
       <BreadCrumb  />
-{!loading && data?.product !== undefined && data?.product?.title ? <Grid sx={{maxWidth:'lg',mx:1,pt:{sm:15,md:15,lg:9}}} className='auto' container>
+{!loading && data?.product !== undefined && data?.product?.title ? <Grid sx={{maxWidth:'lg',mx:1,pt:{sm:15,md:9,lg:5}}} className='auto' container>
        <Grid  item xs={12}  md={7} >
          <ProductImageCarousel images={data?.product?.images}/>
    
@@ -84,7 +84,7 @@ const Index = () => {
         border:'1px solid #00000029',
         px:{xs:1,sm:1.5}}} item xs={12}  md={5}>
          <Box sx={{pt:{xs:3,sm:0}}}>
-             <Typography component={'h1'} sx={{fontWeight:400,pt:1,fontSize:{xs:'2em',sm:'2.25sem'}}}>
+             <Typography component={'h1'} sx={{fontWeight:400,pt:1,fontSize:{xs:'1.2em',sm:'1.55sem'}}}>
               {data?.product?.title || 'Loading Product Details'}
              </Typography>
              <Typography className='gray' component={'h4'} sx={{fontWeight:400}}>

@@ -29,7 +29,7 @@ const Preloader3 = ({res}:{res:any}) => {
             // py: {xs:'.75em',sm:'2em',md:'3em'},
             // width: {xs:'98%',md:'74%',lg:'80%'},
             width:'100%',
-            maxWidth:'lg',
+            maxWidth:'none',
             // maxWidth: 'lg',
             minHeight:'350px',
             maxHeight:{xs:'380px',sm:'80vh'},
