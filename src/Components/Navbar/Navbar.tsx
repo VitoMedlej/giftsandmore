@@ -146,9 +146,10 @@ export default function Navbar() {
                     alignItems: 'center',
                  
                 }}>
-                           <Link className='flex center auto absolute  align-center ' style={{ justifyContent:'flex-start !important'}}  href='/' color='inherit'>
+                           <Link className='flex text-center center auto absolute  decor-none black align-center ' style={{ justifyContent:'flex-start !important'}}  href='/' color='inherit'>
 
 <Box
+className='center auto decor-none items-center flex text-center '
     sx={{
  
     mx: {
@@ -158,10 +159,13 @@ export default function Navbar() {
     width:{xs:'90px',sm: '100px'}
     , height:{xs:'65px',sm: '100px'}
 }}>
-    <img
+    <Typography  sx={{fontWeight:900,fontSize:'1em'}}>
+        GIFTS & MORE
+    </Typography>
+    {/* <img
         className='img'
         src={`https://ucarecdn.com/01ea6d0a-fdbf-4a2f-b647-e76b2d700e32/365014401_1944248375937735_7655171259538237739_n.jpg`}
-        alt="gifts.and.more_lb Lebanon logo"/>
+        alt="gifts.and.more_lb Lebanon logo"/> */}
 </Box>
 </Link>
 
