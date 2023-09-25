@@ -34,7 +34,7 @@ const Page = async(ctx : any) => {
     //     let page=  searchParams.get('page') || 0
 
         
-        let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.toLocaleLowerCase()
+        let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${decodeURIComponent(category)}`.toLocaleLowerCase()
     const ProductsCollection = await client
         .db("GIFTS")
         .collection("Products");
