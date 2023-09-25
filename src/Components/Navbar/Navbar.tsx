@@ -154,9 +154,9 @@ className='center auto decor-none items-center flex text-center '
  
     mx: {
         sm: '1em'
-    },
+    }
    
-    width:{xs:'90px',sm: '100px'}
+    // width:{xs:'90px',sm: '100px'}
     , height:{xs:'65px',sm: '100px'}
 }}>
     <Typography  sx={{fontWeight:900,fontSize:'1em'}}>

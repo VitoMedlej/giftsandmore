@@ -104,7 +104,7 @@ const Index = () => {
    
       
          
-             <Box className='flex wrap' sx={{my:2,position:'relative'}}>
+             <Box className='flex wrap' sx={{my:2,justifyContent:'space-between',position:'relative'}}>
               <Box sx={{width:'100%'}}>
 
              <QuantityPicker 
@@ -117,15 +117,19 @@ const Index = () => {
                      onClick={()=>addToCart(`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:data.product.price, selectedColor},true)}
              
               sx={{gap:.5,
-                borderRadius:0,
+                borderRadius:'200px',
                 color:'white',
-             width:{xs:'100%',sm:'49%'}}}>
+                fontSize:{xs:'.7em',sm:'.9em'},
+                // background : data?.product?.colors[0] ? `${data?.product?.colors[0]}` : 'black', 
+                // borderColor : data?.product?.colors[0] ? `${data?.product?.colors[0]}` : 'black', 
+             width:{xs:'49%',sm:'49%'}}}>
                  Add To Bag
-                 <AiOutlineShoppingCart  fontSize={'medium'}/>
              </Btn>
-             <Btn   sx={{border:'none',background:'transparent', color:'green',gap:.5,mt:.5,":hover":{color:'black'},width:{xs:'100%',sm:'49%'}}}>
+             <Btn   sx={{background:'transparent',  
+                fontSize:{xs:'.7em',sm:'.9em'},
+             
+             borderRadius:'200px',border:'1px solid green',color:'green',gap:.5,mt:.5,":hover":{color:'black'},width:{xs:'49%',sm:'49%'}}}>
                  WhatsApp 
-                 <BsWhatsapp fontSize={'medium'}/>
              </Btn>
              </Box>
          <Divider></Divider>
@@ -142,7 +146,7 @@ const Index = () => {
              </Box> */}
          </Box>}
 
-         { data?.product?.colors && data?.product?.colors?.length > 0 && <Box className='flex' sx={{py:2}}>
+         {/* { data?.product?.colors && data?.product?.colors?.length > 0 && <Box className='flex' sx={{py:2}}>
                  <Typography >
                  <strong>Colors:</strong>{' '}
                  </Typography>
@@ -156,10 +160,8 @@ const Index = () => {
                  }) }
              </Box>
               
-             {/* <Box>
-                <ProductOptionSelect/>
-             </Box> */}
-         </Box>}
+          
+         </Box>} */}
 
              <Typography sx={{fontWeight:600,py:.25}}>
                  Product Description:
