@@ -104,8 +104,8 @@ const Index = () => {
    
       
          
-             <Box className='flex wrap' sx={{my:2,justifyContent:'space-between',position:'relative'}}>
-              <Box sx={{width:'100%'}}>
+             <Box className='flex wrap' sx={{my:2,justifyContent:'flex-start',position:'relative'}}>
+              <Box>
 
              <QuantityPicker 
                     onChange={(e:number)=>{incrementQty(data?.product?._id,e)}}
@@ -118,19 +118,19 @@ const Index = () => {
              
               sx={{gap:.5,
                 borderRadius:'200px',
-                color:'white',
+              color:'white',
                 fontSize:{xs:'.7em',sm:'.9em'},
                 // background : data?.product?.colors[0] ? `${data?.product?.colors[0]}` : 'black', 
                 // borderColor : data?.product?.colors[0] ? `${data?.product?.colors[0]}` : 'black', 
              width:{xs:'49%',sm:'49%'}}}>
                  Add To Bag
              </Btn>
-             <Btn   sx={{background:'transparent',  
+             {/* <Btn   sx={{background:'transparent',  
                 fontSize:{xs:'.7em',sm:'.9em'},
              
              borderRadius:'200px',border:'1px solid green',color:'green',gap:.5,mt:.5,":hover":{color:'black'},width:{xs:'49%',sm:'49%'}}}>
                  WhatsApp 
-             </Btn>
+             </Btn> */}
              </Box>
          <Divider></Divider>
 

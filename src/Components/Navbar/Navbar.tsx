@@ -159,7 +159,7 @@ className='center auto decor-none items-center flex text-center '
     // width:{xs:'90px',sm: '100px'}
     , height:{xs:'65px',sm: '100px'}
 }}>
-    <Typography  sx={{fontWeight:900,fontSize:'1em'}}>
+    <Typography  sx={{fontWeight:900,fontSize:{xs:'1em',md:'1.2em'}}}>
         GIFTS & MORE
     </Typography>
     {/* <img
