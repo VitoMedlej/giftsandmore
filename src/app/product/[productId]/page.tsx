@@ -104,7 +104,7 @@ const Index = () => {
    
       
          
-             <Box className='flex wrap' sx={{my:2,justifyContent:'flex-start',position:'relative'}}>
+             <Box className='flex wrap ' sx={{my:2,justifyContent:'flex-start',position:'relative'}}>
               <Box>
 
              <QuantityPicker 
@@ -166,7 +166,7 @@ const Index = () => {
              <Typography sx={{fontWeight:600,py:.25}}>
                  Product Description:
              </Typography>
-             <Typography className='gray'>
+             <Typography className='gray pre'>
    {data?.product?.description}
              </Typography>
          </Box>
