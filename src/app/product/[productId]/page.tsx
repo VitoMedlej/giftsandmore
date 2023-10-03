@@ -166,7 +166,7 @@ const Index = () => {
              <Typography sx={{fontWeight:600,py:.25}}>
                  Product Description:
              </Typography>
-             <Typography className='gray pre'>
+             <Typography className='gray pre 'sx={{textWrap:'wrap'}}>
    {data?.product?.description}
              </Typography>
          </Box>
