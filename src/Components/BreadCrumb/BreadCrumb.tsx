@@ -3,7 +3,6 @@
 import * as React from 'react';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
-import { Typography } from '@mui/material';
 import { useParams } from 'next/navigation';
 
 function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
@@ -22,7 +21,7 @@ export default function ActiveLastBreadcrumb() {
           underline="hover"
           href={`/collection/products`}
         >
-          {category ? category : 'Collection'}
+          {category ? decodeURIComponent(category) : 'Collection'}
         </Link>
         {/* <Link
         className='gray' 

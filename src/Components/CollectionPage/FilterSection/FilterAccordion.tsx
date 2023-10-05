@@ -42,10 +42,7 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
              comp: <SelectOneForm
              title= 'Category'
             List={
-            
-         
-                [...categories,'collection']
-             
+                    [...categories,'collection']
            }
             value={options.category}
             setValue={

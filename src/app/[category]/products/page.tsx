@@ -58,7 +58,7 @@ const Page = async(ctx : any) => {
           ? {
               category: {
                 $regex: new RegExp(
-                  `^${filterByCate.toLocaleLowerCase().replace(/-/g, ' ')}$`,
+                  `^${filterByCate.toLocaleLowerCase()}$`,
                   'i'
                 ),
               },

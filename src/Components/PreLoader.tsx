@@ -103,7 +103,7 @@ const PreLoader = ({data, images}:any) => {
         {cates.map(i=>{
             return <Box
 
-            onClick={()=>router.push(`${i?.category.en.replace(/ /g, '-').toLocaleLowerCase() || 'collection'}/products`)}
+            onClick={()=>router.push(`${i?.category.en.toLocaleLowerCase() || 'collection'}/products`)}
             key={i?.img} className='cursor relative'
              sx={{borderRadius:'50%',height:{xs:'43vw',sm:'300px'},
              margin:1,width:{xs:'43vw',sm:'300px',md:'22%'}}}>

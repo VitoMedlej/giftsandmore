@@ -75,7 +75,7 @@ export default function BasicAccordion({toggleDrawer} : any) {
       key={category.en}
       onClick={()=>{
         toggleDrawer(false)
-        router.push(`/${encodeURIComponent(category.en)}/products`)
+        router.push(`/${encodeURIComponent(category.en?.toLocaleLowerCase())}/products`)
        }}
        disablePadding>
 
