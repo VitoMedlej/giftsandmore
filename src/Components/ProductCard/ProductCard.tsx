@@ -56,9 +56,9 @@ const ProductCard = ({
                 height: height || {xs:'180px',sm:'300px',md:'350px'}
             }}>
                 <img
-                    src={images
-                    ? images[0]
-                    : ''}
+                     src={images
+                        ? `${images[0]}-/resize/400x400/`
+                        : ''}
                     alt="Prdouct image"
                     className="img contain"/>
             </Box>
