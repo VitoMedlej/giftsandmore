@@ -16,6 +16,7 @@ import { server } from '@/Utils/Server'
 import { QuantityPicker } from '@/Components/Shared/QuantityPicker/QuantityPicker'
 import ProductReview from '@/Components/ProductReview/ProductReview'
 import usePrice from '@/Hooks/usePrice'
+import ColorSelector from '@/Components/ColorSelector/ColorSelector'
 // import { useRouter } from 'next/navigation'
 
 const Index = () => {
@@ -76,14 +77,24 @@ const Index = () => {
  
       <BreadCrumb  />
 {!loading && data?.product !== undefined && data?.product?.title ? <Grid sx={{maxWidth:'lg',mx:1,pt:{sm:15,md:9,lg:5}}} className='auto' container>
-       <Grid  item xs={12}  md={7} >
+       <Grid  item xs={12}  md={6} >
          <ProductImageCarousel images={data?.product?.images}/>
-   
+        <Box className="flex wrap justify-between between space-around" sx={{mt:1}}>
+
+          {data?.product?.images?.map((i:any)=>{
+            return <Box key={i} sx={{width:`${95 / data?.product?.images?.length}%` ,
+            height: `${95 / data?.product?.images?.length}%` }}>
+                <img src={i} alt="" className="img" />
+              </Box>
+          })}
+        
+                </Box>
        </Grid>
        <Grid sx={{
-        border:'1px solid #00000029',
+        ml:{xs:0,sm:2},
+        // border:'1px solid #00000029',
         px:{xs:1,sm:1.5}}} item xs={12}  md={5}>
-         <Box sx={{pt:{xs:3,sm:0}}}>
+         <Box sx={{px:{xs:0,sm:0},pt:{xs:3,sm:0}}}>
              <Typography component={'h1'} sx={{fontWeight:400,pt:1,fontSize:{xs:'1.2em',sm:'1.55sem'}}}>
               {data?.product?.title || 'Loading Product Details'}
              </Typography>
@@ -135,18 +146,9 @@ const Index = () => {
          <Divider></Divider>
 
          <Box sx={{pt:4}}>
-         { data?.product?.size && <Box >
-             <Box >
-                 <Typography >
-                 <strong>Size:</strong>{' '}{data.product.size}
-                 </Typography>
-             </Box>
-             {/* <Box>
-                <ProductOptionSelect/>
-             </Box> */}
-         </Box>}
+        
 
-         { data?.product?.colors && data?.product?.colors?.length > 0 && <Box className='flex' sx={{py:2}}>
+         {/* { data?.product?.colors && data?.product?.colors?.length > 0 && <Box className='flex' sx={{py:2}}>
                  <Typography >
                  <strong>Colors:</strong>{' '}
                  </Typography>
@@ -161,11 +163,30 @@ const Index = () => {
              </Box>
               
           
-         </Box>}
+         </Box>} */}
+ <Typography sx={{fontWeight:300,py:.5}}>
+                 Color Options:
+             </Typography>
+             {
+              <ColorSelector options={data?.product?.colors}/>
+             }
 
+
+{ data?.product?.size && <Box sx={{mt:4}} >
+             <Box >
+                 <Typography >
+                 <strong>Size:</strong>{' '}{data.product.size}
+                 </Typography>
+             </Box>
+             {/* <Box>
+                <ProductOptionSelect/>
+             </Box> */}
+         </Box>}
              <Typography sx={{fontWeight:600,py:.25}}>
                  Product Description:
              </Typography>
+
+
              <Typography className='gray pre wrapped'sx={{textWrap:'wrap'}}>
    {data?.product?.description}
              </Typography>
