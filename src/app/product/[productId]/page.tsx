@@ -192,6 +192,8 @@ const Index = () => {
              </Typography>
          </Box>
        </Grid>
+       <Divider></Divider>
+
          <ProductReview data={data} setData={setData} reviews={data?.product?.reviews || null}/> 
        <HomeProductsCarousel Collectiontitle={"Shop More Products"} delay={3000} data={data?.moreProducts} />
    </Grid> : <Box className='flex auto center align-center' sx={{py:5}}>

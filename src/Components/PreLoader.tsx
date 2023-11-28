@@ -207,7 +207,7 @@ const PreLoader = ({data, images}:any) => {
           </Grid>
           <Grid xs={12}  sm={6}>
               <Box sx={{height:'500px'}}>
-                <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://planouter.com/wp-content/uploads/elementor/thumbs/IMG-5322-1-qabmavxq1ih28yliitx1aohp27koxna6q6ze33c934.jpg" alt="Product Showcase image" className="img" />
+                <img src="https://planouter.com/cdn/shop/files/IMG-5355_2_1.jpg?v=1697617892&width=750" alt="Product Showcase image" className="img" />
               </Box>
           </Grid>
       </Grid>
