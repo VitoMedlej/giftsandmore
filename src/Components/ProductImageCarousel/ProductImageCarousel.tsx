@@ -14,10 +14,11 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper";
 import { Box } from "@mui/material";
 
-export default function App({images}:{images:string[] | []| undefined}) {
+export default function App({images,index,setSwiper}:{setSwiper?:any,index?:number,images:string[] | []| undefined}) {
   return (
     <>
       <Swiper
+      onSwiper={setSwiper}
         spaceBetween={30}
         effect={"fade"}
         autoplay={

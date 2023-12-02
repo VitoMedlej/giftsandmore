@@ -69,7 +69,14 @@ const Index = () => {
 
       }, [])
 
-  
+      const [swiper, setSwiper] = useState<any>(null);
+
+      const goToSlide  = (index: number) => {
+        if (swiper) {
+          swiper?.slideTo(index);
+        }
+      };
+      
   return (
      
     
@@ -78,11 +85,13 @@ const Index = () => {
       <BreadCrumb  />
 {!loading && data?.product !== undefined && data?.product?.title ? <Grid sx={{maxWidth:'lg',mx:1,pt:{sm:15,md:9,lg:5}}} className='auto' container>
        <Grid  item xs={12}  md={6} >
-         <ProductImageCarousel images={data?.product?.images}/>
+         <ProductImageCarousel setSwiper={setSwiper} images={data?.product?.images}/>
         <Box className="flex wrap justify-between between space-around" sx={{mt:1}}>
 
-          {data?.product?.images?.map((i:any)=>{
-            return <Box className='cursor pointer' key={i} sx={{width:`${95 / data?.product?.images?.length}%` ,
+          {data?.product?.images?.map((i:any,index:number)=>{
+            return <Box
+            onClick={()=>goToSlide(Number(index))}
+            className='cursor pointer' key={i} sx={{width:`${95 / data?.product?.images?.length}%` ,
             minHeight:'20%',
             minWidth:'20%',
          height: `${95 / data?.product?.images?.length}%` }}>
