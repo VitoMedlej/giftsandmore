@@ -24,7 +24,7 @@ export default function BasicSelect({options} : {options:any}) {
           label="Color"
           onChange={handleChange}
         >
-          {options.map((i:any)=>{return <MenuItem key={i}  value={`${i}`}>{i.toUpperCase()}</MenuItem>}
+          {options.map((i:any)=>{return <MenuItem key={i}  sx={{fontSize:'.8em'}} value={`${i}`}>{i}</MenuItem>}
           )}
         </Select>
       </FormControl>

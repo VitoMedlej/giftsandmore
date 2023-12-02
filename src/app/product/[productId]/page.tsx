@@ -82,8 +82,10 @@ const Index = () => {
         <Box className="flex wrap justify-between between space-around" sx={{mt:1}}>
 
           {data?.product?.images?.map((i:any)=>{
-            return <Box key={i} sx={{width:`${95 / data?.product?.images?.length}%` ,
-            height: `${95 / data?.product?.images?.length}%` }}>
+            return <Box className='cursor pointer' key={i} sx={{width:`${95 / data?.product?.images?.length}%` ,
+            minHeight:'20%',
+            minWidth:'20%',
+         height: `${95 / data?.product?.images?.length}%` }}>
                 <img src={i} alt="" className="img" />
               </Box>
           })}
